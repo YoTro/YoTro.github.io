@@ -1,4 +1,4 @@
-# Scribble
+# YoTro
 
 A Jekyll theme. [Demo :point_left:](http://scribble.muan.co/posts/scribble-the-jekyll-theme).
 
@@ -6,7 +6,7 @@ A Jekyll theme. [Demo :point_left:](http://scribble.muan.co/posts/scribble-the-j
 
 ## Get started
 
-1. [Fork the repository](https://github.com/muan/scribble/fork)
+1. [Fork the repository](https://github.com/YoTro/scribble/fork)
 
 2. Clone the repository: `git clone https://github.com/username/scribble`
 
@@ -25,8 +25,8 @@ A Jekyll theme. [Demo :point_left:](http://scribble.muan.co/posts/scribble-the-j
 2. Change `about.md` for blog intro
 
 3. For domain settings see [the guide from GitHub](https://help.github.com/articles/setting-up-a-custom-domain-with-pages)
+---
 
 ## The end
 
-Like it? [Tell me](http://twitter.com/muanchiou).<br/>
-Problem? [Use GitHub Issues](https://github.com/muan/scribble).
+
