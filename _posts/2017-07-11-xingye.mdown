@@ -1,6 +1,7 @@
 ---
 title: Go ahead
 date: 2017-07-11 20:52:31
+layout: post
 ---
 
 # 愿世界温柔以待 #
