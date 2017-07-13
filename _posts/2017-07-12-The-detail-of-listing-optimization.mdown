@@ -1,9 +1,8 @@
 ---
 title: The detail of listing optimization
 date: 2017-07-12 21:00:31
+layout: default
 ---
-
-# The point of Listing #  
 
 The Listing page shows the second only to the title and pictures in the rankings, which is the selling point of the product. From the layout of the Amazon page, we can generally know which specific link is more important in Amazon's eyes. Amazon has arranged the best product presentation for our sellers, which is one of the reasons why we should pay special attention to the "five major selling points" on the page. 
 
@@ -14,7 +13,9 @@ In the search for new products, we have already referred to the needs of the mar
 
 When writing a selling point, we can consider it from the following angles:
 
+
 ## the point of view ##
+
 
 1.Attract buyers eye, stimulate demand for purchase.
 
