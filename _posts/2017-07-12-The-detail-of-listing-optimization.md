@@ -19,15 +19,15 @@ When writing a selling point, we can consider it from the following angles:
 
 1.Attract buyers eye, stimulate demand for purchase.
 
-Buyers to purchase products always "order three", showing different products to let buyers eyes more stay for you, the customer first glance, that is similar to the same information will generally not immediately tired.
+Buyers to purchase products always "compare with other stores", showing different products to let buyers eyes more stay for you, the customer first glance, that is similar to the same information will generally not immediately tired.
 
-Even if the product features are not different, you have to make "different"". Of course, the buyer's "interest point" may not only be "different" bring, there can be many other points, but "difference" is to distinguish between your products and tens of millions of other sellers key.
+Even if the product features are not different, you have to make "different". Of course, the buyer's `interest point` may not only be "different" bring, there can be many other points, but `difference` is to distinguish between your products and tens of millions of other sellers key.
 
 2.Describe professional, brand / intimacy, lifestyle / easy to understand and so on.
 
 The use of language as a medium of communication should be standardized on the platform, and special adjustments will be made to suit the customers. For some major products, customers need specialized description, so as to produce a sense of security products, will be assured to buy.
 
-For some products, many times more annoying customer product description of the "professional, the term" language into the breath of life, can enhance product and customer intimacy, enhance the psychological expectations of customers for product. After the customer bogey read your description as in the fog.
+For some products, many times more annoying customer product description of the "professional, the term" language into the breath of life, can enhance product and customer intimacy, enhance the psychological expectations of customers for product. After the customer read your description as in the fog.
 
 3.Dispel misgivings, prompting direct purchase.
 
@@ -104,13 +104,13 @@ The following text on the product selling point may help you:
 
 2. Other selling points can write other different features of the product, such as from the appearance, design structure, additional features, etc. can also be different. But when you don't have anything to write about, you can use one or two sentences to simplify and summarize all the points of your product, add the language of specialization, life, and the language itself can be a selling point.
 
-3.For new concept products or products with unique additional functions, the one or two sentence points out its characteristics, and then briefly pointed out how to use.
+3. For new concept products or products with unique additional functions, the one or two sentence points out its characteristics, and then briefly pointed out how to use.
 
-4.Sometimes to highlight product features, an image of the specific effects of the product can stimulate buyers' interest more.
+4. Sometimes to highlight product features, an image of the specific effects of the product can stimulate buyers' interest more.
 
-5.The product features are not obvious, from its applicable scene, scope of application, applicable to the crowd, etc., outline the overall use of the product.
+5. The product features are not obvious, from its applicable scene, scope of application, applicable to the crowd, etc., outline the overall use of the product.
 
-6.Five selling points, the overall words of the specifications at a glance, some letters capitalized prominent, vivid language localization, for the conversion rate of the page has unexpected good results.
+6. Five selling points, the overall words of the specifications at a glance, some letters capitalized prominent, vivid language localization, for the conversion rate of the page has unexpected good results.
 
 7. The last selling point, generally written to promote buyers to put aside scruples, direct purchase of sentences. When there is nothing to write, enclose shelf life, gifts, etc..
 
