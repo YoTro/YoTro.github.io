@@ -77,11 +77,11 @@ More research on competitors, similar products selling point is where to start, 
 
 After finishing, the seller noticed the effect is not ideal, he can often make changes. Of course, this cycle of change and patterns should be orderly, so that we can find out which one is really useful to us. For how to reasonably confirm the optimization point can achieve the effect, we can do this:
 
-1.In the case of listing has been uploaded, download the sales report background, observe the average daily conversion rate of A1.
+1. In the case of listing has been uploaded, download the sales report background, observe the average daily conversion rate of A1.
 
-2.The optimization of a point, in other conditions (rest, holiday ,activities, etc.) have not been modified or changed little under the premise of the situation, choose at least 7 days (of course, the longer the better), the background download data to observe the average conversion rate of A2 every day.
+2. The optimization of a point, in other conditions (rest, holiday ,activities, etc.) have not been modified or changed little under the premise of the situation, choose at least 7 days (of course, the longer the better), the background download data to observe the average conversion rate of A2 every day.
 
-3.Contrasted with A1 and A2 ,you coould found that even if the rise of 1 percentage points, it's shows that you did the optimization have effective, and vice versa.
+3. Contrasted with A1 and A2 ,you coould found that even if the rise of 1 percentage points, it's shows that you did the optimization have effective, and vice versa.
 
 How to optimize the way? Some sellers after update the product do not know how to optimize, the following tips can be properly used:
 
