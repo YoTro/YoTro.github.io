@@ -17,25 +17,25 @@ When writing a selling point, we can consider it from the following angles:
 ## the point of view ##
 
 
-1.Attract buyers eye, stimulate demand for purchase.
+1. Attract buyers eye, stimulate demand for purchase.
 
 Buyers to purchase products always "compare with other stores", showing different products to let buyers eyes more stay for you, the customer first glance, that is similar to the same information will generally not immediately tired.
 
 Even if the product features are not different, you have to make "different". Of course, the buyer's `interest point` may not only be "different" bring, there can be many other points, but `difference` is to distinguish between your products and tens of millions of other sellers key.
 
-2.Describe professional, brand / intimacy, lifestyle / easy to understand and so on.
+2. Describe professional, brand / intimacy, lifestyle / easy to understand and so on.
 
 The use of language as a medium of communication should be standardized on the platform, and special adjustments will be made to suit the customers. For some major products, customers need specialized description, so as to produce a sense of security products, will be assured to buy.
 
 For some products, many times more annoying customer product description of the "professional, the term" language into the breath of life, can enhance product and customer intimacy, enhance the psychological expectations of customers for product. After the customer read your description as in the fog.
 
-3.Dispel misgivings, prompting direct purchase.
+3. Dispel misgivings, prompting direct purchase.
 
 After the seller made the above effort and raised the customer's interest to a certain extent, we need to further change the customer's interest from the idea into the actual purchasing behavior.
 
 Sometimes, some inflammatory language will directly lead to the emergence of consumer behavior; sometimes, the seller's one or two sentence to meet the buyer's after-sale protection, but also to dispel doubts in the minds of customers.
 
-4.To meet the algorithm, to enhance the rankings, exposure.
+4. To meet the algorithm, to enhance the rankings, exposure.
 
 Listing page keywords, reasonable and appropriate embedding can make rankings rise. And selling points as an important part of listing, the introduction of keywords is essential.
 
@@ -45,7 +45,7 @@ Listing page keywords, reasonable and appropriate embedding can make rankings ri
 
 After knowing what effect our selling point should achieve, we can do the preparatory work of writing the selling point. At first we didn't know how to start, and with that, you'd know where to start organizing the language.
 
-1.Familiar with the product: the biggest selling point, other features, the applicable crowd and the main use of scenes.
+1. Familiar with the product: the biggest selling point, other features, the applicable crowd and the main use of scenes.
 
 Upload products, for sellers, the biggest selling points are generally clear. Sometimes, in fact, the selling point of a product can not be confined to the product itself. It is necessary to describe the added value of the product from a deeper level, and this additional value is worthy of some psychological expectation of the purchaser.
 
@@ -53,21 +53,21 @@ In the new on-line, we have the best product has a clear positioning: product is
 
 Clear product positioning not only helps sellers to target specific groups, achieving the desired goals in the most direct way and fast in the shortest time, will have a clearer understanding to clear their position can be achieved.
 
-2.Find out keywords: customer search frequently used keywords.
+2. Find out keywords: customer search frequently used keywords.
 
 How to get keywords, there are many ways, not here one by one. The most appropriate way is that you can get the keywords from the customer's mouth from the review similar to the product. With keywords, we can put together other languages and enrich the whole sentence or image.
 
-3.The localization degree of organization language is better, but we can not achieve a mouthful, the seller usually user-friendly OK.
+3. The localization degree of organization language is better, but we can not achieve a mouthful, the seller usually user-friendly OK.
 
 Customers generally lack time to spend a lot of time on your page, and it's important to quickly navigate to the information you need. Sometimes, the aptly living language can quickly stimulate the buyer's inner need. In addition, it is better not to let customers at a glance that the seller is very amateur.
 
-4.Product improvement, security and so on.
+4. Product improvement, security and so on.
 
 When the biggest selling point is displayed in the first place, we can also tap the various attributes of the product to distinguish customers from other brands.
 
 For example, the lightning line, your coil is coarse and nylon woven, you can emphasize that the coarse coil and nylon knitting in the wire can help it to be durable and can be used for a long time without a bad one. From the characteristics of mining products and buyers meet the needs of the point.
 
-5.The main competitors selling point analysis.
+5. The main competitors selling point analysis.
 
 More research on competitors, similar products selling point is where to start, good, prominent place recorded. Finally integrated into their own language. Integration is not plagiarism, but optimization and innovation.
 
@@ -85,11 +85,15 @@ After finishing, the seller noticed the effect is not ideal, he can often make c
 
 How to optimize the way? Some sellers after update the product do not know how to optimize, the following tips can be properly used:
 
-1.Analyzing major competitors selling point, choose right for you to modify.
-2.Collect keywords which customers search for common , record keyword which have good effect in PPC.
-3.In the sentence description, the language is localized, life oriented, streamlined and optimized.
-4.Review/feedback, the product's outstanding which is involved in communication (selling, life scenes etc.)
-5.Join the brand slogan (need long-term accumulated, for new sellers will sacrifice a lot earlier. For example, the first sentence of the Anker product is always the "The Anker Advantage: Join the million+ technology. powered by our leading")
+1. Analyzing major competitors selling point, choose right for you to modify.
+
+2. Collect keywords which customers search for common , record keyword which have good effect in PPC.
+
+3. In the sentence description, the language is localized, life oriented, streamlined and optimized.
+
+4. Review/feedback, the product's outstanding which is involved in communication (selling, life scenes etc.)
+
+5. Join the brand slogan (need long-term accumulated, for new sellers will sacrifice a lot earlier. For example, the first sentence of the Anker product is always the "The Anker Advantage: Join the million+ technology. powered by our leading")
 
 ---
 
