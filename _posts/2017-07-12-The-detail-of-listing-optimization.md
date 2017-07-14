@@ -1,5 +1,5 @@
 ---
-title: The detail of listing optimization
+title: The Description of listing optimization
 date: 2017-07-12 21:00:31
 layout: post
 ---
@@ -73,8 +73,45 @@ More research on competitors, similar products selling point is where to start, 
 
 ---
 
-## constantly optimize ##
+## Constantly optimize ##
 
-After finishing, the seller noticed
+After finishing, the seller noticed the effect is not ideal, he can often make changes. Of course, this cycle of change and patterns should be orderly, so that we can find out which one is really useful to us. For how to reasonably confirm the optimization point can achieve the effect, we can do this:
+
+1.In the case of listing has been uploaded, download the sales report background, observe the average daily conversion rate of A1.
+
+2.The optimization of a point, in other conditions (rest, holiday ,activities, etc.) have not been modified or changed little under the premise of the situation, choose at least 7 days (of course, the longer the better), the background download data to observe the average conversion rate of A2 every day.
+
+3.Contrasted with A1 and A2 ,you coould found that even if the rise of 1 percentage points, it's shows that you did the optimization have effective, and vice versa.
+
+How to optimize the way? Some sellers after update the product do not know how to optimize, the following tips can be properly used:
+
+1.Analyzing major competitors selling point, choose right for you to modify.
+2.Collect keywords which customers search for common , record keyword which have good effect in PPC.
+3.In the sentence description, the language is localized, life oriented, streamlined and optimized.
+4.Review/feedback, the product's outstanding which is involved in communication (selling, life scenes etc.)
+5.Join the brand slogan (need long-term accumulated, for new sellers will sacrifice a lot earlier. For example, the first sentence of the Anker product is always the "The Anker Advantage: Join the million+ technology. powered by our leading")
+
+---
+
+## Points of attention ##
+
+
+Customer psychology is more difficult to get, we have to do is to meet the needs of most people, reasonable abandon is also essential.
+
+The following text on the product selling point may help you:
+
+1. the first selling point is to pay attention to the most attractive point of the customer, directly distinguish between other products, stimulate the desire to buy. You can write about the biggest features of the product.
+
+2. Other selling points can write other different features of the product, such as from the appearance, design structure, additional features, etc. can also be different. But when you don't have anything to write about, you can use one or two sentences to simplify and summarize all the points of your product, add the language of specialization, life, and the language itself can be a selling point.
+
+3.For new concept products or products with unique additional functions, the one or two sentence points out its characteristics, and then briefly pointed out how to use.
+
+4.Sometimes to highlight product features, an image of the specific effects of the product can stimulate buyers' interest more.
+
+5.The product features are not obvious, from its applicable scene, scope of application, applicable to the crowd, etc., outline the overall use of the product.
+
+6.Five selling points, the overall words of the specifications at a glance, some letters capitalized prominent, vivid language localization, for the conversion rate of the page has unexpected good results.
+
+7. The last selling point, generally written to promote buyers to put aside scruples, direct purchase of sentences. When there is nothing to write, enclose shelf life, gifts, etc..
 
 ---
