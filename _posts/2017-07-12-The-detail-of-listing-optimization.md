@@ -57,7 +57,7 @@ Clear product positioning not only helps sellers to target specific groups, achi
 
 How to get keywords, there are many ways, not here one by one. The most appropriate way is that you can get the keywords from the customer's mouth from the review similar to the product. With keywords, we can put together other languages and enrich the whole sentence or image.
 
-3.Language: localization, precise and brief, living and professional .
+3.Language: localization, precise and brief, living and professional.
 The localization degree of organization language is better, but the seller can reading smooth,  buyer usually understand easily.
 
 Customers generally lack time to spend a lot of time on your page, and it's important to quickly navigate to the information you need. Sometimes, the aptly living language can quickly stimulate the buyer's inner need. In addition, it is better not to let customers at a glance that the seller is very amateur.
