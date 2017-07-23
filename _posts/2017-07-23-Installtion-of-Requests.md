@@ -1,5 +1,5 @@
 ---
-title: The Requests of Python---Install
+title: The Requests of Python---Installtion
 date: 2017-07-23 18:36:52
 ---
 
