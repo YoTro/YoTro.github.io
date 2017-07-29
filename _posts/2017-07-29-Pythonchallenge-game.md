@@ -50,9 +50,9 @@ but MAYBE they are in the page source.
 
 ```
 We can open the web source  
-![loading...](/images/pythonchalleng/string.png "source")  
-![loading...](/images/pythonchalleng/equality_code.png "equality_code")  
-![loading...](/images/pythonchalleng/equality.png "equality")  
+![loading...](/images/pythonchallenge/string.png "source")  
+![loading...](/images/pythonchallenge/equality_code.png "equality_code")  
+![loading...](/images/pythonchallenge/equality.png "equality")  
 
 We can know the password is `equality`
 
