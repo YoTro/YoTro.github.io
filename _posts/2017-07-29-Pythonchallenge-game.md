@@ -33,7 +33,14 @@ The prompt is
 
 According to the picture we know,we coulde encoded this text first.  
 ![loading...](/images/pythonchallenge/ord.png "encoding")  
-![loading...](/images/pythonchallenge/translated.png "text")  
+```
+I  h o p e   y o u   d i d n t   t r a n s l a t e   i t   b y   h a n d .    
+ t h a t s   w h a t   c o m p u t e r s   a r e   f o r .     
+ d o i n g   i t   i n   b y   h a n d   i s   i n e f f i c i e n t   a n d   t h a t ' s   w h y   t h i s   t e x t   i s   s o   l o n g .     
+ u s i n g   s t r i n g .   
+ m a k e t r a n s ( )   i s   r e c o m m e n d e d .     
+ n o w   a p p l y   o n   t h e   u r l .  
+``` 
 LOL,if you translate it by hand,so inefficiency!  
 Now,it is so easy.Only change `map` to `ocr`  
 
@@ -56,14 +63,9 @@ We can open the web source
 ![loading...](/images/pythonchallenge/string.png "source") 
 
 ![loading...](/images/pythonchallenge/equality_code.png "equality_code")  
-```
-I  h o p e   y o u   d i d n t   t r a n s l a t e   i t   b y   h a n d .    
- t h a t s   w h a t   c o m p u t e r s   a r e   f o r .     
- d o i n g   i t   i n   b y   h a n d   i s   i n e f f i c i e n t   a n d   t h a t ' s   w h y   t h i s   t e x t   i s   s o   l o n g .     
- u s i n g   s t r i n g .   
- m a k e t r a n s ( )   i s   r e c o m m e n d e d .     
- n o w   a p p l y   o n   t h e   u r l .  
-```
+
+![loading...](/images/pythonchallenge/equality.png "equality")
+
 We can know the password is `equality`
 
 ```
@@ -87,3 +89,18 @@ This level tell us how to use `re` which like `xXXXxXXXx`.
 ```
 [http://www.pythonchallenge.com/pc/def/equality.html](http://www.pythonchallenge.com/pc/def/equality.html)
 ```
+
+But the web change from `html` to `php`
+
+## The 4 level ##
+
+![loading...](/images/pythonchallenge/4.jpg)
+
+Check in the picture you will see the url `http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=12345` and the body is `and the next nothing is 44827`
+
+I found this is a hundreds loop,so I check in the web source.The prompt is   
+```
+<!-- urllib may help. DON'T TRY ALL NOTHINGS, since it will never 
+end. 400 times is more than enough. -->
+```
+
