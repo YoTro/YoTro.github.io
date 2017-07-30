@@ -104,3 +104,19 @@ I found this is a hundreds loop,so I check in the web source.The prompt is
 end. 400 times is more than enough. -->
 ```
 
+![loading...](/images/pythonchallenge/4_urllib2.png "urllib2")
+
+If you don't know what is [re](https://www.runoob.com/python/python-reg-expressions.html) you can check here.
+ 
+![loading...](/images/pythonchallenge/peak.png "peak")
+
+```
+http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=(\d+)
+```
+
+## The 5 level ##
+
+![loading...](/images/pythonchallenge/5.jpg)  
+`pronounce it `  
+
+
