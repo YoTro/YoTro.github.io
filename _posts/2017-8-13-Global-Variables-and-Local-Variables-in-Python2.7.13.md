@@ -11,7 +11,7 @@ System is window7
 Now We often meet the Error which is UnboundlocalError.It's a frequent question in the learning python.So I try to research the issue today to kown how the variables work in the function and class.
 
 
-1. The function defaults that the variable is a global variable
+- The function defaults that the variable is a global variable
 
 ```
 i=8  
@@ -22,7 +22,7 @@ t()
 ```
 The `'i`'s value is 8 which is comfire the result.
 
-2. If the Global variable is not named in the function,it would report error `UnboundLocalError: local variable 'i' referenced before assignment`
+- If the Global variable is not named in the function,it would report error `UnboundLocalError: local variable 'i' referenced before assignment`
 
 ```
 i=4
@@ -32,7 +32,7 @@ def t():
 t()
 ``` 
 
-3. You could name the variable use in keyword `global`.
+- You could name the variable use in keyword `global`.
 
 ```
 i=4
@@ -45,4 +45,32 @@ t()
 i
 5
 ```
-The global variable `i` is change too.
+The global variable `i` is change too.  
+
+- If you don't want to change the global variable,you could assign it to another local variable.
+
+```
+i=4
+def t():
+		global i
+		t=i
+		t+=1
+		print t
+t()
+5
+i
+4
+```  
+
+- You can also reference global variables on function arguments  
+
+```
+i=4
+def t(i):
+		print i
+		i=2
+		print t
+t()
+4
+2
+```
