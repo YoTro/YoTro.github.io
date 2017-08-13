@@ -10,10 +10,9 @@ python -v 2,7,13
 ## The 0 level ##
 
 ![loading...](/images/pythonchallenge/0.jpg "0")  
-```
+
 [http://www.pythonchallenge.com/pc/def/0.html](http://www.pythonchallenge.com/pc/def/0.html)  
 
-```
 You must be count the num to change the URL
 
 ![loading...](/images/pythonchallenge/2^38.png "2^^38")
@@ -44,10 +43,9 @@ I  h o p e   y o u   d i d n t   t r a n s l a t e   i t   b y   h a n d .
 LOL,if you translate it by hand,so inefficiency!  
 Now,it is so easy.Only change `map` to `ocr`  
 
-```
 [http://www.pythonchallenge.com/pc/def/map.html](http://www.pythonchallenge.com/pc/def/map.html)
 
-```
+
 
 [RegExr](http://regexr.com/) can use `\w/g` get letters and tell you where they are.
 
@@ -68,10 +66,8 @@ We can open the web source
 
 We can know the password is `equality`
 
-```
 [http://www.pythonchallenge.com/pc/def/ocr.html](http://www.pythonchallenge.com/pc/def/ocr.html)
 
-```
 
 ## The 3 level ##
 
@@ -86,9 +82,8 @@ This level tell us how to use `re` which like `xXXXxXXXx`.
 
 ![loading...](/images/pythonchallenge/linkedlist.png "linkedlist")  
 
-```
 [http://www.pythonchallenge.com/pc/def/equality.html](http://www.pythonchallenge.com/pc/def/equality.html)
-```
+
 
 But the web change from `html` to `php`
 
