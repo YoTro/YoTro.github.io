@@ -20,7 +20,7 @@ We all kown `Python2` have two Built-in function which are `range` and `xrange`,
 
 ## Differences ##
 
-1. `range` will be built a list immediately if it is generated,but the `xrange` is gerenate a object like this
+- `range` will be built a list immediately if it is generated,but the `xrange` is gerenate a object like this
 
 ```
 >>>t=xrange(10)  
