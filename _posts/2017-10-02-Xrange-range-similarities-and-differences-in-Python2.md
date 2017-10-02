@@ -48,13 +48,13 @@ So `range()` is more power in Python3.
 
 ## Official document ##
 
->Help on class xrange in module __builtin__:
->
->class xrange(object)
-> |  xrange(stop) -> xrange object
-> |  xrange(start, stop[, step]) -> xrange object
+>Help on class xrange in module __builtin__:  
+>  
+>class xrange(object)  
+> |  xrange(stop) -> xrange object  
+> |  xrange(start, stop[, step]) -> xrange object  
 > |  
-> |  Like range(), but instead of returning a list, returns an object that
-> |  generates the numbers in the range on demand.  For looping, this is 
-> |  slightly faster than range() and more memory efficient.
+> |  Like range(), but instead of returning a list, returns an object that  
+> |  generates the numbers in the range on demand.  For looping, this is  
+> |  slightly faster than range() and more memory efficient.  
 
