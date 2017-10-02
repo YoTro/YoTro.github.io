@@ -21,17 +21,19 @@ We all kown `Python2` have two Built-in function which are `range` and `xrange`,
 ## Differences ##
 
 1. `range` will be built a list immediately if it is generated,but the `xrange` is gerenate a object like this
+
 ```
-t=xrange(10)  
-t  
+>>>t=xrange(10)  
+>>>t  
 xrange(10)  
-type(t)  
+>>>type(t)  
 <type 'xrange'>  
 
 ```
 so `xrange` is use less memory and it has faster processing speed if the loop is especially large.And gerenates the numbers in the range on demand.
 
 So it has not a slice becaus of it is a object not  list 
+
 ```
 t[:]
 
