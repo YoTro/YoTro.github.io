@@ -9,6 +9,7 @@ We all kown `Python2` have two Built-in function which are `range` and `xrange`,
 1. They are both use in forloop 
 2. They are both built-in function in Python2
 3. They all accept 3 arguments [start,stop,step],start is default 0,step is default 1,and if `stop` is bigger than `start`,it will return a Empty list.
+
 ```
 >>> x=range(0,10,1)  
 >>> x  
@@ -18,23 +19,24 @@ We all kown `Python2` have two Built-in function which are `range` and `xrange`,
 
 
 ## Differences ##
+
 1. `range` will be built a list immediately if it is generated,but the `xrange` is gerenate a object like this
 ```
->>> t=xrange(10)  
->>> t  
+t=xrange(10)  
+t  
 xrange(10)  
->>> type(t)
-<type 'xrange'>
+type(t)  
+<type 'xrange'>  
 
 ```
 so `xrange` is use less memory and it has faster processing speed if the loop is especially large.And gerenates the numbers in the range on demand.
 
 So it has not a slice becaus of it is a object not  list 
 ```
->>> t[:]
+t[:]
 
-Traceback (most recent call last):
-  File "<pyshell#11>", line 1, in <module>
+Traceback (most recent call last):  
+  File "<pyshell#11>", line 1, in <module>  
     t[:]
 TypeError: sequence index must be integer, not 'slice'
 
