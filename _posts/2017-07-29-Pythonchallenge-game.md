@@ -15,6 +15,8 @@ python -v 2,7,13
 
 You must be count the num to change the URL
 
+### Answer ###
+
 ![loading...](/images/pythonchallenge/2^38.png "2^^38")
 
 ## The 1 level ##
@@ -31,6 +33,9 @@ The prompt is
 >E-->G
 
 According to the picture we know,we coulde encoded this text first.  
+
+### Answer ###
+
 ![loading...](/images/pythonchallenge/ord.png "encoding")  
 ```
 I  h o p e   y o u   d i d n t   t r a n s l a t e   i t   b y   h a n d .    
@@ -60,6 +65,8 @@ but MAYBE they are in the page source.
 We can open the web source  
 ![loading...](/images/pythonchallenge/string.png "source") 
 
+### Answer ###
+
 ![loading...](/images/pythonchallenge/equality_code.png "equality_code")  
 
 ![loading...](/images/pythonchallenge/equality.png "equality")
@@ -77,6 +84,8 @@ One small letter, surrounded by EXACTLY three big bodyguards on each of its side
 ```
 This level tell us how to use `re` which like `xXXXxXXXx`.  
 ![loading...](/images/pythonchallenge/re_3.png)  
+
+### Answer ###
 
 ![loading...](/images/pythonchallenge/3_code.png "re")  
 
@@ -98,6 +107,7 @@ I found this is a hundreds loop,so I check in the web source.The prompt is
 <!-- urllib may help. DON'T TRY ALL NOTHINGS, since it will never 
 end. 400 times is more than enough. -->
 ```
+### Answer ###
 
 ![loading...](/images/pythonchallenge/4_urllib2.png "urllib2")
 
@@ -113,5 +123,59 @@ http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=(\d+)
 
 ![loading...](/images/pythonchallenge/5.jpg)  
 `pronounce it `  
+
+The best way is to see the source code 
+
+```
+<html>  
+<head>  
+  <title>peak hell</title>  
+  <link rel="stylesheet" type="text/css" href="../style.css">  
+</head>  
+<body>  
+<center>  
+<img src="peakhell.jpg"/>  
+<br><font color="#c0c0ff">  
+pronounce it  
+<br>  
+<peakhell src="banner.p"/>  
+</body>  
+</html>  
+
+<!-- peak hell sounds familiar ? -->  
+```
+You can notice that [`banner.p`](http://www.pythonchallenge.com/pc/def/banner.p)
+
+It tell us that `Persistent serialized storage` of the python about `pickle`-Create portable serialized representations of Python objects.
+
+The Tools is use like game save in the hard disk can serialize any type of data such as dict list into a string format.
+
+Also has a module `cPickle`  which for a (much) faster implementation becaus it is written by C,but it named pickle in Python3.
+
+pickle functions
+
+>FUNCTIONS
+>    dump(obj, file, protocol=None)
+    
+>    dumps(obj, protocol=None)
+    
+>    load(file)
+    
+>    loads(str)
+
+### Answer ###
+
+![loading...](/images/pythonchallenge/5_code.png)
+
+![loading...](/images/pythonchallenge/channel.png)
+
+`channel
+
+```
+http://www.pythonchallenge.com/pc/def/peak.html
+```
+## The 6 level ##
+
+![loading...](/images/pythonchallenge/6.jpg)
 
 
