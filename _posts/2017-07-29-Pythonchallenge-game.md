@@ -7,6 +7,8 @@ If you want to practice your python,the [pythonchallenge](http://www.pythonchall
 
 python -v 2,7,13 
 
+---
+
 ## The 0 level ##
 
 ![loading...](/images/pythonchallenge/0.jpg "0")  
@@ -18,6 +20,8 @@ You must be count the num to change the URL
 ### Answer ###
 
 ![loading...](/images/pythonchallenge/2^38.png "2^^38")
+
+---
 
 ## The 1 level ##
 
@@ -54,6 +58,8 @@ Now,it is so easy.Only change `map` to `ocr`
 
 [RegExr](http://regexr.com/) can use `\w/g` get letters and tell you where they are.
 
+---
+
 ## The 2 level ##
 
 ![loading...](/images/pythonchallenge/2.jpg "The 2 level")  
@@ -75,6 +81,7 @@ We can know the password is `equality`
 
 [http://www.pythonchallenge.com/pc/def/ocr.html](http://www.pythonchallenge.com/pc/def/ocr.html)
 
+---
 
 ## The 3 level ##
 
@@ -95,6 +102,8 @@ This level tell us how to use `re` which like `xXXXxXXXx`.
 
 
 But the web change from `html` to `php`
+
+---
 
 ## The 4 level ##
 
@@ -118,7 +127,7 @@ If you don't know what is [re](https://www.runoob.com/python/python-reg-expressi
 ```
 http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=(\d+)
 ```
-
+---
 ## The 5 level ##
 
 ![loading...](/images/pythonchallenge/5.jpg)  
@@ -174,6 +183,8 @@ pickle functions
 ```
 http://www.pythonchallenge.com/pc/def/peak.html
 ```
+---
+
 ## The 6 level ##
 
 ![loading...](/images/pythonchallenge/6.jpg)
