@@ -5,7 +5,7 @@ date: 2017-07-29 12:27:31
 
 If you want to practice your python,the [pythonchallenge](http://www.pythonchallenge.com/)coulde help you.There are currently 33 levels.
 
-python -v 2,7,13 
+python -v 2.7.13 
 
 ---
 
