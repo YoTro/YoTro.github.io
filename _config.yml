@@ -1,23 +1,38 @@
 # ----------- CONFIGURABLE START -----------
-title:            "YoTro"
-description:      "My program which I learning with happy day, do what you want"
-url:              https://yotro.github.io # Site url, without a slash at the end.
-signoff:          "YoTro" # Your name
-paginate:         5
-facebook_appid:   # APP ID for like button, remove from /_includes/share.html if unwanted.
-google_analytics: # Set tracking, remove from /javascripts/basic.js if unwanted.
-share:            false # Turn on twitter and facebook share buttons
-
+title:            "LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog"
+description:      "Full Stack独立开发者|欢迎来到 LiberXue「角落」侃侃理想、谈谈人生、敲敲代码。"
+url:              https://liberxue.github.io # 域名
+signoff:          "LiberXue" # Your name
+facebook_appid:   #liberxue
+google_analytics: UA-101222464-1
+share:            true 
+# 分页
+paginate: 15
+paginate_path: "liberxuepage:num"
+gems: [jekyll-paginate]
 links:
-  - name:         Posts
+  - name:         首页
     url:          /
     external:     false
-  - name:         About me
+  - name:         书籍
+    url:          /book
+    external:     false
+  - name:         旅游
+    url:          /road
+    external:     false
+  - name:         归档
+    url:          /archives
+    external:     false
+  - name:         标签
+    url:          /tags
+    external:     false
+  - name:         关于
     url:          /about
     external:     false
 # ------------ CONFIGURABLE END ------------
 
-permalink:        /posts/:title
+#permalink:        /:categories/:title.html
+permalink: /:year/:month/:day/:title.html
 defaults:
   - values:
       layout: "default"

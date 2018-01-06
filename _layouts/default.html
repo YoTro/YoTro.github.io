@@ -1,28 +1,41 @@
-{% assign is_post = page.date %}
-<!doctype>
-<html lang="en">
-  <head>
-    <meta content='{{ page.title }} - {{ site.title }}' name='title' />
-    <meta content='{{ page.title }} - {{ site.title }}' name='og:title' />
-    <title>{{ page.title }} - {{ site.title }}</title>
+<!DOCTYPE>
+<html lang="zh-cn" data-scribe-reduced-action-queue="true">
+	  <meta http-equiv="x-dns-prefetch-control" content="on">   
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+	  <meta http-equiv="Cache-Control" content="no-siteapp"/>  
+    <title>{{ site.title }}</title>
     {% include head.html %}
   </head>
-  <body class="lh-copy dark-gray pa0 f6 sans-serif bg-super-white">
-    <header class="tc mt4">
-      <a href="{{ site.url }}">
-        <img src="{{ site.url }}/images/fav.png" alt="Home" width="53" height="59">
-      </a>
-      <p>{{ site.title }}</p>
-    </header>
-    <div class="mw7 bg-white mt4 mb3 center br2-ns bt bb ba-ns b--light-gray">
-      <nav class="bb b--light-gray pv4 tc" aria-label="Main">
-        {% for link in site.links %}
-          <a class="link blue hover-mid-gray mh2 pv1"
-             href="{% unless link.external %}{{ site.url }}{% endunless %}{{ link.url }}">
-             {{ link.name }}
-           </a>
-        {% endfor %}
-      </nav>
+<body class="bg-grey" gtools_scp_screen_capture_injected="true"><div id="MathJax_Message" style="display: none;"></div>
+<header id="header" class="header bg-white">
+    <div class="navbar-container">
+      <a href="/?liberxue" title="访问 {{  site.title }}" class="navbar-logo"> <img src="{{ site.url }}/style/images/logo-liberxue.png" alt="{{ site.title }}"> </a>
+        <div class="navbar-menu">
+           {% for link in site.links %}             
+            <a href="{{ link.url }}?liberxue"  title="访问 {{  link.name }}" data-hover="{{link.name}}">{{ link.name }}</a>
+                {% endfor %}
+          </div>
+        <div class="navbar-search" onclick="">
+            <span class="icon-search"></span>
+            <form method="post" action="/404.html" role="search">
+                <span class="search-box">
+         <input type="text" class="input" id="cb-search-content" required="true" placeholder="标题 标签..." maxlength="30" autocomplete="off">
+                </span>
+            </form>
+        </div>
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+               {% for link in site.links %}           
+                <li><a href="{{ link.url }}?liberxue" title="访问 {{  link.name }}" data-hover="{{link.name}}">{{ link.name }}</a></li>
+                 {% endfor %}
+            </ul>
+        </div>
+    </div>
+</header>
 
       <main class="tl f6 relative pa4 pa5-ns overflow-hidden">
         {% if page.title %}
@@ -47,9 +60,6 @@
       </main>
       {% if is_post %}{% include pagination.html %}{% endif %}
     </div>
-    <footer class="mw7 center tc pt3 pb4 silver">
-      Built with Jekyll using <a href="https://github.com/YoTro" class="link silver hover-blue pv1">YoTro</a>.
-      <img src="{{ site.url }}/images/github.png" alt="YoTro" class="mt4 db center" />
-    </footer>
+{% include foot.html %}
   </body>
 </html>
