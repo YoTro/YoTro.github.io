@@ -14,20 +14,6 @@
       </a>
       <p>{{ site.title }}</p>
     </header>
-    <div class="cb-search-tool" style="position: fixed; top: 0px ; bottom: 0px; left: 0px; right:  0px;
-          opacity: 0.95; background-color: #111111; z-index: 9999; display: none;">
-        <input type="text" class="form-control cb-search-content" id="cb-search-content" style="position: fixed; top: 60px" placeholder="文章标题 日期 标签" >
-
-        <div style="position: fixed; top: 16px; right: 16px;">
-            <img src="/search/img/cb-close.png"  id="cb-close-btn"/>
-        </div>
-    </div>
-
-    <div style="position: fixed; right: 16px; bottom: 20px;">
-        <img src="/search/img/cb-search.png"  id="cb-search-btn"  title="双击ctrl试一下"/>
-    </div>
-
-
     <div class="mw7 bg-white mt4 mb3 center br2-ns bt bb ba-ns b--light-gray">
       <nav class="bb b--light-gray pv4 tc" aria-label="Main">
         {% for link in site.links %}
@@ -62,7 +48,7 @@
       {% if is_post %}{% include pagination.html %}{% endif %}
     </div>
     <footer class="mw7 center tc pt3 pb4 silver">
-      Built with Jekyll using <a href="http://github.com/YoTro" class="link silver hover-blue pv1">YoTro</a>.
+      Built with Jekyll using <a href="https://github.com/YoTro" class="link silver hover-blue pv1">YoTro</a>.
       <img src="{{ site.url }}/images/github.png" alt="YoTro" class="mt4 db center" />
     </footer>
   </body>
