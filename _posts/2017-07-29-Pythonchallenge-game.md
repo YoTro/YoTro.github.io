@@ -181,7 +181,7 @@ pickle functions
 `channel
 
 ```
-http://www.pythonchallenge.com/pc/def/peak.html
+[http://www.pythonchallenge.com/pc/def/peak.html](http://www.pythonchallenge.com/pc/def/peak.html)
 ```
 ---
 
