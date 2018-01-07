@@ -56,7 +56,7 @@ gitalk:
     # - owner
 
 ## Google Analytics ##
-# ga_tracking_id:  #Google analytics id for the site
+ga_tracking_id:  UA-104920121-1 #Google analytics id for the site
 
 ## Reading quantity (LeanCloud) ##
 leancloud:
@@ -94,7 +94,6 @@ exclude:
   - /docs
   - /node_modules
   - /screenshots
-  - /test
   - /vendor
 
 ## Plugins ##
@@ -111,7 +110,7 @@ server_url: "0.0.0.0"
 isdebug: false
 
 # ----------- CONFIGURABLE START -----------
-title:            "Toryun|python|jekyll blog|GitHub blog"
+title:            "Toryun|python"
 description:      "理工男|竹杖芒鞋轻胜马，谁怕，一蓑烟雨任平生"
 url:              https://YoTro.github.io # 域名
 signoff:          "Toryun" # Your name

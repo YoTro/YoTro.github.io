@@ -8,8 +8,11 @@ titles:
 key: page-about
 ---
 
-Just say something about yourself. :+1:
+`Python` is a data of tool make what you want ,HTML5 is a new program diff than html4.4 ,Linux is a free system,beatuy.Learning make me happy everyday.My dream is try hard to do what you want to do .
+
+
+
 
 {% highlight javascript %}
-  (() => console.log('hello, world!'))();
+  Find me on [GitHub](https://github.com/YoTro)
 {% endhighlight %}
