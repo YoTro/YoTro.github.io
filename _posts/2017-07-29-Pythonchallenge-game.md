@@ -1,6 +1,8 @@
 ---
 title: The pythonchallenge game
 date: 2017-07-29 12:27:31
+tag: python game
+comments:true
 ---
 
 If you want to practice your python,the [pythonchallenge](http://www.pythonchallenge.com/)coulde help you.There are currently 33 levels.
