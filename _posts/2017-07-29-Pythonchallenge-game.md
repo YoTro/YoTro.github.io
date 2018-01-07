@@ -1,7 +1,7 @@
 ---
 title: The pythonchallenge game
 date: 2017-07-29 12:27:31
-tag: python game
+tags: python game
 comments:true
 ---
 
