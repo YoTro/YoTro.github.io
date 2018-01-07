@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -120,3 +121,45 @@ server_url: "0.0.0.0"
 
 ## Development ##
 isdebug: false
+=======
+# ----------- CONFIGURABLE START -----------
+title:            "LiberXue|FullStack|独立开发者|jekyll blog|GitHub blog"
+description:      "Full Stack独立开发者|欢迎来到 LiberXue「角落」侃侃理想、谈谈人生、敲敲代码。"
+url:              https://liberxue.github.io # 域名
+signoff:          "LiberXue" # Your name
+facebook_appid:   #liberxue
+google_analytics: UA-101222464-1
+share:            true 
+# 分页
+paginate: 15
+paginate_path: "liberxuepage:num"
+gems: [jekyll-paginate]
+links:
+  - name:         首页
+    url:          /
+    external:     false
+  - name:         书籍
+    url:          /book
+    external:     false
+  - name:         旅游
+    url:          /road
+    external:     false
+  - name:         归档
+    url:          /archives
+    external:     false
+  - name:         标签
+    url:          /tags
+    external:     false
+  - name:         关于
+    url:          /about
+    external:     false
+# ------------ CONFIGURABLE END ------------
+
+#permalink:        /:categories/:title.html
+permalink: /:year/:month/:day/:title.html
+defaults:
+  - values:
+      layout: "default"
+
+theme: jekyll-theme-cayman
+>>>>>>> 503c2deb89cd7cb36224289b2b3e76102a0e7e75
