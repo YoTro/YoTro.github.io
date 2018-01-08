@@ -1,6 +1,8 @@
 ---
 title: Amazon keywords and listing compare with other good store
 date: 2017-07-11 12:27:31
+tags: Amazon
+
 ---
 
 This summer I go to Zhejiang do my first job in E-commerce.My first stage is Amazon which is the one of lagrgest E-stage in the world focus on listing not store. 

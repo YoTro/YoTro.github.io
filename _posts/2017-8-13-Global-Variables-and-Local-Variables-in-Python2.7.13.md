@@ -1,6 +1,7 @@
 ---
 title: The UnboundlocalError
 date: 2017-08-13 10:03:31
+tags: Variables,python27
 ---
 
 Python version is 2.7.13  

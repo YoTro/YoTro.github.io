@@ -5,7 +5,7 @@ tags: python game
 comments:true
 ---
 
-If you want to practice your python,the [pythonchallenge](http://www.pythonchallenge.com/)coulde help you.There are currently 33 levels.
+If you want to practice your python,the [pythonchallenge](http://www.pythonchallenge.com/) coulde help you.There are currently 33 levels.
 
 python -v 2.7.13 
 
@@ -180,10 +180,11 @@ pickle functions
 
 ![loading...](/images/pythonchallenge/channel.png)
 
-`channel
+`channel`
 
 ```
 [http://www.pythonchallenge.com/pc/def/peak.html](http://www.pythonchallenge.com/pc/def/peak.html)
+
 ```
 ---
 

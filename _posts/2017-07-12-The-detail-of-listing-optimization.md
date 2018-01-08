@@ -2,6 +2,7 @@
 title: The Description of listing optimization
 date: 2017-07-12 21:00:31
 layout: post
+tags: Amazon
 ---
 
 The Listing page shows the second only to the title and pictures in the rankings, which is the selling point of the product. From the layout of the Amazon page, we can generally know which specific link is more important in Amazon's eyes. Amazon has arranged the best product presentation for our sellers, which is one of the reasons why we should pay special attention to the "five major selling points" on the page. 

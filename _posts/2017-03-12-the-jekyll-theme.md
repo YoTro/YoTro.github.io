@@ -1,6 +1,7 @@
 ---
 title: a Jekyll theme
 date: 2017-03-12 00:06:52
+tags: jeklly
 ---
 
 This have many jekyll theme to make a website UI.If you don't know what is jekyll or how to use you can check it [Chinese Official Website](http://jekyllcn.com/docs/home/).  

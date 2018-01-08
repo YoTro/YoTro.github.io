@@ -1,6 +1,7 @@
 ---
 title: xrange and  range in Python2
 date: 2017-10-2 10:57:31
+tags: Xrange,python2
 ---
 
 We all kown `Python2` have two Built-in function which are `range` and `xrange`,they are both  use in `for` looping.

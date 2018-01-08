@@ -1,6 +1,7 @@
 ---
-title: The Requests of Python---Installtion
+title: The Requests of Python---Installation
 date: 2017-07-23 18:36:52
+tags: Requests
 ---
 
 # Requests #
@@ -9,7 +10,7 @@ date: 2017-07-23 18:36:52
 
 Requests is an elegant and simple HTTP library for Python, built for human beings. You are currently looking at the documentation of the development release.
 
-## Installtion of Requests ##
+## Installation of Requests ##
 
   - $ pip install requests  
   - Get the Source Code  
@@ -17,7 +18,7 @@ Requests is an elegant and simple HTTP library for Python, built for human being
 If windows you can  
 ```sh
 
-$ cd C:Python27\Scripts
+$ cd C:Python27/Scripts
 
 $ pip install requests
 
