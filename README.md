@@ -1,24 +1,23 @@
-# NexT
+# YoTro
+竹杖芒鞋轻胜马，谁怕？一说烟雨任平生
 
-> 精于心，简于形
+## Features
 
-NexT 是由 [Hexo NexT](https://github.com/iissnan/hexo-theme-next) 移植而来的 Jekyll 主题。<!--commit: f951075d9b739d26b42472431995fa68d08796aa-->
+- 响应式
+- 分页（[jekyll-paginate](https://github.com/jekyll/jekyll-paginate)）
+- 文章目录（[TOC](http://projects.jga.me/toc/)）
+- 文章标签
+- Emoji（[Jemoji](https://github.com/jekyll/jemoji)）
+- 评论（[Disqus](https://disqus.com/)）
+- Google Analytics
+- 联系方式设置（Email, Facebook, Twitter, 微博, 知乎……）
+- Web 语意化
+- 网站图标的自动化工具（[gulp-svg2png](https://www.npmjs.com/package/gulp-svg2png), [gulp-to-ico](https://www.npmjs.com/package/gulp-to-ico)）
+- Color Theme
+- 数学公式（[MathJax](https://www.mathjax.org/)）
+- RSS（[jekyll-feed](https://github.com/jekyll/jekyll-feed)）
+- 多语言支持
 
-<a href="http://simpleyyt.github.io/jekyll-theme-next/" target="_blank">在线预览 Preview</a> | <a href="http://simpleyyt.com" target="_blank">Yitao's Blog</a> | <a href="http://theme-next.simpleyyt.com" target="_blank">NexT 使用文档</a> |  [English Documentation](README.en.md)
+### 评论系统
 
-[![Join the chat at https://gitter.im/simpleyyt/jekyll-theme-next](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jekyll-theme-next/lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-![NexT Schemes](http://iissnan.com/nexus/next/next-schemes.jpg)
-
-
-## 浏览器支持 Browser support
-
-![Browser support](http://iissnan.com/nexus/next/browser-support.png)
-
-
-## 开发 Development
-
-NexT 主旨在于简洁优雅且易于使用，所以首先要尽量确保 NexT 的简洁易用性。
-
-NexT is built for easily use with elegant appearance. First things first, always keep things simple.
-
+目前支持 Disqus 
