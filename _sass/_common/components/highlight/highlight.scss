@@ -19,7 +19,7 @@ pre, code { font-family: $code-font-family; }
 code {
   padding: 2px 4px;
   word-wrap: break-word;
-  color: white;
+  color: $code-foreground;
   background: $code-background;
   border-radius: $code-border-radius;
   font-size: $code-font-size;
