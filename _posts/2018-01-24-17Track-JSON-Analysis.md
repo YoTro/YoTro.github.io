@@ -87,15 +87,17 @@ z	Redelivery Scheduled, The customer has requested that the Postal Service redel
 
 ## Delayed transmission
 
-IF it is Delayed transmission,it will send two json : one size is 123 byte,another is 2.17KB
+IF it is Delayed transmission,it will send two json : one size is 123 byte,another is 2.17KB.
+
 First `guid` is null string,the second has a string and JSON has fullfill logistics information
 
 ![loading...](/images/JSON/17track/XHR_JSON_2(Alert).png)
 # !IMPORT params introduction
 
-- **f** If delivered, the `f` is **The arrival `time` of the goods at the customer's address**
+- **f** If delivered, the `f` is **The arrival time of the goods at the customer's address**
 
 - **e**
+
 | e     | Expression   |   f   |
 | :---: |  :---:       | :---: |
 | 10    |  in Transit  |  $-1$ |
