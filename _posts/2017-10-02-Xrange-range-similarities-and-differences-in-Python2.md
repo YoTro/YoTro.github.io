@@ -23,7 +23,7 @@ We all kown `Python2` have two Built-in function which are `range` and `xrange`,
 
 - `range` will be built a list immediately if it is generated,but the `xrange` is gerenate a object like this
 
-```
+```python
 >>>t=xrange(10)  
 >>>t  
 xrange(10)  
