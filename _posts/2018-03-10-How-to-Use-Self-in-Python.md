@@ -25,19 +25,20 @@ student=Student()
 
 ```
 
-3. Because the class is a template, we can bind the  attributes into the instance when we create.Here we us the `__init__()` which is a built-in method in Python:
+3. Because the class is a template, we can bind the  attributes into the instance when we create.Here we us the `__init__()` which is a built-in function in Python:
 ```python
  1 |Class Student(object):
  2 | Def __init__(self, name, score):
  3 |     Self.name = name
  4 |     Self.score = score
- 
 ```
 
 *Note*:
-	- The firsr parameter of the `__init__ ()` method is always `self`,which meams that **the instance of created class itself**.So we can bind the attributes with self in `__init__()`.
-	- If you define the `__init__()`, We must pass in parameters that match the __init__() method, cannot pass empty parameters when we create instance.But self does not need to be passed,the Python interpreter will passed itself.
-	```python
+
+- The first parameter of the `__init__ ()` function is always `self`,it meams that **self is the instance of created class itself**.So we can bind the attributes with self in `__init__()`.
+	
+- If you define the `__init__()`, We must pass in parameters that match the `__init__()` function, cannot pass empty parameters when we create instance.But self does not need to be passed,the Python interpreter will passed itself.
+        ```python
 	>>>student = Student("Hugh", 99)
 	>>>student.name
 	"Hugh"
