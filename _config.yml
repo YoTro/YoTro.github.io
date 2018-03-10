@@ -6,7 +6,7 @@
 # Site
 title: "YoTro"
 subtitle:
-description: "My program which I learning with happy day, do what you want"
+description: "Python2.7,learning about how to use requests,xlrd,xlwt 3rd party lib"
 author: Toryun
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: en
@@ -83,7 +83,7 @@ keywords: "python"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss:false
 
 # Specify the date when the site was setup
 #since: 2015
