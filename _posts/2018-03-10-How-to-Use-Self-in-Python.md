@@ -20,7 +20,6 @@ We kown that the most concept of object-oriendted is the class and instance.The 
 Object indicates which class the class inherits from,and the Object class is a class that all classes inherits.
 
 2. Instance: How to create a Student instance after define a Student class.You can create by the class name + (),pass to a variable:
-
 ```python
 student=Student()
 
@@ -36,8 +35,7 @@ student=Student()
 ```
 
 *Note*:
-	- The firsr parameter of the `__init__ ()` method is always `self`,which meams that **the instance of created class itself**.So we can bind the attributes with self in `__init__()`
-	
+	- The firsr parameter of the `__init__ ()` method is always `self`,which meams that **the instance of created class itself**.So we can bind the attributes with self in `__init__()`.
 	- If you define the `__init__()`, We must pass in parameters that match the __init__() method, cannot pass empty parameters when we create instance.But self does not need to be passed,the Python interpreter will passed itself.
 	```python
 	>>>student = Student("Hugh", 99)
@@ -45,4 +43,4 @@ student=Student()
 	"Hugh"
 	>>>student.score
 	99
-	
+	```
