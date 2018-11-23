@@ -47,9 +47,7 @@ In the process of searching youtubers,sme jobs are very repetitive and boring.
 5. Send the sample to him ,test and review ,make and upload a video  
 Now we could solve this problem by [YouTube Data API v3](https://developers.google.com/apis-explorer/#p/youtube/v3/)  
 
-<details class="note"><summary>Content</summary>
-
-## Parperation  
+<details class="note"><summary>Content</summary>## Parperation  
 
 
 *   Python 2.6 or greater
@@ -72,7 +70,8 @@ Now we could solve this problem by [YouTube Data API v3](https://developers.goog
 3.  Copy the full code sample to a local file in the same directory as the client_secrets.json file (or modify the sample to correctly identify that file's location.
 4.  Run the sample from the command line and set command-line arguments as necessary:
 
-    ```python sample.py --arg1=value1 --arg2=value2 ...```
+    ```python sample.py --arg1=value1 --arg2=value2 ...
+    ```
 
 5.  Most samples print something to STDOUT. You can also check the YouTube website to see the effects of requests that write data, such as requests that create playlists or channel sections.
 
@@ -112,7 +111,7 @@ Method: youtube.playlists.insert<br>
 Description: This sample calls the API's <code>playlists.insert</code> method to create a private playlist owned by the
 channel authorizing the request.
 
-### [Create and manage comments](https://github.com/youtube/api-samples/blob/master/python/comment_handling.py)
+### [Create and manage comments](https://github.com/youtube/api-samples/blob/master/python/comment_handling.py) 
 
 Method: youtube.commentThreads.list, youtube.comments.insert, youtube.comments.list, youtube.comments.update,
 youtube.comments.setModerationStatus, youtube.comments.markAsSpam, youtube.comments.delete<br>
