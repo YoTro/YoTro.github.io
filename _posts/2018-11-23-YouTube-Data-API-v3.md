@@ -21,14 +21,16 @@ Only left one who knows nothing.
 
 
   [Alexa Traffic Rank](https://www.alexa.com/siteinfo/magiccubemall.com#trafficstats) | Traffic Rank in US
-  :-- | --: 
+  :--: | :--: 
   734,902 | 480,655 
  Magiccubemall has 1801 products  
 
 - [Hobbyinrc](https://www.hobbyinrc.com)  
+
  [Alexa Traffic Rank](https://www.alexa.com/siteinfo/hobbyinrc.com#trafficstats) | Traffic Rank in RU
-  :-- | --: 
-  914,227 | 715,987    
+  :--: | :--: 
+  914,227 | 715,987  
+
  Hobbyinrc has 4613 products  
  The main work is contact the Youtubers,let them promote your products.  
  Normally,it is better communication with fewer than 20,000 followers.  
