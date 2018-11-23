@@ -361,4 +361,5 @@ Description: This sample demonstrates how to retrieve reports created by a speci
 <code>jobs.list</code> method to retrieve reporting jobs. It then calls the <code>reports.list</code> method with the
 <code>jobId</code> parameter set to a specific job id to retrieve reports created by that job. Finally, the sample
 prints out the download URL for each report.
+
 </details>
