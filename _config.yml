@@ -45,6 +45,7 @@ highlighter: rouge
 ## 'redcarpet' is unsupported on GitHub Pages now.
 markdown: kramdown
 kramdown:
+    parse_block_html: true
     input: GFM
 
 # Default Attributes
