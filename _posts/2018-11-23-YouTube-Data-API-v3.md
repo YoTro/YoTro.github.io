@@ -26,10 +26,10 @@ Only left one who knows nothing.
  Magiccubemall has 1801 products  
 
 - [Hobbyinrc](https://www.hobbyinrc.com)  
- [Alexa Traffic Rank](https://www.alexa.com/siteinfo/hobbyinrc.com#trafficstats) | Traffic Rank in RU|
+ [Alexa Traffic Rank](https://www.alexa.com/siteinfo/hobbyinrc.com#trafficstats) | Traffic Rank in RU
   :-- | --: 
   914,227 | 715,987    
- Hobbyinrc has 4613 products
+ Hobbyinrc has 4613 products  
  The main work is contact the Youtubers,let them promote your products.  
  Normally,it is better communication with fewer than 20,000 followers.  
  When the number of followers is more than 100,000, you need to pay the fee to some youtubers for making videos.  
