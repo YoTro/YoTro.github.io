@@ -1,7 +1,6 @@
 ---
 title:Introducing the detail of self in Python
 date: 2018-03-10 16:30:31
-layout: post
 tags: [python,self]
 ---
 # How to use self in python 
