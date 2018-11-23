@@ -47,10 +47,9 @@ In the process of searching youtubers,sme jobs are very repetitive and boring.
 5. Send the sample to him ,test and review ,make and upload a video  
 Now we could solve this problem by [YouTube Data API v3](https://developers.google.com/apis-explorer/#p/youtube/v3/)  
 
-<details><summary>Content</summary> 
+<details><summary>Content</summary>
 
-## Parperation  
-
+## Parperation
 
 *   Python 2.6 or greater
 
