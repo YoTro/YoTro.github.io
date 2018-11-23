@@ -14,21 +14,21 @@ This has a lot to do with the work I have done before.
 Finally,I found a company they advised me did the website which is they built by themselves.
 This is not in conflict with my own life plan.I will be a Webmaster or website administrators ,develop the website to top rank in the world
 2. One month gone,our manager quited her job.  
-![loading...](/images/emoji/cry.gif "(ಥ﹏ಥ)")
+![loading...](/images/emoji/cry.gif "(ಥ﹏ಥ)")  
 Only left one who knows nothing.
 3. 3 months gone,I became a regular employee and have 2 sites.
 - [Magiccubemall](https://www.magiccubemall.com)  
 
 
- | [Alexa Traffic Rank](https://www.alexa.com/siteinfo/magiccubemall.com#trafficstats) | Traffic Rank in US|
- | :-- | --: |
- | 734,902 | 480,655|  
+  [Alexa Traffic Rank](https://www.alexa.com/siteinfo/magiccubemall.com#trafficstats) | Traffic Rank in US
+  :-- | --: 
+  734,902 | 480,655 
  Magiccubemall has 1801 products  
 
 - [Hobbyinrc](https://www.hobbyinrc.com)  
-| [Alexa Traffic Rank](https://www.alexa.com/siteinfo/hobbyinrc.com#trafficstats) | Traffic Rank in RU|
- | :-- | --: |
- | 914,227 | 715,987|  
+ [Alexa Traffic Rank](https://www.alexa.com/siteinfo/hobbyinrc.com#trafficstats) | Traffic Rank in RU|
+  :-- | --: 
+  914,227 | 715,987    
  Hobbyinrc has 4613 products
  The main work is contact the Youtubers,let them promote your products.  
  Normally,it is better communication with fewer than 20,000 followers.  
@@ -43,6 +43,7 @@ In the process of searching youtubers,sme jobs are very repetitive and boring.
 Now we could solve this problem by [YouTube Data API v3](https://developers.google.com/apis-explorer/#p/youtube/v3/)  
 
 <details class="note"><summary>Content</summary>
+
 ## Parperation
 
 *   Python 2.6 or greater
