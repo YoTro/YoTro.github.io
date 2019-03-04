@@ -9,7 +9,10 @@
   {% if post.sticky > 0 %}
     {% assign post_class = post_class | append: ' ' | append: 'post-sticky' %}
   {% endif %}
-
+  {% if page.music %} 
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id={ { page.music-id } }&auto=1&height=66">
+        </iframe>
+  {% endif %}
   <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="{{ post.url | absolute_url }}">
 
