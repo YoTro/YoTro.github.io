@@ -25,8 +25,8 @@ You could add this code to `_includes/_macro/post.html`
   {% endif %}
 
 ```
-Then in every page you only need add the tag `music-id:xxxxxx`
-Note:
+Then in every page you only need add the tag `music-id:xxxxxx`  
+Note:  
 ~ don't has blank between { and %  
 ~ Generally the weight and height not included the "",you need add  
 ~ Auto=1 means it will play auto,auto=0 means it won't
