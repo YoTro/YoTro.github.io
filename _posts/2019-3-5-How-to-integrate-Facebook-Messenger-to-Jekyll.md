@@ -1,5 +1,5 @@
 ---
-title: How To Add Facebook Messenger to Jekyll/website
+title: How To Add Facebook Messenger to Jekyll
 layout: post
 date: 2019-03-05 10:30:31
 tags:[Plugins,Facebook,jekyll]
