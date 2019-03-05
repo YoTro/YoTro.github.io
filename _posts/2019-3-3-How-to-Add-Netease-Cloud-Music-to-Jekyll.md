@@ -1,9 +1,9 @@
------
+---
 title: How To Add The Netease Clould Music to Jekyll
 layout: post
 tags:[Plugins,Music,API]
-music-id: 35201383
------
+music-id:35201383
+---
 
 # Genetate Iframe 
 Open the Netease Cloud Music on PC,then click the music  
