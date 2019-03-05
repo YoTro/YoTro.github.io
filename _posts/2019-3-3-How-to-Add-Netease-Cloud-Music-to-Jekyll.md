@@ -1,8 +1,8 @@
 ---
 title: How To Add The Netease Clould Music to Jekyll
 layout: post
-tags:[Plugins,Music,API]
-music-id:35201383
+tags: [Plugins,Music,API]
+music-id: 35201383
 ---
 
 # Genetate Iframe 
