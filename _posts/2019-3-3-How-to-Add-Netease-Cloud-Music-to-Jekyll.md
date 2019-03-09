@@ -5,7 +5,7 @@ tags: [Plugins,Music,API]
 music-id: 35201383
 ---
 
-# Genetate Iframe 
+# Generate Iframe 
 Open the Netease Cloud Music on PC,then click the music  
 [生成网易云音乐外链](/images/Plugins/outerchain.jpg)  
 Usually it will show "由于版权限制，无法生成外链"，don't worry,just see the link 
@@ -30,4 +30,6 @@ Note:
 ~ don't has blank between { and %  
 ~ Generally the weight and height not included the "",you need add  
 ~ Auto=1 means it will play auto,auto=0 means it won't
+
+But I don't know why the music can't play on my website
 

@@ -10,7 +10,7 @@ music-id: 35201383
 Facebook messenger is very awesome for us to contact live,just  like wechat,and Facebook launched the Messenger customer chat plugin in 2017  
 With the Messenger ,it looks like a lightweight CRM,you could make a greater businesses with your customers,so many websites(wordpress ,shoppify ,etc) have this plugin.
 Now I want to show you how to integrate Facebook Messenger as a live chat to Jekyll
-[Toryun.com's Messenger Plugin](/images/Plugin/Messenger.jpg)
+
 ## Bot Support
 Messenger has a feature which is bot suppoort ,I will develop this one in next step and introduce it  
 
@@ -25,11 +25,11 @@ Detailed documentation & setup instructions on [Facebook](https://developers.fac
 
 ## 1. Retrieve your Facebook Page ID  
 First, you’ll need to retrieve your *Facebook page ID*. You can do this by navigating to your page, clicking on the *About tab*, and scrolling to the bottom of the page. There, you will see your *page ID (It should be a number).
-[Page ID](/images/Plugin/page_id.jpg)
+![Page ID](/images/Plugin/Messengerbot/page_id.jpg)
 
 ## 2. Whitelist your Domain
 Next, you’ll need to navigate to the “MESSENGER PLATFORM” tab and whitelist your domain. Type in both the HTTP:// and HTTPS:// variants of your domain to ensure it works for 100% of users. Click the SAVE button.
-[whitelist](/images/Plugin/whitelist.jpg)
+![whitelist](/images/Plugin/Messengerbot/whitelist.jpg)
 
 3. Embed a snippet of code in your website
 Now, our final step, is to embed a small snippet of code on our website/jekyll. You should place it just before the closing **</body>** tag of your webpage, or use a tag manager, like Google Tag Manager.
@@ -69,7 +69,7 @@ then put the `<!-- Your customer chat code --><div>...</div>` to `_includes/_mac
 
 ## Additional Setting: Messenger widget open by default
 Facebook also gives you the ability to open your chat widget by default on page load. It looks like this:  
-[Widget](/images/Plugin/widget.jpg)  
+![Widget](/images/Plugin/Messengerbot/widget.jpg)  
 Just change **minimized=”true”** to **minimized=”false”** in your code snippet.
 
 ```html
@@ -99,7 +99,7 @@ You can add this snippet of code, along with your other snippet of code, to alig
 </style>
 
 ```  
-[widget_left](/images/Plugin/widget_left.jpg)
+![widget_left](/images/Plugin/Messengerbot/widget_left.jpg)
 
 Ok,That'all
 
