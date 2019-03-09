@@ -43,6 +43,7 @@ Get your URL from your Clitch dashboard, add /webhook in the end, and paste it i
 ### Step 9. Subscribe your App to your Page
 ### Step 10. Connect Your Chatbot to a Google Sheet
 Copy this Google Sheet and add your Google Sheet ID to your env. file in your Glitch project.
+But After I check ,I found it can't generate anything ,because it need your google sheet api and credientals
 ### Step 11. Test your Facebook ChatBot
 Go to your Facebook page and chat with your bot. To customize your chatbot’s replies edit your Google Sheet from the Step 10.
 
