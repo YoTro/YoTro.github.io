@@ -3,6 +3,7 @@ title: Learning Plan
 date: 2019-05-29 18:48:00
 tags: [LearningPlan]
 music-id: 355992
+
 ---
 
 # Plan to become stronger, it's me! Never give up
