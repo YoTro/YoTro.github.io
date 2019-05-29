@@ -2,7 +2,7 @@
 title: How To Add The Netease Clould Music to Jekyll
 layout: post
 tags: [Plugins,Music,API]
-music-id: 35201383
+music-id: 1330348068
 
 ---
 
@@ -10,11 +10,11 @@ music-id: 35201383
 Open the Netease Cloud Music on PC,then click the music  
 [生成网易云音乐外链](/images/Plugins/outerchain.jpg)  
 Usually it will show "由于版权限制，无法生成外链"，don't worry,just see the link 
-> https://music.163.com/#/album?id=35201383  
+>https://music.163.com/#/album?id=35201383  
 
 You could change the id to this code
 
->  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id={{ page.music-id }}&auto=0&height=66"></iframe>
+><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id={{ page.music-id }}&auto=0&height=66"></iframe>
 
 # Add to ervery page  
 You could add this code to `_includes/_macro/post.html`
