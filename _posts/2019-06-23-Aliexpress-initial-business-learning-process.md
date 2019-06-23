@@ -22,6 +22,20 @@ Of course, its use also has a certain threshold, the picture will tell you the d
 Recently learning from our data analysis, the coverage rate is not changed, the more products are covered/created, the more sku will sell out
 
 This picture is not perfect, I will continue to learn, share the experience and knowledge I have learned here, I hope we all become strong and confident.Fighting！</span>
+
+
+<span id="CN">进入这个公司我正在意识到什么才是真正的铺货，每天每天上传10-100个产品，并且你还要去覆盖别人店铺的产品，这也就意味着你每周要上传上千个产品如果你的团队有十来个人。
+
+在这种运营方式的情况下，队内竞争和平台竞争也就会加剧，然而这样 的好处便是淘汰质量不好的产品，找到更好卖的精品，这就是所谓的铺货模式。
+
+大量的铺货显然单纯靠人力是不够的，于是有了一些自动化工具，比如说深圳市江胜科技有限公司开发的全球交易助手软件，这个软件在中国异常的火爆，几乎整个中国做速卖通行业的业务人员都在使用它。
+
+当然它的使用也是有一定的门槛的，接下来的这张图片会告诉你详细的使用过程以及速卖通的一些业务流程。
+
+最近学习到的是，根据行业数据分析，覆盖率不变的情况下，覆盖产品越多，动销sku越多
+
+这个图片并不完善，我会继续学习，把学到的经验和知识分享到这里，希望我们都变得强大而自信,加油！</span>
+
 <details><summary markdown="span">Content</summary>
 # 速卖通
 
@@ -207,15 +221,3 @@ taey 运费模板ID：712173234
 
 ### 使用交易助手调sku库存为零
 </details>
-
-<span id="CN">进入这个公司我正在意识到什么才是真正的铺货，每天每天上传10-100个产品，并且你还要去覆盖别人店铺的产品，这也就意味着你每周要上传上千个产品如果你的团队有十来个人。
-
-在这种运营方式的情况下，队内竞争和平台竞争也就会加剧，然而这样 的好处便是淘汰质量不好的产品，找到更好卖的精品，这就是所谓的铺货模式。
-
-大量的铺货显然单纯靠人力是不够的，于是有了一些自动化工具，比如说深圳市江胜科技有限公司开发的全球交易助手软件，这个软件在中国异常的火爆，几乎整个中国做速卖通行业的业务人员都在使用它。
-
-当然它的使用也是有一定的门槛的，接下来的这张图片会告诉你详细的使用过程以及速卖通的一些业务流程。
-
-最近学习到的是，根据行业数据分析，覆盖率不变的情况下，覆盖产品越多，动销sku越多
-
-这个图片并不完善，我会继续学习，把学到的经验和知识分享到这里，希望我们都变得强大而自信,加油！</span>
