@@ -7,11 +7,12 @@ music-id: 516657051
 ---
 
 # AliExpress's initial business learning process
+[EN](#EN)|[CN](#CN)
 
 
+>[学习笔记Aliexpress](https://drive.google.com/open?id=1EpYGr3zkPm2ChjR3qTTEIwB24QoVbPfw)
 
-![学习笔记Aliexpress](https://drive.google.com/open?id=1EpYGr3zkPm2ChjR3qTTEIwB24QoVbPfw)
-When I work with a new company about sell many goods on Aliexpress, I am realizing what is the real penetration. Uploading 10-100 products every day, and you have to cover the products of other people' stores, which means you have to upload thousands of products every week if your team has over ten people.  
+<span id="EN">When I work with a new company about sell many goods on Aliexpress, I am realizing what is the real penetration. Uploading 10-100 products every day, and you have to cover the products of other people' stores, which means you have to upload thousands of products every week if your team has over ten people.  
 
 In the case of this type of operation, intra-competition competition and platform competition will also intensify. However, the advantage is to eliminate poor quality products and find better-selling products. This is that penetration model.  
 
@@ -21,9 +22,9 @@ Of course, its use also has a certain threshold, the picture will tell you the d
 
 Recently learning from our data analysis, the coverage rate is not changed, the more products are covered/created, the more sku will sell out
 
-This picture is not perfect, I will continue to learn, share the experience and knowledge I have learned here, I hope we all become strong and confident.Fighting！
+This picture is not perfect, I will continue to learn, share the experience and knowledge I have learned here, I hope we all become strong and confident.Fighting！</span>
 
-进入这个公司我正在意识到什么才是真正的铺货，每天每天上传10-100个产品，并且你还要去覆盖别人店铺的产品，这也就意味着你每周要上传上千个产品如果你的团队有十来个人。
+<span id="CN">进入这个公司我正在意识到什么才是真正的铺货，每天每天上传10-100个产品，并且你还要去覆盖别人店铺的产品，这也就意味着你每周要上传上千个产品如果你的团队有十来个人。
 
 在这种运营方式的情况下，队内竞争和平台竞争也就会加剧，然而这样 的好处便是淘汰质量不好的产品，找到更好卖的精品，这就是所谓的铺货模式。
 
@@ -33,4 +34,4 @@ This picture is not perfect, I will continue to learn, share the experience and 
 
 最近学习到的是，根据行业数据分析，覆盖率不变的情况下，覆盖产品越多，动销sku越多
 
-这个图片并不完善，我会继续学习，把学到的经验和知识分享到这里，希望我们都变得强大而自信,加油！
+这个图片并不完善，我会继续学习，把学到的经验和知识分享到这里，希望我们都变得强大而自信,加油！</span>
