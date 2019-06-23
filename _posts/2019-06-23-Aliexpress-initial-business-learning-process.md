@@ -21,7 +21,7 @@ Of course, its use also has a certain threshold, the picture will tell you the d
 
 Recently learning from our data analysis, the coverage rate is not changed, the more products are covered/created, the more sku will sell out
 
-This picture is not perfect, I will continue to learn, share the experience and knowledge I have learned here, I hope we all become strong and confident.Fighting！</span>
+This picture is not perfect, I will continue to learn, share the experience and knowledge I have learned here, I hope we all become strong and confident.Fighting！
 
 
 <span id="CN">进入这个公司我正在意识到什么才是真正的铺货，每天每天上传10-100个产品，并且你还要去覆盖别人店铺的产品，这也就意味着你每周要上传上千个产品如果你的团队有十来个人。
@@ -34,7 +34,7 @@ This picture is not perfect, I will continue to learn, share the experience and 
 
 最近学习到的是，根据行业数据分析，覆盖率不变的情况下，覆盖产品越多，动销sku越多
 
-这个图片并不完善，我会继续学习，把学到的经验和知识分享到这里，希望我们都变得强大而自信,加油！</span>
+这个图片并不完善，我会继续学习，把学到的经验和知识分享到这里，希望我们都变得强大而自信,加油！
 
 <details><summary markdown="span">Content</summary>
 # 速卖通
