@@ -8,9 +8,9 @@ youtube-id: tw1OtUWSXkM
 ---
 
 ## MySQL Learning
-![loading...](/images/SMT/price.png,price_process)
 
 After learning AliExpress, there are some batch processing work on daily, such as price, you can refer to the following flow chart
+![loading...](/images/SMT/price.png)
 
 So I decided to put the table into the sql database so that the data will be processed faster, then processed by Python.
 **MySQL** which I intend to use is the database management system ("My" is the name - Monty Widenius who is one of Co-founder's daughter's name).
