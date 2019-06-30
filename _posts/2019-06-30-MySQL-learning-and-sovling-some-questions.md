@@ -9,7 +9,9 @@ youtube-id: tw1OtUWSXkM
 
 ## MySQL Learning
 
-After learning AliExpress, there are some batch processing work on daily, such as price, you can refer to the following flow chart
+[EN](#EN)|[CN](#CN)
+
+<span id="EN">After learning AliExpress, there are some batch processing work on daily, such as price, you can refer to the following flow chart
 ![loading...](/images/SMT/price.png)
 
 So I decided to put the table into the sql database so that the data will be processed faster, then processed by Python.
@@ -37,7 +39,7 @@ You could download by command line or installer
 2. **Q**: The speed of table import wizard which means the speed of write to database is so slow(1.2MB/s),how to increase the speed?  
  **A**: Increase the size of cache,open the my.ini which is the MySQL configuration file.
 
-学习速卖通后，有一些批量处理工作，可以参考以下流程图
+<span id="CN">学习速卖通后，有一些批量处理工作，可以参考以下流程图
 于是我决定把表格放入sql数据库中这样处理数据的速度会更快一些。
 其中我打算运用的是数据库管理系统MySQL
 这也是非常有优势的，如果以后我做的网站是处于中小型时。
@@ -45,7 +47,7 @@ You could download by command line or installer
 ### 遇到的一些问题：
 
 1. **Q**: 导入表格到MySQL Workbench 时，编码格式必须是UTF8否则无法识别中文，表头如果英语系统无法识别标题，那么可以说excel的编码不是utf-8。  
-**A **：您应该将中文标题更改为英语（因为我没有找到更好的方法）。  
+**A**：您应该将中文标题更改为英语（因为我没有找到更好的方法）。  
 
 2. **Q**：表导入向导的速度，这意味着写入数据库的速度是如此之慢（1.2MB / s），如何提高速度？  
 **A**：增加缓存大小，打开MySQL配置文件my.ini。设置参数
