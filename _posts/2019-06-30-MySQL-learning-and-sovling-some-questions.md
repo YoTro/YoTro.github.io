@@ -30,7 +30,21 @@ You could download by command line or installer
 
 >**Windows**
 
-[Download](https://dev.mysql.com/downloads/file/?id=485813)
+[Download Installer](https://dev.mysql.com/downloads/file/?id=485813)
+Download the [wheel](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient) then install in your local computer
+~~~sh
+cd C:\Users\administered\Downloads\download  
+pip install mysqlclient-1.4.2-cp27-cp27m-win_amd64.whl
+~~~
+
+
+#### Python DB-API usage process:
+
+. Call the API module. 
+. Get a connection to the database.
+. Execute SQL statements and stored procedures.
+. Close the database connection.
+
 
 ### Some Q&A :
 
