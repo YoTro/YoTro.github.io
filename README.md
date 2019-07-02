@@ -1,4 +1,6 @@
 # YoTro  
+
+![build_passing](build_passing.svg)
 CN|[EN](https://github.com/YoTro/YoTro.github.io/blob/master/README.en.md)  
 竹杖芒鞋轻胜马，谁怕？一说烟雨任平生
 
