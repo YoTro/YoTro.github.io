@@ -3,7 +3,7 @@ title: MySQL Learning
 date: 2019-06-30 18:00:00
 tags: [LearningPlan,MySQL]
 music-id: 1336990977
-youtube-id: tw1OtUWSXkM
+youtube-video-ID: tw1OtUWSXkM
 
 ---
 
@@ -30,20 +30,23 @@ You could download by command line or installer
 
 >**Windows**
 
-[Download Installer](https://dev.mysql.com/downloads/file/?id=485813)
+[Download Installer](https://dev.mysql.com/downloads/file/?id=485813)   
 Download the [wheel](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient) then install in your local computer
 ~~~sh
 cd C:\Users\administered\Downloads\download  
 pip install mysqlclient-1.4.2-cp27-cp27m-win_amd64.whl
 ~~~
 
+But when you update the homebrew, it usually takes your long time in China.   
+So I recommend you download the [dmg](https://dev.mysql.com/downloads/file/?id=486026) in the official website
+
 
 #### Python DB-API usage process:
 
-. Call the API module. 
-. Get a connection to the database.
-. Execute SQL statements and stored procedures.
-. Close the database connection.
+. Call the API module.  
+. Get a connection to the database.   
+. Execute SQL statements and stored procedures.   
+. Close the database connection.   
 
 
 ### Some Q&A :
@@ -51,7 +54,9 @@ pip install mysqlclient-1.4.2-cp27-cp27m-win_amd64.whl
 1. **Q**: When importing a form to MySQL Workbench, the encoding format must be UTF8 or it will not recognize Chinese. If the header is not recognized by the English system, then it would be said the encoding of your excel is not utf-8.  
 **A**: You should change the Chinese header to English ( beacause I have not found any better way).  
 2. **Q**: The speed of table import wizard which means the speed of write to database is so slow(1.2MB/s),how to increase the speed?  
- **A**: Increase the size of cache,open the my.ini which is the MySQL configuration file.
+ **A**: Increase the size of cache,open the my.ini which is the MySQL configuration file.  
+3. **Q**: If your excel's header has "("、")",the workbench can't distinguish the column of csv, then you will import nothing records
+**A**: Cancel the "(",")"
 
 <span id="CN">学习速卖通后，有一些批量处理工作，可以参考以下流程图
 于是我决定把表格放入sql数据库中这样处理数据的速度会更快一些。
@@ -65,5 +70,7 @@ pip install mysqlclient-1.4.2-cp27-cp27m-win_amd64.whl
 
 2. **Q**：表导入向导的速度，这意味着写入数据库的速度是如此之慢（1.2MB / s），如何提高速度？  
 **A**：增加缓存大小，打开MySQL配置文件my.ini。设置参数
+
+3. **Q**: 导入表格时，会出现虽然可以导入但是导入了0条记录，这是因为你的表头含有小括号。（至于其它符号，有待测试）
 
 未完待写...
