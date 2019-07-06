@@ -29,24 +29,31 @@ You could download by command line or installer
     </tr>
     <tr>
       <td>Linux or Mac</td>
-      <td>[MySQL Workbench download](https://dev.mysql.com/downloads/file/?id=485470)
+      <td><a href="https://dev.mysql.com/downloads/file/?id=485470">MySQL Workbench download</a>
 But when you update the homebrew, it usually takes your long time in China.   
-So I recommend you download the [mysql-community-dmg](https://dev.mysql.com/downloads/file/?id=486026) in the official website</td>
-     <td>~~~sh
-.yum install mysql-community-server
-.apt-get install mysql-server
-.brew install mysql
-~~~</td>
+So I recommend you download the <a href="https://dev.mysql.com/downloads/file/?id=486026">mysql-community-dmg</a> in the official website
+	  </td>
+      <td>
+     	<code>
+			<li>yum install mysql-community-server</li>
+			<li>.apt-get install mysql-server</li>
+			<li>.brew install mysql</li>
+		</code>
+	  </td>
     </tr>
     <tr>
       <td>Windows</td>
-      <td>[MySQL Community Server Download](https://dev.mysql.com/downloads/file/?id=485812)
-      [MySQL Workbench Download](https://dev.mysql.com/downloads/file/?id=485462)</td>
-      <td>Download the [wheel](https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient) then install in your local computer
-~~~sh
-cd C:\Users\administered\Downloads\download  
-pip install mysqlclient-1.4.2-cp27-cp27m-win_amd64.whl
-~~~</td>
+      <td>
+      	<a href="https://dev.mysql.com/downloads/file/?id=485812">MySQL Community Server Download</a>
+        <a href="https://dev.mysql.com/downloads/file/?id=485462">MySQL Workbench Download</a>
+      </td>
+      <td>
+      	Download the <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient">wheel</a> then install in your local computer
+		<code>
+		<li>cd C:\Users\administered\Downloads\download  </li>
+		<li>pip install mysqlclient-1.4.2-cp27-cp27m-win_amd64.whl</li>
+		</code>
+	   </td>
     </tr>
 </table>
 </details>
