@@ -21,7 +21,7 @@ This is also very advantageous if the website I am doing in the future is in the
 You could download by command line or installer
 
 <details>
-<table markdown="span">
+<table>
     <tr>
       <td></td>
       <td>Installer</td>
@@ -49,7 +49,7 @@ pip install mysqlclient-1.4.2-cp27-cp27m-win_amd64.whl
 ~~~</td>
     </tr>
 </table>
-<details>
+</details>
 
 #### Python DB-API usage process:
 
