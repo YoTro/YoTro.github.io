@@ -29,23 +29,23 @@ You could download by command line or installer
     </tr>
     <tr>
       <td>Linux or Mac</td>
-      <td><a href="https://dev.mysql.com/downloads/file/?id=485470">MySQL Workbench download</a>
+      <td><a href="https://dev.mysql.com/downloads/file/?id=485470">MySQL Workbench download</a><br/>
 But when you update the homebrew, it usually takes your long time in China.   
 So I recommend you download the <a href="https://dev.mysql.com/downloads/file/?id=486026">mysql-community-dmg</a> in the official website
 	  </td>
       <td>
      	<code>
-			<li>yum install mysql-community-server</li>
-			<li>.apt-get install mysql-server</li>
-			<li>.brew install mysql</li>
+			yum install mysql-community-server
+			apt-get install mysql-server
+			brew install mysql
 		</code>
 	  </td>
     </tr>
     <tr>
       <td>Windows</td>
       <td>
-      	<a href="https://dev.mysql.com/downloads/file/?id=485812">MySQL Community Server Download</a>
-        <a href="https://dev.mysql.com/downloads/file/?id=485462">MySQL Workbench Download</a>
+      	<li><a href="https://dev.mysql.com/downloads/file/?id=485812">MySQL Community Server Download</a></li>
+        <li><a href="https://dev.mysql.com/downloads/file/?id=485462">MySQL Workbench Download</a></li>
       </td>
       <td>
       	Download the <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient">wheel</a> then install in your local computer
