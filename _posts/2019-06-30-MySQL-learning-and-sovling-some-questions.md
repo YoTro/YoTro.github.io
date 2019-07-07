@@ -20,7 +20,7 @@ So I decided to put the table into the sql database so that the data will be pro
 This is also very advantageous if the website I am doing in the future is in the small and medium size.  
 You could download by command line or installer
 
-<details><summary>More Details</summary>
+<details><summary markdown="span">More Details</summary>
 <table>
     <tr>
       <td></td>
