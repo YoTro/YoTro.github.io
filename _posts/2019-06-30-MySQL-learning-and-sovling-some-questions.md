@@ -20,7 +20,7 @@ So I decided to put the table into the sql database so that the data will be pro
 This is also very advantageous if the website I am doing in the future is in the small and medium size.  
 You could download by command line or installer
 
-<details>
+<details><summary>More Details</summary>
 <table>
     <tr>
       <td></td>
@@ -72,7 +72,7 @@ So I recommend you download the <a href="https://dev.mysql.com/downloads/file/?i
 **A**: You should change the Chinese header to English ( beacause I have not found any better way).  
 2. **Q**: The speed of table import wizard which means the speed of write to database is so slow(1.2MB/s),how to increase the speed?  
  **A**: Increase the size of cache,open the my.ini which is the MySQL configuration file.  
-3. **Q**: If your excel's header has "("、")",the workbench can't distinguish the column of csv, then you will import nothing records
+3. **Q**: If your excel's header has "("、")",the workbench can't distinguish the column of csv, then you will import nothing records   
 **A**: Cancel the "(",")"
 
 <span id="CN">学习速卖通后，有一些批量处理工作，可以参考以下流程图
