@@ -63,8 +63,7 @@ def dij(start, graph):
                 dists[edge[0]] = minCost + edge[1]
                 parents[edge[0]] = minNode
     return dists, parents
-
-# Data
+#Data
 data = [
     [1, 0, 8],
     [1, 2, 5],
@@ -81,13 +80,13 @@ data = [
 ]
 n = 7  # the number of nodes
 
-# Translate the list date to graph
+#Translate the list date to graph
 graph = [[] for _ in range(n)]
 for edge in data:
     graph[edge[0]].append([edge[1], edge[2]])
     graph[edge[1]].append([edge[0], edge[2]])
 
-# Finding the shortest path from the one node
+#Finding the shortest path from the one node
 
 dists, parents = dij(2, graph)
 print('dists')
