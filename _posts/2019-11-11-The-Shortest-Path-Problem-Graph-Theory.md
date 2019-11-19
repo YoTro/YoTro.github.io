@@ -119,7 +119,8 @@ print(parents)
 如图[directed graphs with unbounded non-negative weights](\images\python_struction\Dijkstra.jpg)
 [步骤图](\images\python_struction\20191006112455385.jpg)
 ### 代码实现
-···python
+
+···python  
 def dij(start, graph):
     n = len(graph)
     if n == 0:
@@ -151,11 +152,7 @@ def dij(start, graph):
                 dists[edge[0]] = minCost + edge[1]
                 parents[edge[0]] = minNode
     return dists, parents
-
-
-# 主程式
-
-# Data
+#主程式
 data = [
     [1, 0, 8],
     [1, 2, 5],
