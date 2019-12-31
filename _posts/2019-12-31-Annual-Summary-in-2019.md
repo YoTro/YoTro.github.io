@@ -38,7 +38,7 @@ Change:
 | The store's overseas warehouse delivery time does not over 15 days | 7 days |  
 | | Penalty Rule Increases Search Cheating |  
 
-### data analysis
+### Data Analysis
 
 Due to YKS Inc has 459 shops, they sold a large number of goods every day , the sales is over 1 million, the orders are over 60k, and the sales sku is about 10k. Hot Categories include **Household**, **Beauty, Health & Hair**, **Automobiles & Motorcycles** 
 The average price of Beauty, Health & Hair is $ 20 and the profit margin is 19% the highest in our company. Massage sell the best, but the sales of home appliances are the largest. There are too few skus for Automobiles & Motorcycles (the style is still not rich enough so it can't go up, but the market should not be underestimated)  
@@ -109,7 +109,8 @@ After going through several twists and turns, without more progress and growth, 
 
 [关于入驻中的保证金规则变更](https://sell.aliexpress.com/zh/__pc/15iCAXj8Og.htm)  
 改变：
-| 2019 |2020 |  
+
+| 2019 | 2020 |  
 | ------ | ------ |  
 | 要交年费10000元，当达到平台要求的销售额时会全额返还 | 只要保证支付宝里有1万金额（类目不同有所不同），支付宝冻结这笔金额用于缴纳违规扣分后的钱（500起步）|  
 | 店铺的海外仓配送时长不超过15天 | 7天 |  
