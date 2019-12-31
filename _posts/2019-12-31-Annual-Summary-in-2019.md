@@ -70,7 +70,7 @@ The zombie listing of the store should be cleaned up at the beginning of each mo
 No wholesale customers were captured
 
 ## Summarize
-! [loading ...] (/ images / mind / Processlearningplan.svg)
+![loading...](/images/mind/Processlearningplan.svg)
 
 ### Auto-tune remix-themed content
 
