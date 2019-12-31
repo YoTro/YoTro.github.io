@@ -28,13 +28,15 @@ I have experienced so many in the last year
 ### Publish goods on Aliexpress
 
 ### Protect store
-[About the change of the deposit rules in the settlement] (https://sell.aliexpress.com/en/__pc/15iCAXj8Og.htm)
+
+[About the change of the deposit rules in the settlement](https://sell.aliexpress.com/en/__pc/15iCAXj8Og.html)  
 Change:
-| 2019 | 2020 |
-| ------ | ------ |
-| An annual fee of ￥10,000 will be paid, and will be fully returned when the sales required by the platform are achieved. | Money (starting at 500) |
-| The store's overseas warehouse delivery time does not over 15 days | 7 days |
-| | Penalty Rule Increases Search Cheating |
+
+| 2019 | 2020 |  
+| ------ | ------ |  
+| An annual fee of ￥10,000 will be paid, and will be fully returned when the sales required by the platform are achieved. | Money (starting at 500) |  
+| The store's overseas warehouse delivery time does not over 15 days | 7 days |  
+| | Penalty Rule Increases Search Cheating |  
 
 ### data analysis
 
@@ -63,6 +65,25 @@ Starting from the above several elements, after considering the risk of infringe
 In this way, the overall store structure is relatively stable. This is the strategy used when developing to 700-800 US dollars a day. At less than 400 US dollars a day, stores should use low prices to launch new products to increase exposure and visitors to increase sales.  
 The zombie listing of the store should be cleaned up at the beginning of each month to sort out the space and increase exposure.
 
+### Regretful
+
+No wholesale customers were captured
+
+## Summarize
+! [loading ...] (/ images / mind / Processlearningplan.svg)
+
+### Auto-tune remix-themed content
+
+"你曾是少年葛平版" is making
+
+### Python
+
+Successfully read using Google sheet's api
+
+## Mindset summary
+
+After going through several twists and turns, without more progress and growth, my mentality has changed again, and it has become the same as before, requiring a long vacation to adjust. But time is so ruthless and won't stay half because of you. The risk of resignation is huge but continues to be painful and dilemma. Many times I wonder if I have chosen the wrong way and is not suitable for this business. It's a few years when I think of myself as "not confused" before 30 years old
+
 <span id="CN">
 > 逝者如斯夫，不舍昼夜
 
@@ -73,7 +94,7 @@ The zombie listing of the store should be cleaned up at the beginning of each mo
 ![loading...](/images/SMT/1111.png)  
 - 11月29日黑五  
 ![loading...](/images/SMT/1129.png)  
-- 12月29日店铺永久  
+- 12月29日店铺永久关闭  
 ![loading...](/images/SMT/accountunavailable.png)  
 ![loading...](/images/SMT/IPRInfringement.png)  
 
@@ -87,12 +108,12 @@ The zombie listing of the store should be cleaned up at the beginning of each mo
 ### 账号维护  
 
 [关于入驻中的保证金规则变更](https://sell.aliexpress.com/zh/__pc/15iCAXj8Og.htm)  
-改变：  
-|2019|2020|
-| ------ | ------ |
-|要交年费10000元，当达到平台要求的销售额时会全额返还|只要保证支付宝里有1万金额（类目不同有所不同），支付宝冻结这笔金额用于缴纳违规扣分后的钱（500起步）|
-|店铺的海外仓配送时长不超过15天|7天|
-| |惩罚规则增加搜索作弊|
+改变：
+| 2019 |2020 |  
+| ------ | ------ |  
+| 要交年费10000元，当达到平台要求的销售额时会全额返还 | 只要保证支付宝里有1万金额（类目不同有所不同），支付宝冻结这笔金额用于缴纳违规扣分后的钱（500起步）|  
+| 店铺的海外仓配送时长不超过15天 | 7天 |  
+| | 惩罚规则增加搜索作弊 |  
 
 ### 数据分析
 由于有颗树铺货模式459个店铺积累了大量的发货数据，每天光速卖通的销售额就有100多万，发货量有6、7万单，动销sku约1万个，其中热门类目有家居、美容健康、汽摩配
@@ -100,14 +121,14 @@ The zombie listing of the store should be cleaned up at the beginning of each mo
 我们可以建立一个数据模型从几个维度分析并提取爆款，引流款、利润款
 
 1.出单的账号数  
-2.发货数量
-3.边利率
-4.平均客单价
-5.开发时间
-6.总销售此sku的账号数
-7.动销账号率=出单账号数/总销售账号
-8.店铺爆款率=发货数/动销数
-9.侵权风险
+2.发货数量  
+3.边利率  
+4.平均客单价  
+5.开发时间  
+6.总销售此sku的账号数  
+7.动销账号率=出单账号数/总销售账号  
+8.店铺爆款率=发货数/动销数  
+9.侵权风险  
 
 从上述的几个元素出发，在考虑了侵权风险的情况下，我们可以通过以下思路选出我们需要的产品
 
@@ -130,5 +151,5 @@ The zombie listing of the store should be cleaned up at the beginning of each mo
 ### python
 成功使用Google sheet的api进行了读取操作
 
-心态总结
+## 心态总结  
 经历了几次波折，没有了更多的进步和成长，我的心态又发生了变化，变得和以前一样，需要一次长假来调整。但是时间又如此无情不会因为你而停留半分。辞职风险巨大但是继续苟且又很痛苦，进退两难。我有很多时候都会怀疑自己是否选错了路，是不是不适合这一行。一想到自己离30“不惑”还有几年就一些压力
