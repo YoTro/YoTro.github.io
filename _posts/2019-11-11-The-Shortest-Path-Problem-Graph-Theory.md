@@ -6,6 +6,7 @@ tags: [Graph,Dijkstra,Floyd]
 music-id: 1401924960
 
 ---
+
 [EN](#EN)|[CN](#CN)
 <span id="EN"></span>
 # Preface
@@ -120,7 +121,7 @@ print(parents)
 如图[directed graphs with unbounded non-negative weights](\images\python_struction\Dijkstra.jpg)
 [步骤图](\images\python_struction\20191006112455385.jpg)
 ### 代码实现
-···python
+```python
 def dij(start, graph):
     n = len(graph)
     if n == 0:
@@ -152,11 +153,8 @@ def dij(start, graph):
                 dists[edge[0]] = minCost + edge[1]
                 parents[edge[0]] = minNode
     return dists, parents
-
-
-# 主程式
-
-# Data
+#主程式
+#Data
 data = [
     [1, 0, 8],
     [1, 2, 5],
@@ -192,29 +190,29 @@ print(parents)
 
 ```
 其中graph=
-[
-	[
-		[1, 8], [2, 1], [6, 2], [5, 4]
-	],
+[  
+	[  
+		[1, 8], [2, 1], [6, 2], [5, 4]  
+	],  
  	[	
-		[0, 8], [2, 5], [3, 10], [6, 9]
-	], 
-	[
-		[1, 5], [0, 1]
-	], 
-	[
-		[1, 10], [6, 5], [4, 8], [5, 8]
-	],
-	[
-		[3, 8], [5, 5]
-	],
-	[
-		[0, 4], [6, 7], [3, 8], [4, 5]
-	],
- 	[	
-		[1, 9], [0, 2], [3, 5], [5, 7]
-	]
-]
+		[0, 8], [2, 5], [3, 10], [6, 9]  
+	],  
+	[  
+		[1, 5], [0, 1]  
+	],  
+	[  
+		[1, 10], [6, 5], [4, 8], [5, 8]  
+	],  
+	[  
+		[3, 8], [5, 5]  
+	],  
+	[  
+		[0, 4], [6, 7], [3, 8], [4, 5]  
+	],  
+ 	[	  
+		[1, 9], [0, 2], [3, 5], [5, 7]  
+	]  
+]  
 
 
 ## Floyd算法
