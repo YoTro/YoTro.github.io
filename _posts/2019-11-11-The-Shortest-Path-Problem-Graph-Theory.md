@@ -105,7 +105,7 @@ print(parents)
 有向图，无向图
 ## [最短路径算法](https://zh.wikipedia.org/wiki/%E6%9C%80%E7%9F%AD%E8%B7%AF%E9%97%AE%E9%A2%98)
 - Dijkstra算法
-- [A*搜索算法](https://zh.wikipedia.org/wiki/A*%E6%90%9C%E5%B0%8B%E6%BC%94%E7%AE%97%E6%B3%95)
+- [A\*搜索算法](https://zh.wikipedia.org/wiki/A*%E6%90%9C%E5%B0%8B%E6%BC%94%E7%AE%97%E6%B3%95)
 - [Bellman-Ford算法](https://zh.wikipedia.org/wiki/%E8%B4%9D%E5%B0%94%E6%9B%BC-%E7%A6%8F%E7%89%B9%E7%AE%97%E6%B3%95) 
 - SPFA算法（Bellman-Ford算法的改进版本）
 - [Floyd-Warshall算法](https://zh.wikipedia.org/wiki/Floyd-Warshall%E7%AE%97%E6%B3%95) 弗洛伊德算法 原理是动态规划。
@@ -117,15 +117,12 @@ print(parents)
 ### 算法思想
 对于带权无向图G，两个集合Q和S,Q存放所有节点，S存放最短路径节点，一开始S只有一个源点，以后每求出一条最短路径，就将它放入集合S中，每次更新集合S中的到每个节点的最短路径直到全部节点放入集合S中，
 ### 算法步骤
-如图[directed graphs with unbounded non-negative weights](\images\python_struction\Dijkstra.jpg)
-[步骤图](\images\python_struction\20191006112455385.jpg)
-### 代码实现
-<<<<<<< HEAD
-```python
-=======
+如图![directed graphs with unbounded non-negative weights】(\images\python_struction\Dijkstra.jpg)
+![步骤图](\images\python_struction\20191006112455385.jpg)
 
-···python  
->>>>>>> 9ef0f33e45c4138ce4c34046d4d3c8d10e066cb2
+### 代码实现
+
+```python  
 def dij(start, graph):
     n = len(graph)
     if n == 0:
@@ -157,11 +154,6 @@ def dij(start, graph):
                 dists[edge[0]] = minCost + edge[1]
                 parents[edge[0]] = minNode
     return dists, parents
-#主程式
-<<<<<<< HEAD
-#Data
-=======
->>>>>>> 9ef0f33e45c4138ce4c34046d4d3c8d10e066cb2
 data = [
     [1, 0, 8],
     [1, 2, 5],
@@ -176,8 +168,7 @@ data = [
     [5, 3, 8],
     [5, 4, 5]
 ]
-n = 7  # 結點數
-
+n = 7  # 結點數  
 # 用data資料構建鄰接表
 graph = [[] for _ in range(n)]
 for edge in data:
@@ -196,6 +187,7 @@ print('parents')
 print(parents)
 
 ```
+
 其中graph=
 [  
 	[  
@@ -220,12 +212,6 @@ print(parents)
 		[1, 9], [0, 2], [3, 5], [5, 7]  
 	]  
 ]  
-
-
-## Floyd算法
-
-可以有负权边
-
-
-### 算法思想
+graph[0] 代表节点1，graph[1]代表结点2，以此类推
+其中[1,8]代表结点1可以到达结点2，距离值为8，不得不说这种表达方式非常棒
 
