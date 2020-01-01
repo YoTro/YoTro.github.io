@@ -5,11 +5,12 @@ tags: [2019]
 music-id: 1387679200
 
 ---
+> It passes on just like this, not ceasing day or night 
 
 [EN](#EN)|[CN](#CN)
 
 <span id="EN">  
-> It passes on just like this, not ceasing day or night  
+ 
 Bye bye 2019, hope you have a good luck in 2020.
 I have experienced so many in the last year
 - Changed the work in May
@@ -82,7 +83,7 @@ Successfully read using Google sheet's api
 
 ## Mindset summary
 
-After going through several twists and turns, without more progress and growth, my mentality has changed again, and it has become the same as before, requiring a long vacation to adjust. But time is so ruthless and won't stay half because of you. The risk of resignation is huge but continues to be painful and dilemma. Many times I wonder if I have chosen the wrong way and is not suitable for this business. It's a few years when I think of myself as "not confused" before 30 years old
+After going through several twists and turns, without more progress and growth, my mentality has changed again, and it has become the same as before, requiring a long vacation to adjust. But time is so ruthless and won't stay half. The risk of resignation is huge but continues to be painful and dilemma. Many times I wonder if I have chosen the wrong way and is not suitable for this business. It's a few years when I think of myself as "not confused" before 30 years old
 
 <span id="CN">
 > 逝者如斯夫，不舍昼夜
