@@ -35,7 +35,7 @@ Change:
 
 | 2019 | 2020 |  
 | ------ | ------ |  
-| An annual fee of ￥10,000 will be paid, and will be fully returned when the sales required by the platform are achieved. | Money (starting at 500) |  
+| An annual fee of ￥10,000 will be paid, and will be fully returned when the sales required by the platform are achieved. | You need ¥10000 in the Alipay for pay the fine, usually ¥500 for 2 points|  
 | The store's overseas warehouse delivery time does not over 15 days | 7 days |  
 | | Penalty Rule Increases Search Cheating |  
 
@@ -83,7 +83,7 @@ Successfully read using Google sheet's api
 
 ## Mindset summary
 
-After going through several twists and turns, without more progress and growth, my mentality has changed again, and it has become the same as before, requiring a long vacation to adjust. But time is so ruthless and won't stay half. The risk of resignation is huge but continues to be painful and dilemma. Many times I wonder if I have chosen the wrong way and is not suitable for this business. It's a few years when I think of myself as "not confused" before 30 years old
+After going through several events, without more progress and growth in work, my mentality has changed again, and it has become the same as before, requiring a long vacation to adjust. But time is so ruthless and won't stay half. The risk of resignation is huge but continues to be painful and dilemma. Many times I wonder if I have chosen the wrong way and is not suitable for this business. It's a few years when I think of myself as "not confused" before 30 years old
 
 <span id="CN">
 > 逝者如斯夫，不舍昼夜
