@@ -117,7 +117,7 @@ print(parents)
 ### 算法思想
 对于带权无向图G，两个集合Q和S,Q存放所有节点，S存放最短路径节点，一开始S只有一个源点，以后每求出一条最短路径，就将它放入集合S中，每次更新集合S中的到每个节点的最短路径直到全部节点放入集合S中，
 ### 算法步骤
-如图![directed graphs with unbounded non-negative weights】(\images\python_struction\Dijkstra.jpg)
+如图![directed graphs with unbounded non-negative weights](\images\python_struction\Dijkstra.jpg)
 ![步骤图](\images\python_struction\20191006112455385.jpg)
 
 ### 代码实现
