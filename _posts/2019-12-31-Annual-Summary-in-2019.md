@@ -43,6 +43,8 @@ Change:
 
 Due to YKS Inc has 459 shops, they sold a large number of goods every day , the sales is over 1 million, the orders are over 60k, and the sales sku is about 10k. Hot Categories include **Household**, **Beauty, Health & Hair**, **Automobiles & Motorcycles** 
 The average price of Beauty, Health & Hair is $ 20 and the profit margin is 19% the highest in our company. Massage sell the best, but the sales of home appliances are the largest. There are too few skus for Automobiles & Motorcycles (the style is still not rich enough so it can't go up, but the market should not be underestimated)  
+![The distribution of Sales sku's date which were sold on December 20, 2019](\images\SMT\Distributionofsalesku.png)
+![The distribution of Sales sku's date under orders which were sold on December 20, 2019](\images\SMT\Distributionoforordersku.png)
 We can build a data model to analyze and extract hidden potential goods which are best seller goods, attract goods,profitable goods from several following dimensions:  
 
 1. Sale stores  
@@ -117,9 +119,16 @@ After going through several events, without more progress and growth in work, my
 | 店铺的海外仓配送时长不超过15天 | 7天 |  
 | | 惩罚规则增加搜索作弊 |  
 
-### 数据分析
-由于有颗树铺货模式459个店铺积累了大量的发货数据，每天光速卖通的销售额就有100多万，发货量有6、7万单，动销sku约1万个，其中热门类目有家居、美容健康、汽摩配
-美容健康的客单价$20和利润19%是最高的，按摩仪卖的最好，而家居的销量却是最大的，汽摩配的sku太少（样式还是不够丰富所以不上不下，但市场不容小觑）
+### [数据分析](https://drive.google.com/open?id=1JhDbbbR8Jo_Wo-oeC0Xz8IORBRYc_Iun)
+由于有颗树铺货模式460个店铺积累了大量的发货数据，
+![账号类目分布图](\images\SMT\AccountCategoryDistribution.png)
+每天光速卖通的销售额就有100多万，发货量有6、7万单，动销sku约1万个，其中热门类目有家居、美容健康、汽摩配
+美容健康的客单价$20和利润19%是最高的，按摩仪卖的最好，而家居的销量却是最大的，汽摩配的sku太少（样式还是不够丰富所以不上不下，但市场不容小觑）。
+![12月20日出单类目分析表](\images\SMT\smtCategoryanalysis_A.png)
+![12月20日出单类目出单开发时间分布表](\images\SMT\smtCategoryanalysis_B.png)
+通过分析来看整体速卖通出单的sku都是789月份开发的产品再12月份出单，2019年开发的sku销售额占比最多，如图![12月20日动销sku开发时间分布表](\images\SMT\Distributionofsalesku.png)
+![12月20日动销sku（发货量）开发时间分布表](\images\SMT\Distributionoforordersku.png)
+![smt账号分析表](\images\SMT\AccountAnalysis.png)
 我们可以建立一个数据模型从几个维度分析并提取爆款，引流款、利润款
 
 1.出单的账号数  
