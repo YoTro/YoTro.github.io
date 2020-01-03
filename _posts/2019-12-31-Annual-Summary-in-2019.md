@@ -128,7 +128,7 @@ After going through several events, without more progress and growth in work, my
 ![12月20日出单类目出单开发时间分布表](\images\SMT\smtCategoryanalysis_B.png)
 通过分析来看整体速卖通出单的sku都是789月份开发的产品再12月份出单，2019年开发的sku销售额占比最多，如图![12月20日动销sku开发时间分布表](\images\SMT\Distributionofsalesku.png)
 ![12月20日动销sku（发货量）开发时间分布表](\images\SMT\Distributionoforordersku.png)
-!![12月20日动销sku（动销数）开发时间分布表](\images\SMT\Distributionofsalesku1.png)
+![12月20日动销sku（动销数）开发时间分布表](\images\SMT\Distributionofsalesku1.png)
 ![smt账号分析表](\images\SMT\AccountAnalysis.png)
 我们可以建立一个数据模型从几个维度分析并提取爆款，引流款、利润款
 
