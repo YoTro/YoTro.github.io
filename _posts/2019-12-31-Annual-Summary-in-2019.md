@@ -83,9 +83,9 @@ No wholesale customers were captured
 
 Successfully read using Google sheet's api
 
-## Mindset summary
+## Mindset summary  
+When fate strikes, like a pouring rain in the wilderness, where can I hide 
 
-After going through several events, without more progress and growth in work, my mentality has changed again, and it has become the same as before, requiring a long vacation to adjust. But time is so ruthless and won't stay half. The risk of resignation is huge but continues to be painful and dilemma. Many times I wonder if I have chosen the wrong way and is not suitable for this business. It's a few years when I think of myself as "not confused" before 30 years old
 
 <span id="CN">
 > 逝者如斯夫，不舍昼夜
@@ -164,4 +164,4 @@ After going through several events, without more progress and growth in work, my
 成功使用Google sheet的api进行了读取操作
 
 ## 心态总结  
-经历了几次波折，没有了更多的进步和成长，我的心态又发生了变化，变得和以前一样，需要一次长假来调整。但是时间又如此无情不会因为你而停留半分。辞职风险巨大但是继续苟且又很痛苦，进退两难。我有很多时候都会怀疑自己是否选错了路，是不是不适合这一行。一想到自己离30“不惑”还有几年就一些压力
+命运来袭时，如同荒野中遭遇瓢泼大雨，我又能在何处躲避
