@@ -31,8 +31,11 @@ The most important algorithms for solving this problem are:
 
 ### Algorithm Thought
 For the undirected graphs with nonnegative weights G, two sets Q and S, Q stores all nodes, S stores the shortest path node, and initially there is only one start node, and push the node to S after calculates the shortest path every time , updating the shortest path until all nodes are placed in the set S
+
 ## The code
-```python
+
+{% highlight ruby linenos %}  
+
 # dists: the distance of shortest path 
 # parents: You can use the parent node to make the shortest path tree
 def dij(start, graph):
@@ -95,7 +98,8 @@ print(dists)
 print('parents')
 print(parents)
 
-```
+{% endhighlight %}
+
 <span id="CN"></span>
 # 图论之最短路径问题
 # 前言
