@@ -14,7 +14,7 @@ It Contains the Tracking number and logistics information
 
  `z2` has English logistics information
 
-```json
+{% highlight ruby linenos %}
 JSON
 ret	1
 msg	Ok
@@ -46,11 +46,12 @@ dat	[…]
             z2	[…]
             zex	{…}
               sa	true
-```
+{% endhighlight %}
 
 You can find a transition about Tracking package in `z0:z`.
 
-```json
+{% highlight ruby linenos %}
+
 z0:"{…}"
 a	2018-01-23 00:00
 b	null
@@ -58,7 +59,8 @@ c
 d	NORFOLK, VA 23518
 z	Redelivery Scheduled, The customer has requested that the Postal Service redeliver this item on January 25, 2018 in NORFOLK, VA 23518.
 
-```
+{% endhighlight %}
+
 # 5 transit status
 
 ## in transit
