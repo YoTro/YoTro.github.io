@@ -126,6 +126,7 @@ print(parents)
 
 ### 代码实现
 
+{% highlight ruby linenos %}  
 ```python  
 def dij(start, graph):
     n = len(graph)
@@ -191,6 +192,7 @@ print('parents')
 print(parents)
 
 ```
+{% endhighlight %}
 
 其中graph=
 [  
