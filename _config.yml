@@ -364,7 +364,7 @@ highlight_theme: night
 # MathJax Support
 mathjax:
   enable: true
-  per_page: true
+  per_page: false
   cdn: https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML
 
 # Han Support docs: https://hanzi.pro/
