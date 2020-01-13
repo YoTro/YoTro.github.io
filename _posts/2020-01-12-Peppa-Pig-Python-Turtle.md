@@ -922,13 +922,13 @@ te.done()
 
 Linear Bézier curves
 
-B(t) = P_0 + (P_1 - P_0)t = (1 - t) P_0 + tP_1,t \in [0,1]
+$B(t) = P_0 + (P_1 - P_0)t = (1 - t) P_0 + tP_1,t \in [0,1]$
 
 Quadratic Bézier curves
 
-B(t) = (1 - t)^2P_0 + 2(1 - t)tP_1 + t^2P_2, 0\leq  t\leq 1
+$B(t) = (1 - t)^2P_0 + 2(1 - t)tP_1 + t^2P_2, 0\leq  t\leq 1$
 
 Cubic Bézier curves
 
-B(t) = \sum_{i=0}^n \binom{n}{i}P_i(1 - t)^{n-i}t^i = \binom{n}{0} p_0(1 - t)^{n}t^0 + \binom{n}{1} p_1(1 - t)^{n-1}t^1 +...+ (\binom{n}{n-1}p_{n-1}(1 - t)^1t^{n-1} + \binom{n}{n}p_n(1-t)^0t^n,t \in [0,1]
+$B(t) = \sum_{i=0}^n \binom{n}{i}P_i(1 - t)^{n-i}t^i = \binom{n}{0} p_0(1 - t)^{n}t^0 + \binom{n}{1} p_1(1 - t)^{n-1}t^1 +...+ (\binom{n}{n-1}p_{n-1}(1 - t)^1t^{n-1} + \binom{n}{n}p_n(1-t)^0t^n,t \in [0,1]$
 
