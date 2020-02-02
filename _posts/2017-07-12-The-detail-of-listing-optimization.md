@@ -1,5 +1,5 @@
 ---
-title: The Description of listing optimization
+title: How to write 5 points in Amazon Goods' Listing
 date: 2017-07-12 21:00:31
 layout: post
 tags: Amazon

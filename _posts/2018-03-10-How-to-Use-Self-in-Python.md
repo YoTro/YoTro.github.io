@@ -1,5 +1,5 @@
 ---
-title: Introducing the detail of self in Python
+title: How to understand self of Python
 date: 2018-03-10 16:30:31
 tags: [python,self]
 

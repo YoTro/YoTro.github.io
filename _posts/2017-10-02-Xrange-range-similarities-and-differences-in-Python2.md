@@ -1,5 +1,5 @@
 ---
-title: xrange and  range in Python2
+title: What's the difference between xrange() and  range() in Python2
 date: 2017-10-2 10:57:31
 tags: [Xrange,python2]
 ---

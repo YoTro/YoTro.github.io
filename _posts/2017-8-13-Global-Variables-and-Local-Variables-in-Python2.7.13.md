@@ -1,5 +1,5 @@
 ---
-title: The UnboundlocalError
+title: How to Solve The UnboundlocalError of Python
 date: 2017-08-13 10:03:31
 tags: [Variables,python27]
 ---

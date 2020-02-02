@@ -1,5 +1,5 @@
 ---
-title: a Jekyll theme
+title: How to choose and install a Jekyll theme
 date: 2017-03-12 00:06:52
 tags: jeklly
 ---

@@ -1,5 +1,5 @@
 ---
-title: MySQL Learning
+title: How to Install MySQL in Windows
 date: 2019-06-30 18:00:00
 tags: [LearningPlan,MySQL]
 music-id: 1336990977

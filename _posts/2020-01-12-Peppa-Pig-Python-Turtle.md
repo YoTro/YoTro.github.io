@@ -1,5 +1,5 @@
 ---
-title: Autopainting Peppa Pig by Python turtle 
+title: How to Autopainting Peppa Pig and Homura Akemi by Python turtle 
 date: 2020-01-12 01:00:00
 tags: [Turtle]
 music-id: 1518088873

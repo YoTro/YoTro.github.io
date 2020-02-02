@@ -1,5 +1,5 @@
 ---
-title: The Shortest Path Problem in Grapgh
+title: How to Solve The Shortest Path Problem in Grapgh
 layout: post
 date: 2019-11-11 16:48:00
 tags: [Graph,Dijkstra,Floyd]

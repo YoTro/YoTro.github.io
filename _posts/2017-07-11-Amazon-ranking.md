@@ -1,5 +1,5 @@
 ---
-title: Amazon keywords and listing compare with other good store
+title: What is Amazon keywords and listing compare with other good store
 date: 2017-07-11 12:27:31
 tags: Amazon
 

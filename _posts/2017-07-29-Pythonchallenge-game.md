@@ -1,8 +1,9 @@
 ---
-title: The pythonchallenge game
+title: How to Learn Python Fastly By Game
 date: 2017-07-29 12:27:31
 tags: [python,game]
 ---
+#  The pythonchallenge game #
 
 If you want to practice your python,the [pythonchallenge](http://www.pythonchallenge.com/) coulde help you.There are currently 33 levels.
 

@@ -1,5 +1,5 @@
 ---
-title: The Requests of Python---Installation
+title: How to Install Requests of Python in Windows / Linux
 date: 2017-07-23 18:36:52
 tags: Requests
 ---
