@@ -148,7 +148,7 @@ Your search template (search/search.html for the default case) will likely be ve
 
 templates/search/search.html
  
-{% extends 'base.html' %}
+{ % extends 'base.html' % }
 {% load highlight %}
  
 {% block content %}
