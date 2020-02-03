@@ -1,6 +1,6 @@
 ---
 title: How to Install Django Haystack Whoosh
-date: 2020-02-02 17:35:00
+date: 2020-02-02 17:35:00 -0700
 tags: [Django,Haystack,Whoosh]
 music-id: 1317100959
 
