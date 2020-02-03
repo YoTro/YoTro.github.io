@@ -144,11 +144,11 @@ urlpatterns = [
 
 Your search template (search/search.html for the default case) will likely be very simple. The following is enough to get going (your template/block names will likely differ):
 
-{% highlight ruby linenos %}
+```
 
 templates/search/search.html
  
-{ % extends 'base.html' % }
+{% extends 'base.html' %}
 {% load highlight %}
  
 {% block content %}
@@ -212,7 +212,7 @@ templates/search/search.html
     </form>
 {% endblock %}
 
-{% endhighlight %}
+```
 
 Note that the `page.object_list` is actually a list of `SearchResult` objects instead of individual models. These objects have all the data returned from that record within the search index as well as score. They can also directly access the model for the result via `{{ result.object }}`. So the `{{ result.object.title }}` uses the actual `Post` object in the database and accesses its title field.
 
