@@ -180,7 +180,7 @@ subject = "hello world, this is subject"
 content = "here is the message send from {0}".format(from_addr)
 send_mail(subject, content, from_addr, to_addr, fail_silently=False)
 ```
-# How to send many emails by Django
+## How to send many emails by Django
 
 ```python
 from django.core.mail import send_mas_mail
@@ -197,7 +197,7 @@ send_mas_mail((message0,message1),fail_silently = False)
 ```
 Note: The main difference between [`send_mass_mail`](https://docs.djangoproject.com/en/3.0/topics/email/##send-mass-mail) and [`send_mail`](https://docs.djangoproject.com/en/3.0/topics/email/##send-mail) is that send_mail() opens a connection to the mail server each time it’s executed, while send_mass_mail() uses a single connection for all of its messages. This makes send_mass_mail() slightly more efficient.
 
-######## How to add attachment to email
+## How to add attachment to email
 
 ```python
 from django.conf import settings
@@ -359,30 +359,30 @@ url(r'^(?P<post_id>\d+)/share/$', views.post_share,
 
 ## Render forms in templates
 
-######## Add share.html 
+## Add share.html 
 
 add to this path `blog/templates/blog/post/`
 
 ```
-{ % extends "blog/base.html" % }
+\{% extends "blog/base.html" %\}
 
-{ % block title %}Share a post{% endblock % }
+\{% block title %}Share a post{% endblock %\}
 
-{ % block content % } 
-  { % if sent % }
+\{% block content %\} 
+  \{% if sent %\}
     <h1>E-mail successfully sent</h1>
     <p>
       "{{ post.title }}" was successfully sent to {{ cd.to }}.
     </p>
-  { % else % }
+  \{% else %\}
     <h1>Share "{{ post.title }}" by e-mail</h1>
     <form action="." method="post">
       {{ form.as_p }}
-      { % csrf_token % }
+      \{% csrf_token %\}
       <input type="submit" value="Send e-mail">
     </form>
-  { % endif % }
-{ % endblock % }
+  \{% endif %\}
+\{% endblock %\}
 ```
 
 This share.html is a file when you click the share button then show the forms to user
@@ -399,7 +399,7 @@ it will render like this:
 
 renders the form as a series of <p> tags, with each <p> containing one field. You could use `as_table` or `as_ul`.  
 
-######## Add sharelink to detail.html
+## Add sharelink to detail.html
 
 add this code to blog/post/detail.html :
 
@@ -785,25 +785,25 @@ url(r'^(?P<post_id>\d+)/share/$', views.post_share,
 在通过创建表单，编写视图（view）以及添加URL模式后，我们就只剩下为这个视图（view）添加模板（tempalte）了。在blog/templates/blog/post/目录下创建一个新的文件并命名为share.html。在该文件中添加如下代码：
 
 ```
-{ % extends "blog/base.html" % }
+\{% extends "blog/base.html" %\}
 
-{ % block title %}Share a post{% endblock % }
+\{% block title %}Share a post{% endblock %\}
 
-{ % block content % } 
-  { % if sent % }
+\{% block content %\} 
+  \{% if sent %\}
     <h1>E-mail successfully sent</h1>
     <p>
       "{{ post.title }}" was successfully sent to {{ cd.to }}.
     </p>
-  { % else % }
+  \{% else %\}
     <h1>Share "{{ post.title }}" by e-mail</h1>
     <form action="." method="post">
       {{ form.as_p }}
-      { % csrf_token % }
+      \{% csrf_token %\}
       <input type="submit" value="Send e-mail">
     </form>
-  { % endif % }
-{ % endblock % }
+  \{% endif %\}
+\{% endblock %\}
 ```
 
 这个模板（tempalte）专门用来显示一个表单或一条成功提示信息。如你所见，我们创建的HTML表单元素里面表明了它必须通过POST方法提交：
