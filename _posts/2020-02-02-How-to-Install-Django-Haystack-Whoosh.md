@@ -151,9 +151,9 @@ templates/search/search.html
 {% assign openTag = '{%' %}
 
 {{ openTag }} extends 'base.html' %\}
-\{% load highlight %\}
+{{ openTag }}load highlight %\}
  
-\{% block content %\}
+{{ openTag }}block content %\}
     <h2>Search</h2>
      <form method="get" action=".">
         <table>
@@ -165,12 +165,12 @@ templates/search/search.html
                 </td>
             </tr>
         </table>
-    \{% if query %\}
-        \{% for result in page.object_list %\}
+    {{ openTag }}if query %\}
+        {{ openTag }}for result in page.object_list %\}
             <article class="post post-{{ result.object.pk }}">
                 <header class="entry-header">
                     <h1 class="entry-title">
-                        <a href="{{ result.object.get_absolute_url }}">\{% highlight result.object.title with query %\}</a>
+                        <a href="{{ result.object.get_absolute_url }}">{{ openTag }}highlight result.object.title with query %\}</a>
                     </h1>
                     <div class="entry-meta">
                     <span class="post-category">
@@ -195,7 +195,7 @@ templates/search/search.html
                     </div>
                 </div>
             </article>
-        \{% empty %\}
+        {{ openTag }}empty %\}
             <div class="no-post">No results!</div>
         {% endfor %}
         {% if page.has_previous or page.has_next %}
