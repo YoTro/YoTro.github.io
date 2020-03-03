@@ -68,6 +68,11 @@ $ p = \frac{n-1}{n}\times \frac{n-1}{n} ... \frac{n-i+1}{n-i+2} \times \frac{1}{
 
 <span id="CN">
 
+# [Fisher-Yates Shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
+
+时间复杂度: O(n)
+空间复杂度: O(n)
+
 ```python
 
    def shuffle(self, x, random=None):
@@ -102,10 +107,6 @@ $ p = \frac{n-1}{n}\times \frac{n-1}{n} ... \frac{n-i+1}{n-i+2} \times \frac{1}{
 
 ```
 
-# [Fisher-Yates Shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
-
-Time complexity: O(n)
-Space complexity: O(n)
 
 # 随机性证明
 
