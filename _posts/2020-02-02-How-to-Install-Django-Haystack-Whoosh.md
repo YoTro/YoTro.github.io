@@ -147,7 +147,9 @@ Your search template (search/search.html for the default case) will likely be ve
 ```
 
 templates/search/search.html
- 
+
+{% assign openTag = '{%' %}
+{{ openTag }} raw %}    
 \{% extends 'base.html' %\}
 \{% load highlight %\}
  
@@ -211,6 +213,7 @@ templates/search/search.html
     {% endif %}
     </form>
 {% endblock %}
+{{ openTag }} endraw %}
 
 ```
 
