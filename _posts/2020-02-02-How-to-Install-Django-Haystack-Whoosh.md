@@ -174,7 +174,7 @@ templates/search/search.html
                     </h1>
                     <div class="entry-meta">
                     <span class="post-category">
-                        <a href="{% url 'blog:category' result.object.category.pk %}">
+                        <a href="{{ openTag }} url 'blog:category' result.object.category.pk %}">
                             {{ result.object.category.name }}</a></span>
                         <span class="post-date"><a href="#">
                             <time class="entry-date" datetime="{{ result.object.created_time }}">
