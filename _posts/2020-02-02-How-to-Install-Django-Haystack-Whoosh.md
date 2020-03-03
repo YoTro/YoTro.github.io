@@ -149,9 +149,8 @@ Your search template (search/search.html for the default case) will likely be ve
 templates/search/search.html
 
 {% assign openTag = '{%' %}
-{{ openTag }} raw %} 
-   
-{% extends 'base.html' %\}
+
+{{ openTag }} extends 'base.html' %\}
 \{% load highlight %\}
  
 \{% block content %\}
