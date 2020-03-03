@@ -49,7 +49,8 @@ Space complexity: O(n)
 # Proof of randomness
 Prove that the i-th position where each element is placed in the new array is 1 / n.
 
-## Proof: The probability that an element m is placed in the i-th position P = the probability that m is not selected when the first i-1 positions select elements * the probability that m is selected in the i-th position,
+## Proof: 
+The probability that an element m is placed in the i-th position P = the probability that m is not selected when the first i-1 positions select elements * the probability that m is selected in the i-th position,
 
 $ p = \frac{n-1}{n}\times \frac{n-1}{n} ... \frac{n-i+1}{n-i+2} \times \frac{1}{n-i+1} 
 
@@ -112,7 +113,8 @@ $ p = \frac{n-1}{n}\times \frac{n-1}{n} ... \frac{n-i+1}{n-i+2} \times \frac{1}{
 
 证明每个元素被放置在新数组中的第i个位置是1/n。
 
-## 证明：一个元素m被放入第i个位置的概率 P = 前i-1个位置选择元素时没有选中m的概率 * 第i个位置选中m的概率，即：
+## 证明：
+一个元素m被放入第i个位置的概率 P = 前i-1个位置选择元素时没有选中m的概率 * 第i个位置选中m的概率，即：
 
 $ p = \frac{n-1}{n}\times \frac{n-1}{n} ... \frac{n-i+1}{n-i+2} \times \frac{1}{n-i+1} 
 
