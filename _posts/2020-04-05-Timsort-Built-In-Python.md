@@ -38,6 +38,10 @@ It is advantageous over Quicksort for sorting object references or pointers beca
 
 3.  the smaller of the remaining elements of the two runs is copied into temporary memory, and elements are merged with the larger run into the now free space. If the first run is smaller, the merge starts at the beginning; if the second is smaller, the merge starts at the end. This optimization reduces the number of required element movements, the running time and the temporary space overhead in the general case.
 
+![merge_criteria](//upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Representation_of_stack_for_merge_memory_in_Timsort.svg/280px-Representation_of_stack_for_merge_memory_in_Timsort.svg.png)
+
+
+
  Minrun is chosen from the range 32 to 64 inclusive, such that the size of the data, divided by minrun, is equal to, or slightly less than, a power of two. The final algorithm takes the six most significant bits of the size of the array, adds one if any of the remaining bits are set, and uses that result as the minrun. This algorithm works for all arrays, including those smaller than 64; for arrays of size 63 or less, this sets minrun equal to the array size and Timsort reduces to an insertion sort.
 
 See the Tim Peter's description
@@ -50,6 +54,22 @@ fancier.
 > When N is a power of 2, testing on random data showed that minrun values of 16, 32, 64 and 128 worked about equally well.  At 256 the data-movement cost in binary insertion sort clearly hurt, and at 8 the increase in the number of function calls clearly hurt.  Picking *some* power of 2 is important
 here, so that the merges end up perfectly balanced (see next section).  We pick 32 as a good value in the sweet range; picking a value at the low end allows the adaptive gimmicks more opportunity to exploit shorter natural runs.
 
+```c
+static Py_ssize_t
+merge_compute_minrun(Py_ssize_t n)
+{
+    Py_ssize_t r = 0;           /* becomes 1 if any 1 bits are shifted off */
+
+    assert(n >= 0);
+    while (n >= 64) {
+        r |= n & 1;
+        n >>= 1;
+    }
+    return n + r;
+}
+nRemaining = hi - lo
+minrun = merge_compute_minrun(nRemaining)
+```
 
 ## [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
 
@@ -124,12 +144,14 @@ You could see my code here [source code](https://github.com/YoTro/Python_reposit
 
 ## 核心过程
 
-1. 查找部分有序数组长度并且最好是2的幂,如果长度小于某个值minRunLength，直接用二分插入排序算法进行合并，如果是降序，则直接反转数组
+1. 查找部分有序数组长度并且最好是2的幂,如果长度小于某个值minrun，直接用二分插入排序算法进行合并，如果是降序，则直接反转数组
 
 2. 找到各个run，并入栈
 
 3. 按规则合并run（x>y+z and y>z)
+(规则：1. len[-3] > len[-2] + len[-1] && 2. len[-2] > len[-1])
 
+![merge_criteria](//upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Representation_of_stack_for_merge_memory_in_Timsort.svg/280px-Representation_of_stack_for_merge_memory_in_Timsort.svg.png)
 
 ### Computing minrun
 
@@ -149,6 +171,23 @@ Tim Peter 认为如果元素个数在64的情况下，minrun就是整个数组�
 
 - 976：11 1101 0000，取前六个最高标志位为111101(61)，同时最后几位为0000，所以 minrun 为61，⌈n/minrun⌉=16 满足要求
 
+```c
+static Py_ssize_t
+merge_compute_minrun(Py_ssize_t n)
+{
+    Py_ssize_t r = 0;           /* becomes 1 if any 1 bits are shifted off */
+
+    assert(n >= 0);
+    while (n >= 64) {
+        r |= n & 1;
+        n >>= 1;
+    }
+    return n + r;
+}
+nRemaining = hi - lo
+minrun = merge_compute_minrun(nRemaining)
+```
+
 ## 用到的排序方法
 
 我们会发现当数组元素个数小于7时，[插入排序](#插入排序)更合适
@@ -161,7 +200,8 @@ Tim Peter 认为如果元素个数在64的情况下，minrun就是整个数组�
 
 ## [归并排序](https://baike.baidu.com/item/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F)
 
-效率为{\displaystyle O(n\log n)}{\displaystyle O(n\log n)}。1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。
+效率为O(nlog n)。
+1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。
 
 ![loading...](//upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Merge-sort-example-300px.gif/220px-Merge-sort-example-300px.gif)
 [源代码](https://github.com/YoTro/Python_repository/blob/master/Sorting_Algorithms/Merge_sort.py)
@@ -175,7 +215,7 @@ Tim Peter 认为如果元素个数在64的情况下，minrun就是整个数组�
 ## [二分查找](https://baike.baidu.com/item/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE)
 
 一种在有序数组中查找某一特定元素的搜索算法  
-时间复杂度：O\left(\log n\right)
+时间复杂度：O(log n)
 
 [源代码](https://github.com/YoTro/Python_repository/blob/master/Sorting_Algorithms/Binary_search.py)
 
