@@ -4,7 +4,7 @@ date: 2020-04-06 1:00:00
 tags: [Sorting Algorithm]
 music-id: 1429363572
 youtube-video-ID: xB5lbUu9jjQ
-mathjax: True
+mathjax: true
 
 ---
 
@@ -83,7 +83,7 @@ You could see my code here[source code](https://github.com/YoTro/Python_reposito
 
 ##  [binary search](https://en.wikipedia.org/wiki/Binary_search_algorithm)
 
-[loading...](/images/Algorithm formula/Binary_search.gif)
+![loading...](/images/Algorithm formula/Binary_search.gif)
 You could see my code here [source code](https://github.com/YoTro/Python_repository/blob/master/Sorting_Algorithms/Binary_search.py)
 
 
