@@ -18,11 +18,14 @@ mathjax: true
 
 ## Formula
 
+<div style="overflow:auto;">
 \begin{equation} \begin{split} f(t)&=\frac{a_{0}}{2}+a_{1}cos(\omega t)+b_{1}sin(\omega t) \\ &+a_{2}cos(2\omega t)+b_{2}sin(2\omega t) \\ &+...\\ &=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}{[a_{n}cos(n\omega t)+b_{n}sin(n\omega t)]} \end{split} \end{equation}\tag{1}
+</div>
 
 And the an ,bn
-
-\begin{align} &a_{n}=\frac{2}{T}\int_{t_{0}}^{t_{0}+T}f(t)cos(n\omega t)dt \tag{2} \\ &b_{n}=\frac{2}{T}\int_{t_{0}}^{t_{0}+T}f(t)sin(n\omega t)dt \tag{3}\\ \end{align}
+<div style="overflow:auto;">
+\begin{aligned} a_{n}=\frac{2}{T}\int_{t_{0}}^{t_{0}+T}f(t)cos(n\omega t)dt \\ b_{n}=\frac{2}{T}\int_{t_{0}}^{t_{0}+T}f(t)sin(n\omega t)dt \end{aligned}
+</div>
 
 <span id="CN">
 
