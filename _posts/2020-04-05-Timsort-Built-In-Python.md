@@ -10,7 +10,7 @@ mathjax: true
 
 # [Timsort](https://en.wikipedia.org/wiki/Timsort)
 
-[EN](##EN)|[CN](##CN)
+[EN](#EN)|[CN](#CN)
 
 <span id="EN">
 [Source code of Timesort](https://github.com/python/cpython/blob/master/Objects/listobject.c)

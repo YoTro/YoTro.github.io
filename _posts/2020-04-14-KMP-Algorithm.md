@@ -42,11 +42,11 @@ KMP算法是一种改进的字符串匹配算法，由D.E.Knuth，J.H.Morris和V
 
 ### KMP算法的next［j］计算
 
-<iframe style="width:100%;height:400" src="//player.bilibili.com/player.html?aid=70259921&bvid=BV1TJ411F7UZ&cid=121717870&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe style="width:100%;height:500" src="//player.bilibili.com/player.html?aid=70259921&bvid=BV1TJ411F7UZ&cid=121717870&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ## KMP vs 线性排序
 
-<iframe style="width:100%;height:400" src="//player.bilibili.com/player.html?aid=625281243&bvid=BV1pt4y127xz&cid=178105333&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe style="width:100%;height:500" src="//player.bilibili.com/player.html?aid=625281243&bvid=BV1pt4y127xz&cid=178105333&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ## 源码
 
