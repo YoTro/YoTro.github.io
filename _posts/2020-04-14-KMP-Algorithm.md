@@ -10,7 +10,7 @@ mathjax: true
 
 # [KMP](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
 
-[EN](##EN)|[CN](##CN)
+[EN](#EN)|[CN](#CN)
 
 Knuth–Morris–Pratt algorithm
 

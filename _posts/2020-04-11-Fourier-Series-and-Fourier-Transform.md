@@ -9,7 +9,7 @@ mathjax: true
 
 # [Fourier Series](https://en.wikipedia.org/wiki/Fourier_series)
 
-[EN](##EN)|[CN](##CN)
+[EN](#EN)|[CN](#CN)
 
 <span id="EN">
 ## Definition
@@ -19,7 +19,7 @@ mathjax: true
 ## Formula
 
 <div style="overflow:auto;">
-\begin{equation} \begin{split} f(t)&=\frac{a_{0}}{2}+a_{1}cos(\omega t)+b_{1}sin(\omega t) \\ &+a_{2}cos(2\omega t)+b_{2}sin(2\omega t) \\ &+...\\ &=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}{[a_{n}cos(n\omega t)+b_{n}sin(n\omega t)]} \end{split} \end{equation}\tag{1}
+\begin{equation} \begin{split} f(t)&=\frac{a_{0}}{2}+a_{1}cos(\omega t)+b_{1}sin(\omega t) \\ &+a_{2}cos(2\omega t)+b_{2}sin(2\omega t) \\ &+...\\ &=\frac{a_{0}}{2}+\sum_{n=1}^{\infty}{[a_{n}cos(n\omega t)+b_{n}sin(n\omega t)]} \end{split} \end{equation}
 </div>
 
 And the an ,bn
