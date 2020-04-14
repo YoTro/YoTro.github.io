@@ -26,11 +26,13 @@ These complexities are the same, no matter how many repetitive patterns are in W
 
 ### KMP VS Linematch
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DEKOanlgI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z-DEKOanlgI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-##Source code
+## Source code
 
 Check here [KMP](https://github.com/YoTro/Python_repository/blob/master/Grapgh%20Theory/KMP.py)
+
+<span id="CN">
 
 # [KMP](https://baike.baidu.com/item/kmp%E7%AE%97%E6%B3%95/10951804?fromtitle=KMP&fromid=10158450&fr=aladdin)
 
@@ -40,13 +42,13 @@ KMP算法是一种改进的字符串匹配算法，由D.E.Knuth，J.H.Morris和V
 
 ### KMP算法的next［j］计算
 
-<iframe src="//player.bilibili.com/player.html?aid=70259921&bvid=BV1TJ411F7UZ&cid=121717870&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe style="width:100%;height:400" src="//player.bilibili.com/player.html?aid=70259921&bvid=BV1TJ411F7UZ&cid=121717870&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ## KMP vs 线性排序
 
-<iframe src="//player.bilibili.com/player.html?aid=625281243&bvid=BV1pt4y127xz&cid=178105333&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe style="width:100%;height:400" src="//player.bilibili.com/player.html?aid=625281243&bvid=BV1pt4y127xz&cid=178105333&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-## ## 源码
+## 源码
 
 [Github code](https://github.com/YoTro/Python_repository/blob/master/Grapgh%20Theory/KMP.py)
 
