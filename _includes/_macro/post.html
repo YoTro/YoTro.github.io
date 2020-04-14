@@ -15,7 +15,9 @@
   {% if page.youtube-video-ID %} 
       <div class="videoWrapper"><iframe width="100%" height="400" src="https://www.youtube.com/embed/{{ page.youtube-video-ID }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
   {% endif %}
-
+  {% if page.bilibili-video-ID %} 
+      <div class="videoWrapper"><iframe width="100%" height="400" src="//player.bilibili.com/player.html?aid=70259921&bvid={{ page.bilibili-video-ID }}&cid=121717870&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div>
+  {% endif %}
   <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="{{ post.url | absolute_url }}">
 
