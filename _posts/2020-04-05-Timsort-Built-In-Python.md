@@ -1,5 +1,5 @@
 ---
-title: Quick Sort and Insert Sort
+title: Timsort
 date: 2020-04-06 1:00:00
 tags: [Sorting Algorithm]
 music-id: 1429363572
