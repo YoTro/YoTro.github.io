@@ -52,7 +52,7 @@ Prove that the i-th position where each element is placed in the new array is 1 
 ## Proof: 
 The probability that an element m is placed in the i-th position P = the probability that m is not selected when the first i-1 positions select elements * the probability that m is selected in the i-th position,
 
-$ p = \frac{n-1}{n}\times \frac{n-1}{n} ... \frac{n-i+1}{n-i+2} \times \frac{1}{n-i+1} 
+\begin{aligned} p = \frac{n-1}{n}\times \frac{n-1}{n} ... \frac{n-i+1}{n-i+2} \times \frac{1}{n-i+1} \end{aligned}
 
 1. Initialize the original array and the new array, the length of the original array is n (known);
 
@@ -116,7 +116,7 @@ $ p = \frac{n-1}{n}\times \frac{n-1}{n} ... \frac{n-i+1}{n-i+2} \times \frac{1}{
 ## 证明：
 一个元素m被放入第i个位置的概率 P = 前i-1个位置选择元素时没有选中m的概率 * 第i个位置选中m的概率，即：
 
-$ p = \frac{n-1}{n}\times \frac{n-1}{n} ... \frac{n-i+1}{n-i+2} \times \frac{1}{n-i+1} 
+\begin{aligned} p = \frac{n-1}{n}\times \frac{n-1}{n} ... \frac{n-i+1}{n-i+2} \times \frac{1}{n-i+1} \end{aligned}
 
 # 原理
 
