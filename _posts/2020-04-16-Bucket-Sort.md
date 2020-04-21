@@ -11,6 +11,10 @@ mathjax: true
 
 # [Bucket sort](https://en.wikipedia.org/wiki/Bucket_sort)
 
+[EN](#EN)|[CN](#CN)
+
+<span id="EN"> 
+
 Bucket sort, or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm. It is a distribution sort, a generalization of pigeonhole sort, and is a cousin of radix sort in the most-to-least significant digit flavor. Bucket sort can be implemented with comparisons and therefore can also be considered a comparison sort algorithm. The computational complexity depends on the algorithm used to sort each bucket, the number of buckets to use, and whether the input is uniformly distributed.
 
 Bucket sort works as follows:
@@ -27,6 +31,8 @@ Bucket sort works as follows:
 ## Source code
 
 [My Github Code](https://github.com/YoTro/Python_repository/blob/master/Sorting_Algorithms/Bucket_sort.py)
+
+<span id="CN"> 
 
 # [桶排序](https://baike.baidu.com/item/%E6%A1%B6%E6%8E%92%E5%BA%8F/4973777?fr=aladdin)
 
