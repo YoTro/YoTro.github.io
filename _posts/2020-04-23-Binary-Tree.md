@@ -108,6 +108,15 @@ class binarytree():
 						queue.append(node.right)
 ```
 
+### Delete a node
+
+**There are three situations when deleting:**
+
+1. The deleted node has no child nodes
+2. The deleted node has only one child node
+3. The deleted node has 2 child nodes
+
+
 ### Depth-first search of binary tree
 
 These searches are referred to as depth-first search (DFS), since the search tree is deepened as much as possible on each child before going to the next sibling. For a binary tree, they are defined as access operations at each node, starting with the current node, whose algorithm is as follows:
@@ -235,7 +244,13 @@ class binarytree():
 					else:
 						queue.append(node.right)
 ```				
+### 删除一个节点
 
+**删除的时候有三种情况**
+
+1. 被删除的节点没有子节点
+2. 被删除的节点有一个子节点
+3. 被删除的节点有2个子节点
 
 ### 深度优先遍历
 
