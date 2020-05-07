@@ -2,9 +2,9 @@
 title: Linkedlist
 date: 2020-05-07 16:51:00
 tags: [Graph,Linkedlist,python]
-music-id: 
+music-id: 247529
 youtube-video-ID: 
-bilibili-video-ID: 
+bilibili-video-ID: BV1wt411r7Zx
 mathjax: true
 
 ---
