@@ -452,7 +452,7 @@ if __name__ == '__main__':
 # [DP之我能赢吗](https://leetcode-cn.com/problems/can-i-win)
 
 <audio id="audio" controls="" preload="none">
-<source id="mp3" src="https://github.com/YoTro/YoTro.github.io/blob/master/audio/464_01_1.mp3">
+<source id="mp3" src="https://yotro.github.io/audio/464_01_1.mp3">
 </audio>
 
 今天我们讲的是动态规划之我能赢吗
