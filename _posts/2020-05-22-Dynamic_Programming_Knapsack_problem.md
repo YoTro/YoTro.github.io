@@ -10,8 +10,88 @@ bilibili-video-ID: BV1tC4y1H7yz
 
 # Knapsack problem
 
+> 跃入人海，各有风雨灿烂
+
 The knapsack problem is a problem in combinatorial optimization: Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible. It derives its name from the problem faced by someone who is constrained by a fixed-size knapsack and must fill it with the most valuable items. The problem often arises in resource allocation where the decision makers have to choose from a set of non-divisible projects or tasks under a fixed budget or time constraint, respectively.
 
 The knapsack problem has been studied for more than a century, with early works dating as far back as 1897. The name "knapsack problem" dates back to the early works of mathematician Tobias Dantzig (1884–1956),[2] and refers to the commonplace problem of packing the most valuable or useful items without overloading the luggage.
 
-<iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=%23include%20%3Cstdio.h%3E%0A%23include%20%3Cstdlib.h%3E%0A%23define%20min%28a,b%29%20%28%20%28a%29%3E%28b%29%20%3F%20%28b%29%3A%28a%29%20%29/*%E8%BF%94%E5%9B%9E%E6%9C%80%E5%B0%8F%E5%80%BC*/%0A%23define%20random%28x%29%20%28rand%28%29%25x%29/*%E9%9A%8F%E6%9C%BA%E5%87%BD%E6%95%B0*/%0A%23define%20INT_MAX%202147483647%20/*%E6%9C%80%E5%A4%A7%E5%80%BC%28%E9%9A%8F%E4%BE%BF%E5%AE%9A%E4%B9%89%E7%9A%84%29*/%0Aint%20retMin%20%3D%20INT_MAX%3B/*%E5%88%9D%E5%A7%8B%E5%8C%96retMin%20%3A%20%E6%9C%80%E5%B0%91%E7%A1%AC%E5%B8%81%E6%95%B0*/%0A%0A/*%E9%80%86%E5%BA%8F%E6%95%B0%E7%BB%84%E5%B9%B6%E4%BB%8E%E5%A4%A7%E5%88%B0%E5%B0%8F%E6%8E%92%E5%88%97*/%0Aint%20cmpCoin%28const%20void%20*a,%20const%20void%20*b%29%20%7B%0A%20%20int%20*ap%20%3D%20%28int%20*%29a%3B%0A%20%20int%20*bp%20%3D%20%28int%20*%29b%3B%0A%0A%20%20return%20*bp%20-%20*ap%3B%0A%7D%0A/*DFS%E6%B7%B1%E5%BA%A6%E9%81%8D%E5%8E%86%2B%E5%89%AA%E6%9E%9D*/%0Avoid%20coinChange_dfs%28int*%20coins,%20int%20coinsSize,%20int%20amount,%20int%20index,%20int%20c%29%20%7B%0A%20%20int%20i%3B/*%E5%BD%93%E5%89%8D%E7%A1%AC%E5%B8%81%E6%95%B0*/%0A%20%20%0A%20%20/*%E5%A6%82%E6%9E%9C%E5%88%9A%E5%A5%BD%E5%87%91%E5%A4%9Famount*/%0A%20%20if%20%28amount%20%3D%3D%200%29%20%7B%0A%20%20%20%20retMin%20%3D%20min%28c,%20retMin%29%3B%0A%20%20%20%20return%3B%0A%20%20%7D%0A%20%20/*%E5%A6%82%E6%9E%9C%E8%B6%8A%E7%95%8C%E5%88%99%E8%BF%94%E5%9B%9E*/%0A%20%20if%20%28index%20%3D%3D%20coinsSize%29%20return%3B%0A%20%20%0A%20%20for%20%28i%20%3D%20amount%20/%20coins%5Bindex%5D%3B%20i%20%3E%3D%200%20%26%26%20i%2Bc%20%3C%20retMin%3B%20i%20--%29%20%7B%0A%20%20%20%20coinChange_dfs%28coins,%20coinsSize,%20amount%20-%20i%20*%20coins%5Bindex%5D,%20index%2B1,%20c%2Bi%29%3B%0A%20%20%7D%0A%0A%7D%0A/*%E4%B8%BB%E5%87%BD%E6%95%B0%0A%E6%8D%A2%E9%9B%B6%E9%92%B1%3A%E7%94%A8%E6%9C%80%E5%B0%91%E7%9A%84%E7%A1%AC%E5%B8%81%E6%95%B0%E6%8D%A2%E5%88%9A%E5%A5%BD%E7%9A%84%E9%9B%B6%E9%92%B1%0Acoins%3A%E9%9D%A2%E9%A2%9D%E4%B8%8D%E7%AD%89%E7%9A%84%E6%95%B0%E7%BB%84%0AcoinsSize%3A%20coins%E6%95%B0%E7%BB%84%E7%9A%84%E5%A4%A7%E5%B0%8F%0Aamount%3A%20%E6%89%80%E8%A6%81%E4%BA%A4%E6%8D%A2%E7%9A%84%E7%9B%AE%E6%A0%87%E5%80%BC%E6%80%BB%E9%87%91%E9%A2%9D%0A*/%0Aint%20coinChange%28int*%20coins,%20int%20coinsSize,%20int%20amount%29%7B%0A%20%20/*%0A%20%20retMin%20%3A%20%E6%9C%80%E5%B0%91%E7%A1%AC%E5%B8%81%E6%95%B0%0A%20%20*/%0A%20%20retMin%20%3D%20INT_MAX%3B%0A%20%20/*%E5%A6%82%E6%9E%9C%E6%95%B0%E7%BB%84%E4%B8%BA%E7%A9%BA,%E5%88%99%E7%AB%8B%E9%A9%AC%E8%BF%94%E5%9B%9E-1*/%0A%20%20if%20%28%28coins%20%3D%3D%20NULL%29%20%7C%7C%20%28coinsSize%20%3D%3D%200%29%29%20%7B%0A%20%20%20%20return%20-1%3B%0A%20%20%7D%0A%20%20/*%E5%A6%82%E6%9E%9Camount%E4%B8%BA%E7%A9%BA,%E5%88%99%E7%AB%8B%E9%A9%AC%E8%BF%94%E5%9B%9E0,%E8%A1%A8%E7%A4%BA%E4%B8%8D%E9%9C%80%E8%A6%81%E4%BA%A4%E6%8D%A2*/%0A%20%20if%20%28amount%20%3D%3D%200%29%20%7B%0A%20%20%20%20return%200%3B%0A%20%20%7D%0A%20%20/*sorts%20an%20array%E5%AF%B9%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F*/%0A%20%20qsort%28coins,%20coinsSize,%20sizeof%28int%29,%20cmpCoin%29%3B%0A%20%20/*%E6%89%93%E5%8D%B0%E6%95%B0%E7%BB%84*/%0A%20%20for%28int%20x%20%3D%200%3B%20x%20%3C%20coinsSize%3B%20x%2B%2B%29%7B%0A%20%20%20%20printf%28%22coins%20%3D%20%25d%5Cn%22,%20coins%5Bx%5D%29%3B%0A%20%20%7D%0A%20%20%0A%20%20coinChange_dfs%28coins,%20coinsSize,%20amount,%200,%200%29%3B%0A%20%20/*%E5%A6%82%E6%9E%9C%E6%9C%80%E5%B0%8F%E7%A1%AC%E5%B8%81%E6%95%B0%E4%BE%9D%E7%84%B6%E7%AD%89%E4%BA%8E%E6%9C%80%E5%A4%A7%E5%80%BC%E8%A1%A8%E7%A4%BA%E5%8C%B9%E9%85%8D%E4%B8%8D%E5%88%B0%E9%9B%B6%E9%92%B1,%E8%BF%94%E5%9B%9E-1,%E5%90%A6%E5%88%99%E8%BF%94%E5%9B%9E%E6%9C%80%E5%B0%8F%E5%80%BC*/%0A%20%20return%20%28retMin%20%3D%3D%20INT_MAX%29%20%3F%20-1%20%3A%20retMin%3B%0A%7D%0A%0Aint%20main%28%29%0A%7B%0A%20%20int%20coins%5B%5D%3D%7B1,2,5,10,50,100%7D%3B%0A%20%20int%20amount%20%3D%2017%3B%0A%20%20printf%28%22amount%20%3D%20%25d%5Cn%22,%20amount%29%3B%0A%20%20int%20coinsSize%20%3D%20sizeof%28coins%29%20/%20sizeof%28coins%5B0%5D%29%3B%0A%20%20int%20res%3B%0A%20%20res%3DcoinChange%28coins,%20coinsSize,%20amount%29%3B%0A%20%20printf%28%22res%20%3D%20%25d%22,res%29%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=true&curInstr=136&heapPrimitives=true&origin=opt-frontend.js&py=c&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+<!--自定义右键-->
+<style type="text/css">
+    a {text-decoration: none;}
+    div.usercm{background-repeat:no-repeat;background-position:center center;background-size:cover;background-color:#fff;font-size:13px!important;width:130px;-moz-box-shadow:1px 1px 3px rgba
+(0,0,0,.3);box-shadow:0px 0px 15px #333;position:absolute;display:none;z-index:10000;opacity:0.9; border-radius: 8px;}
+    div.usercm ul{list-style-type:none;list-style-position:outside;margin:0px;padding:0px;display:block}
+    div.usercm ul li{margin:0px;padding:0px;line-height:35px;}
+    div.usercm ul li a{color:#666;padding:0 15px;display:block}
+    div.usercm ul li a:hover{color:#fff;background:#CCCCFF;}
+    div.usercm ul li a i{margin-right:10px}
+    a.disabled{color:#c8c8c8!important;cursor:not-allowed}
+    a.disabled:hover{background-color:rgba(255,11,11,0)!important}
+    div.usercm{background:#fff !important;}
+    </style>
+<div class="usercm" style="left: 199px; top: 5px; display: none;">
+    <ul>
+        <li><a href="https://www.52itm.com/"><i class="fa fa-home fa-fw"></i><span>首页</span></a></li>
+        <li><a href="javascript:void(0);" onclick="getSelect();"><i class="fa fa-copy fa-fw"></i><span>复制</span></a></li>
+        <li><a href="javascript:void(0);" onclick="baiduSearch();"><i class="fa fa-search fa-fw"></i><span>搜索</span></a></li>
+        <li><a href="javascript:history.go(1);"><i class="fa fa-arrow-right fa-fw"></i><span>前进</span></a></li>
+        <li><a href="javascript:history.go(-1);"><i class="fa fa-arrow-left fa-fw"></i><span>后退</span></a></li>
+        <li><a href="javascript:window.location.reload();"><i class="fa fa-refresh fa-fw"></i><span>重载网页</span></a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    (function(a) {
+        a.extend({
+            mouseMoveShow: function(b) {
+                var d = 0,
+                    c = 0,
+                    h = 0,
+                    k = 0,
+                    e = 0,
+                    f = 0;
+                a(window).mousemove(function(g) {
+                    d = a(window).width();
+                    c = a(window).height();
+                    h = g.clientX;
+                    k = g.clientY;
+                    e = g.pageX;
+                    f = g.pageY;
+                    h + a(b).width() >= d && (e = e - a(b).width() - 5);
+                    k + a(b).height() >= c && (f = f - a(b).height() - 5);
+                    a("html").on({
+                        contextmenu: function(c) {
+                            3 == c.which && a(b).css({
+                                left: e,
+                                top: f
+                            }).show()
+                        },
+                        click: function() {
+                            a(b).hide()
+                        }
+                    })
+                })
+            },
+            disabledContextMenu: function() {
+                window.oncontextmenu = function() {
+                    return !1
+                }
+            }
+        })
+    })(jQuery);
+     
+    function getSelect() {
+        "" == (window.getSelection ? window.getSelection() : document.selection.createRange().text) ? layer.msg("请选择文字！") : document.execCommand("Copy")
+    }
+    function baiduSearch() {
+        var a = window.getSelection ? window.getSelection() : document.selection.createRange().text;
+        "" == a ? layer.msg("请选择文字！") : window.open("https://www.baidu.com/s?wd=" + a)
+    }
+    $(function() {
+        for (var a = navigator.userAgent, b = "Android;iPhone;SymbianOS;Windows Phone;iPad;iPod".split(";"), d = !0, c = 0; c < b.length; c++) if (0 < a.indexOf(b[c])) {
+            d = !1;
+            break
+        }
+        d && ($.mouseMoveShow(".usercm"), $.disabledContextMenu())
+    });
+    </script>
