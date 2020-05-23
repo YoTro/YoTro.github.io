@@ -65,7 +65,17 @@
     {% endunless %}
 
   </div>
-
+  <!--   自定义右键 --->
+  <div class="usercm" style="left: 199px; top: 5px; display: none;">
+      <ul>
+          <li><a href="https://www.52itm.com/"><i class="fa fa-home fa-fw"></i><span>首页</span></a></li>
+          <li><a href="javascript:void(0);" onclick="getSelect();"><i class="fa fa-copy fa-fw"></i><span>复制</span></a></li>
+          <li><a href="javascript:void(0);" onclick="baiduSearch();"><i class="fa fa-search fa-fw"></i><span>搜索</span></a></li>
+          <li><a href="javascript:history.go(1);"><i class="fa fa-arrow-right fa-fw"></i><span>前进</span></a></li>
+          <li><a href="javascript:history.go(-1);"><i class="fa fa-arrow-left fa-fw"></i><span>后退</span></a></li>
+          <li><a href="javascript:window.location.reload();"><i class="fa fa-refresh fa-fw"></i><span>重载网页</span></a></li>
+      </ul>
+  </div>
   {% include _scripts/vendors.html %}
   {% include _scripts/commons.html %}
 
