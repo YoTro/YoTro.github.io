@@ -145,22 +145,31 @@
 </script>
 
 <!-- Load codemirror python js-->
-<script src="https://cdn.staticfile.org/codemirror/5.48.2/codemirror.min.js"></script>
-<script src="https://cdn.staticfile.org/codemirror/5.48.2/addon/mode/simple.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.54.0/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.54.0/addon/mode/simple.min.js"></script>
 <link rel="stylesheet" href="//cdn.staticfile.org/codemirror/5.48.2/codemirror.min.css">
-<script src="https://cdn.staticfile.org/codemirror/5.48.2/mode/python/python.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.54.0/mode/python/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.54.0/addon/edit/matchbrackets.min.js"></script>
 <script>
 var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
   lineNumbers: true,
-  matchBrackets: true,
+  matchBrackets: true,// 是否添加匹配括号高亮
   mode: "text/x-python",
   indentUnit: 4,
   indentWithTabs: true,
 });
-btn = $("#submitBTN");
-editor.on("change",function(editor,change){
-  btn.prop('disabled', false);
-});
+// 这里实现的功能就是按下左括号，自动添加右括号
+// 中括号，大括号同理
+editor.addKeyMap({
+    name: 'autoInsertParentheses',
+    "'('": (cm) => {
+        const cur = cm.getCursor()
+
+        cm.replaceRange('()', cur, cur, '+insert')
+        cm.doc.setCursor({ line: cur.line, ch: cur.ch + 1 })
+    }
+})
+
 
 </script>
 <!------------------------------------------------------------------------------------------->

@@ -65,6 +65,29 @@
     {% endunless %}
 
   </div>
+<!-- Load codemirror python js-->
+  <script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    matchBrackets: true,// 是否添加匹配括号高亮
+    mode: "text/x-python",
+    indentUnit: 4,
+    indentWithTabs: true,
+  });
+  // 这里实现的功能就是按下左括号，自动添加右括号
+  // 中括号，大括号同理
+  editor.addKeyMap({
+      name: 'autoInsertParentheses',
+      "'('": (cm) => {
+          const cur = cm.getCursor()
+
+          cm.replaceRange('()', cur, cur, '+insert')
+          cm.doc.setCursor({ line: cur.line, ch: cur.ch + 1 })
+      }
+  })
+
+
+  </script>
 
   {% include _scripts/vendors.html %}
   {% include _scripts/commons.html %}
