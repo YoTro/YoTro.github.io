@@ -2,7 +2,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-
 {% if site.pace %}
   {% assign pace_css_uri = site.vendors._internal | append: '/pace/'| append: site.pace_theme | append: '.min.css?v=1.0.2' | relative_url %}
   {% assign pace_js_uri = site.vendors._internal | append: '/pace/pace.min.js?v=1.0.2' | relative_url %}
@@ -145,6 +144,146 @@
 }(document, 'script', 'facebook-jssdk'));
 </script>
 
+<!-- Load codemirror python js-->
+<script src="//cdn.staticfile.org/codemirror/5.48.2/codemirror.min.js"></script>
+<script src="https://cdn.staticfile.org/codemirror/5.48.2/addon/mode/simple.min.js"></script>
+<link rel="stylesheet" href="//cdn.staticfile.org/codemirror/5.48.2/codemirror.min.css">
+<script src="//cdn.staticfile.org/codemirror/5.48.2/mode/python/python.js"></script>
+<script>
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+  lineNumbers: true,
+  matchBrackets: true,
+  mode: "text/x-python",
+  indentUnit: 4,
+  indentWithTabs: true,
+});
+btn = $("#submitBTN");
+editor.on("change",function(editor,change){
+  btn.prop('disabled', false);
+});
+btn.click(function() {
+  btn.prop('disabled', true);
+  loadingdata = '程序正在运行中……';
+  $("#compiler-textarea-result").val(loadingdata);
+  
+  code = editor.getValue();
+  stdin = '';
+  if ($('#stdin').length > 0) { 
+    stdin = $("#stdin").val();
+  }
+  token = '4381fe197827ec87cbac9552f14ec62a';
+  runcode = 0;
+  $.post("https://tool.runoob.com/compile2.php",{code:code,token:token,stdin:stdin,language:runcode, fileext:"py"},function(data){
+      $("#compiler-textarea-result").val(data.output + data.errors);
+  });
+  setTimeout(function(){
+        btn.prop('disabled', false);
+    }, 10*1000);
+});
+$("#clearCode").click(function() {
+  var r=confirm("确认清空？");
+  if (r==true){
+    editor.setValue("");
+    editor.clearHistory();
+    $("#compiler-textarea-result").val("");
+    btn.prop('disabled', true);
+  }
+});
+
+$(function(){
+  // bind change event to select
+  $('#sel1').on('change', function () {
+      var url = $(this).val(); // get selected value
+      if (url) { // require a URL
+          window.location = url; // redirect
+      }
+      return false;
+  });
+});
+
+</script>
+<!------------------------------------------------------------------------------------------->
+
+<!--自定义右键-->
+<style type="text/css">
+    a {text-decoration: none;}
+    div.usercm{background-repeat:no-repeat;background-position:center center;background-size:cover;background-color:#fff;font-size:13px!important;width:130px;-moz-box-shadow:1px 1px 3px rgba
+(0,0,0,.3);box-shadow:0px 0px 15px #333;position:absolute;display:none;z-index:10000;opacity:0.9; border-radius: 8px;}
+    div.usercm ul{list-style-type:none;list-style-position:outside;margin:0px;padding:0px;display:block}
+    div.usercm ul li{margin:0px;padding:0px;line-height:35px;}
+    div.usercm ul li a{color:#666;padding:0 15px;display:block}
+    div.usercm ul li a:hover{color:#fff;background:#CCCCFF;}
+    div.usercm ul li a i{margin-right:10px}
+    a.disabled{color:#c8c8c8!important;cursor:not-allowed}
+    a.disabled:hover{background-color:rgba(255,11,11,0)!important}
+    div.usercm{background:#fff !important;}
+    </style>
+<div class="usercm" style="left: 199px; top: 5px; display: none;">
+    <ul>
+        <li><a href="https://www.52itm.com/"><i class="fa fa-home fa-fw"></i><span>首页</span></a></li>
+        <li><a href="javascript:void(0);" onclick="getSelect();"><i class="fa fa-copy fa-fw"></i><span>复制</span></a></li>
+        <li><a href="javascript:void(0);" onclick="baiduSearch();"><i class="fa fa-search fa-fw"></i><span>搜索</span></a></li>
+        <li><a href="javascript:history.go(1);"><i class="fa fa-arrow-right fa-fw"></i><span>前进</span></a></li>
+        <li><a href="javascript:history.go(-1);"><i class="fa fa-arrow-left fa-fw"></i><span>后退</span></a></li>
+        <li><a href="javascript:window.location.reload();"><i class="fa fa-refresh fa-fw"></i><span>重载网页</span></a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    (function(a) {
+        a.extend({
+            mouseMoveShow: function(b) {
+                var d = 0,
+                    c = 0,
+                    h = 0,
+                    k = 0,
+                    e = 0,
+                    f = 0;
+                a(window).mousemove(function(g) {
+                    d = a(window).width();
+                    c = a(window).height();
+                    h = g.clientX;
+                    k = g.clientY;
+                    e = g.pageX;
+                    f = g.pageY;
+                    h + a(b).width() >= d && (e = e - a(b).width() - 5);
+                    k + a(b).height() >= c && (f = f - a(b).height() - 5);
+                    a("html").on({
+                        contextmenu: function(c) {
+                            3 == c.which && a(b).css({
+                                left: e,
+                                top: f
+                            }).show()
+                        },
+                        click: function() {
+                            a(b).hide()
+                        }
+                    })
+                })
+            },
+            disabledContextMenu: function() {
+                window.oncontextmenu = function() {
+                    return !1
+                }
+            }
+        })
+    })(jQuery);
+     
+    function getSelect() {
+        "" == (window.getSelection ? window.getSelection() : document.selection.createRange().text) ? layer.msg("请选择文字！") : document.execCommand("Copy")
+    }
+    function baiduSearch() {
+        var a = window.getSelection ? window.getSelection() : document.selection.createRange().text;
+        "" == a ? layer.msg("请选择文字！") : window.open("https://www.baidu.com/s?wd=" + a)
+    }
+    $(function() {
+        for (var a = navigator.userAgent, b = "Android;iPhone;SymbianOS;Windows Phone;iPad;iPod".split(";"), d = !0, c = 0; c < b.length; c++) if (0 < a.indexOf(b[c])) {
+            d = !1;
+            break
+        }
+        d && ($.mouseMoveShow(".usercm"), $.disabledContextMenu())
+    });
+    </script>
+<!------------------------------------------------------------------------------------------->
 
 
 {% comment %} Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066 {% endcomment %}
