@@ -25,18 +25,18 @@ On the other hand, since simple linked lists by themselves do not allow random a
 
 ## Create Linked list 
 
-{% highlight ruby linenos %}
+```python
 class ListNode(object):
  def __init__(self, x):
      self.val = x
      self.next = None
 res = []
 
-{% endhighlight %}
+```
 
 ## Add and Traversal
 
-{% highlight ruby linenos %}
+```python
 class Solution:
     
     def __init__(self):
@@ -60,13 +60,13 @@ class Solution:
             self.dfs(head.next)
         
         return res
-    
+```   
 
-{% endhighlight %}
+
 
 ## Delete
 
-{% highlight ruby linenos %}
+```python
     def delete(self, head, x):
         if not head or not head.next:
             return None
@@ -77,11 +77,11 @@ class Solution:
         if b.val == x:
             a.next = b.next
         return head
-{% endhighlight %}
+```
 
 ## Search
 
-{% highlight ruby linenos %}
+```python
     def search(self, x):
         node = self.head
         found = False
@@ -93,11 +93,11 @@ class Solution:
             else:
                 node = node.next
         print("We can't found this node")
-{% endhighlight %}
+```
 
 ## Insert
 
-{% highlight ruby linenos %}
+```python
     def insert(self, index, x):
         '''
         index->int: 索引要插入的地方
@@ -111,11 +111,11 @@ class Solution:
             node.next = tmp
             tmp.next = node.next.next
         return self.head
-{% endhighlight %}
+```
 
 ## Update
 
-{% highlight ruby linenos %}
+```python
    def update(self, index, x):
         '''
         index->int: original node
@@ -130,7 +130,7 @@ class Solution:
         else:
             return None
         return node
-{% endhighlight %}
+```
 
 ### [Reverse Linked list](https://leetcode-cn.com/problems/reverse-linked-list/)
 
@@ -154,7 +154,7 @@ class Solution:
 [loading...](https://pic.leetcode-cn.com/1318eda47ab9b0d505b98b5c11503012053a1bbcf754ce0c0145af14de5d41cd-%E5%B9%BB%E7%81%AF%E7%89%8718.jpg)[loading...](https://pic.leetcode-cn.com/a0669e29700f80938c95faf9a5cc839d316a31b6f6613da88bcdd31636897d96-%E5%B9%BB%E7%81%AF%E7%89%8719.jpg)[loading...](https://pic.leetcode-cn.com/30db7c04d56193840e53c4dc6c6f095ebe80b2b7a71107ca5ed19da499467914-%E5%B9%BB%E7%81%AF%E7%89%8720.jpg)[loading...](https://pic.leetcode-cn.com/052984cbdec432f46e771e0c7f214b7303941e4a11a7f59ee53a519e6b400adc-%E5%B9%BB%E7%81%AF%E7%89%8721.jpg)[loading...](https://pic.leetcode-cn.com/e096fac734909bc4b1ff55d8446332b5d7e67ec238266b0427ad0d69bc50174b-%E5%B9%BB%E7%81%AF%E7%89%8722.jpg)[loading...](https://pic.leetcode-cn.com/4e0975fd8d898364d24177684967fdf72d9476e64341c375ac2b5df7130b2f0a-%E5%B9%BB%E7%81%AF%E7%89%8723.jpg)
 [loading...](https://pic.leetcode-cn.com/5625ed08dbaa84719f0b4b631fa6c4c7f08c1c5cf18646dbab2f65d410e99e8f-%E5%B9%BB%E7%81%AF%E7%89%8724.jpg)
 
-{% highlight ruby linenos %}
+```python
 class Solution(object):
 	def reverseList(self, head):
 		"""
@@ -175,7 +175,7 @@ class Solution(object):
 		head.next = None
 		return cur
 
-{% endhighlight %}
+```
 
 ## Source code
 
@@ -205,7 +205,7 @@ res = []
 
 ## 添加和遍历
 
-{% highlight ruby linenos %}
+```python
 class Solution:
     
     def __init__(self):
@@ -230,11 +230,11 @@ class Solution:
         
         return res
     
-{% endhighlight %}
+```
 
 ## 删除
 
-{% highlight ruby linenos %}
+```python
     def delete(self, head, x):
         if not head or not head.next:
             return None
@@ -245,11 +245,11 @@ class Solution:
         if b.val == x:
             a.next = b.next
         return head
-{% endhighlight %}
+```
 
 ## 查询
 
-{% highlight ruby linenos %}
+```python
     def search(self, x):
         node = self.head
         found = False
@@ -261,11 +261,11 @@ class Solution:
             else:
                 node = node.next
         print("We can't found this node")
-{% endhighlight %}
+```
 
 ## 插入
 
-{% highlight ruby linenos %}
+```python
     def insert(self, index, x):
         '''
         index->int: 索引要插入的地方
@@ -279,11 +279,11 @@ class Solution:
             node.next = tmp
             tmp.next = node.next.next
         return self.head
-{% endhighlight %}
+```
 
 ## 更新
 
-{% highlight ruby linenos %}
+```python
    def update(self, index, x):
         '''
         index->int: original node
@@ -298,7 +298,7 @@ class Solution:
         else:
             return None
         return node
-{% endhighlight %}
+```
 
 ## [反转链表](https://leetcode-cn.com/problems/reverse-linked-list/)
 
@@ -323,7 +323,7 @@ class Solution:
 [loading...](https://pic.leetcode-cn.com/5625ed08dbaa84719f0b4b631fa6c4c7f08c1c5cf18646dbab2f65d410e99e8f-%E5%B9%BB%E7%81%AF%E7%89%8724.jpg)
 
 
-{% highlight ruby linenos %}
+```python
 class Solution(object):
 	def reverseList(self, head):
 		"""
@@ -345,7 +345,7 @@ class Solution(object):
 		# 每层递归函数都返回cur，也就是最后一个节点
 		return cur
 
-{% endhighlight %}
+```
 
 ## 源码
 

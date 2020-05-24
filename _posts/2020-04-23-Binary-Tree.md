@@ -31,7 +31,7 @@ Second, as a representation of data with a relevant bifurcating structure. In su
 ## Classify
 
 1. Perfect Tree:
-
+```
        x
      /   \
     /     \
@@ -40,10 +40,10 @@ Second, as a representation of data with a relevant bifurcating structure. In su
  x   x   x   x
 / \ / \ / \ / \
 x x x x x x x x
-
+```
 2. Complete Tree:  
 A Binary Tree is complete Binary Tree if all levels are completely filled except possibly the last level ad then last level has all keys as left as possible.
-
+```
        x
      /   \
     /     \
@@ -52,10 +52,10 @@ A Binary Tree is complete Binary Tree if all levels are completely filled except
  x   x   x   x
 / \ /
 x x x
-
+```
 3. Strict/Full Tree:  
 Each node has exactly 0 or 2 children.
-
+```
        x
      /   \
     /     \
@@ -64,7 +64,7 @@ Each node has exactly 0 or 2 children.
  x   x 
     / \
     x x 
-
+```
 
 ## Create and [Traveral](https://en.wikipedia.org/wiki/Tree_traversal)
 
@@ -171,6 +171,7 @@ Access the data part of the current node.
 ## [分类](https://stackoverflow.com/questions/12359660/difference-between-complete-binary-tree-strict-binary-tree-full-binary-tre)
 
 1. 满二叉树(Strict/Full Tree)
+ ```
        x
      /   \
     /     \
@@ -179,8 +180,9 @@ Access the data part of the current node.
  x   x 
     / \
     x x 
+ ```
 2. 完全二叉树(Complete Tree)
-
+```
        x
      /   \
     /     \
@@ -189,10 +191,12 @@ Access the data part of the current node.
  x   x   x   x
 / \ /
 x x x
+```
 
 3. 平衡二叉树
 
 4. 完美二叉树(Perfect tree)
+```
        x
      /   \
     /     \
@@ -201,7 +205,7 @@ x x x
  x   x   x   x
 / \ / \ / \ / \
 x x x x x x x x
-
+```
 ## 二叉树的创建与遍历
 
 ### 定义一个节点
