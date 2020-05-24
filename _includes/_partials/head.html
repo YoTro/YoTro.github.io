@@ -150,30 +150,9 @@
 <link rel="stylesheet" href="//cdn.staticfile.org/codemirror/5.48.2/codemirror.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.54.0/mode/python/python.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.54.0/addon/edit/matchbrackets.min.js"></script>
-<script>
-var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-  lineNumbers: true,
-  matchBrackets: true,// 是否添加匹配括号高亮
-  mode: "text/x-python",
-  indentUnit: 4,
-  indentWithTabs: true,
-});
-// 这里实现的功能就是按下左括号，自动添加右括号
-// 中括号，大括号同理
-editor.addKeyMap({
-    name: 'autoInsertParentheses',
-    "'('": (cm) => {
-        const cur = cm.getCursor()
+<!-- end codemirror python js-->
 
-        cm.replaceRange('()', cur, cur, '+insert')
-        cm.doc.setCursor({ line: cur.line, ch: cur.ch + 1 })
-    }
-})
-
-
-</script>
-<!------------------------------------------------------------------------------------------->
-
+<script src="{{ relative_url }}/assets/lib/prism/prism.js"></script>
 
 {% comment %} Canonical, good for google search engine (SEO) : https://support.google.com/webmasters/answer/139066 {% endcomment %}
 {% if site.canonical %}

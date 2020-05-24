@@ -20,3 +20,7 @@ The knapsack problem has been studied for more than a century, with early works 
     # -*- coding: UTF-8 -*-
 print 'Hello World!'
 </textarea>
+
+```python
+print("hello world")
+```
