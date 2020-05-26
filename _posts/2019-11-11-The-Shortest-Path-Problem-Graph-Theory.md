@@ -34,7 +34,7 @@ For the undirected graphs with nonnegative weights G, two sets Q and S, Q stores
 
 ## The code
 
-{% highlight ruby linenos %}  
+```python 
 # dists: the distance of shortest path 
 # parents: You can use the parent node to make the shortest path tree
 def dij(start, graph):
@@ -96,8 +96,7 @@ print('dists')
 print(dists)
 print('parents')
 print(parents)
-
-{% endhighlight %}
+```
 
 <span id="CN"></span>
 # 图论之最短路径问题
@@ -125,7 +124,7 @@ print(parents)
 
 ### 代码实现
 
-{% highlight ruby linenos %}   
+```python
 def dij(start, graph):
     n = len(graph)
     if n == 0:
@@ -189,7 +188,7 @@ print(dists)
 print('parents')
 print(parents)
 
-{% endhighlight %}
+```
 
 其中graph=
 [  
