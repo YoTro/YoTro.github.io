@@ -341,6 +341,105 @@ class Solution():
         return -1
 
 ```
+
+#### [tarjan](https://baike.baidu.com/item/tarjan%E7%AE%97%E6%B3%95) + Astar算法
+
+[tarjan](https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm)
+
+Tarjan's algorithm is an algorithm in graph theory for finding the strongly connected components of a directed graph. It runs in linear time, matching the time bound for alternative methods including Kosaraju's algorithm and the path-based strong component algorithm. Tarjan's algorithm is named for its inventor, Robert Tarjan.
+
+The algorithm takes a directed graph as input, and produces a partition of the graph's vertices into the graph's strongly connected components. Each vertex of the graph appears in exactly one of the strongly connected components. Any vertex that is not on a directed cycle forms a strongly connected component all by itself: for example, a vertex whose in-degree or out-degree is 0, or any vertex of an acyclic graph.
+
+The basic idea of the algorithm is this: a depth-first search begins from an arbitrary start node (and subsequent depth-first searches are conducted on any nodes that have not yet been found). As usual with depth-first search, the search visits every node of the graph exactly once, declining to revisit any node that has already been visited. Thus, the collection of search trees is a spanning forest of the graph. The strongly connected components will be recovered as certain subtrees of this forest. The roots of these subtrees are called the "roots" of the strongly connected components. Any node of a strongly connected component might serve as a root, if it happens to be the first node of a component that is discovered by search.
+
+`Stack invariant`
+
+Nodes are placed on a stack in the order in which they are visited. When the depth-first search recursively visits a node v and its descendants, those nodes are not all necessarily popped from the stack when this recursive call returns. The crucial invariant property is that a node remains on the stack after it has been visited if and only if there exists a path in the input graph from it to some node earlier on the stack. In other words it means that in the DFS a node would be only removed from the stack after all its connected paths have been traversed. When the DFS will backtrack it would remove the nodes on a single path and return back to the root in order to start a new path.
+
+At the end of the call that visits v and its descendants, we know whether v itself has a path to any node earlier on the stack. If so, the call returns, leaving v on the stack to preserve the invariant. If not, then v must be the root of its strongly connected component, which consists of v together with any nodes later on the stack than v (such nodes all have paths back to v but not to any earlier node, because if they had paths to earlier nodes then v would also have paths to earlier nodes which is false). The connected component rooted at v is then popped from the stack and returned, again preserving the invariant.
+
+`Bookkeeping`
+
+Each node v is assigned a unique integer v.index, which numbers the nodes consecutively in the order in which they are discovered. It also maintains a value v.lowlink that represents the smallest index of any node known to be reachable from v through v's DFS subtree, including v itself. Therefore v must be left on the stack if v.lowlink < v.index, whereas v must be removed as the root of a strongly connected component if v.lowlink == v.index. The value v.lowlink is computed during the depth-first search from v, as this finds the nodes that are reachable from v.
+
+###### 源码
+```python
+#coding:utf-8
+def tarjan_scc(graph):
+    """
+    Tarjan's Algorithm (named for its discoverer, Robert Tarjan) is a graph theory algorithm
+    for finding the strongly connected components of a graph.
+    
+    Based on: http://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm
+    """
+
+    count = [0]        #编号器(ps: 为什么不用int?因为数组的作用域大于int,可以作用于整个递归函数.当然我们也可以在函数参数上传入一个int类型的初始值)
+    stack = []         #用来存储被访问过的强连通节点
+    low = {}           #记录节点访问时的编号并在每次遍历子节点时更新它来找到它的父节点,以此来找到整个搜索子树的根节点
+    dfn = {}           #depth-first-number:为节点添加首次访问的时间戳,节点一旦被访问打上时间戳,就不在被修改
+    result = []        #最终需要返回的结果(所有强连通分量,和单个节点)
+    
+    def strongconnect(node):
+
+        dfn[node] = count[0]# Give each node a depth first search label index
+        low[node] = count[0]
+        count[0] += 1
+        stack.append(node)
+    
+        # If the node is a single node and no other nodes are connected, it is empty
+        try:
+            E = graph[node]
+        except:
+            E = []
+        #Depth traverse the child nodes E of a node (which can be called the root of a strongly connected component because it is the first node to be visited)
+        for v in E:
+            if v not in low:
+                # If the subsequent node v is not traversed, recursively call the strongconnect function to add v to low and number it into the stack
+                strongconnect(v)
+                low[node] = min(low[node],low[v])
+
+            #if node has been traversed, find its father node
+            elif v in stack:
+                # return the mini number 
+                low[node] = min(low[node],dfn[v])
+        
+        # If the node is the root,  the node is at the bottom of the stack, pop the strong connected component from stack.
+        if low[node] == dfn[node]:
+            connected_component = []
+            #Add all the child nodes of root(node) in the stack to result
+            while True:
+                v = stack.pop()
+                connected_component.append(v)
+                if v == node:
+                    break
+            component = tuple(connected_component)
+            result.append(component)
+    #Push into the stack in turn and traverse all nodes of the graph to prevent the existence of nodes not traversed due to run tarjan one times
+    for node in graph:
+        if node not in low:
+            strongconnect(node)
+    return result
+if __name__ == '__main__':
+    
+    grid = {
+    "A": {"B":5,"C":1},
+    "B": {"A":5,"C":2,"D":1},
+    "C": {"A":1,"B":2,"D":4,"E":8},
+    "D": {"B":1,"C":4,"E":3,"F":6},
+    "E": {"C":8,"D":3},
+    "F": {"D":6},
+    "G": {"F":3, "H":5,"S":19},
+    "H": {"G":5,"I":8,"J":4},
+    "I": {"H":8,"K":3}
+    }
+    ret = tarjan_scc(grid)
+    print("The strongly connected componets is \n{}\n".format(ret))
+
+```
+
+In this problem, we only need to use tarjan to make the current player's coordinates form strong connection with the next position next to the box, then we can reach and push the box without calculating the steps, and the box is OK as long as we get the shortest path according to the astar algorithm
+
+
 ## Reference
 
 1. [leetcode typingMonkey](https://leetcode-cn.com/u/tuotuoli/)
@@ -348,6 +447,8 @@ class Solution():
 3. http://www.logarithmic.net/pfh-files/blog/01208083168/tarjan.py
 4. [1972 Depth-First Search and Linear Graph Algorithms
 ](https://epubs.siam.org/doi/abs/10.1137/0201010)
+5. [Algorithm 447 Efficient Algorithms for Graph Manipulation [H]](https://dl.acm.org/doi/pdf/10.1145/362248.362272)
+
 
 <span id="CN">
 
@@ -710,12 +811,10 @@ Tarjan算法 （以发现者Robert Tarjan[1]命名）是一个基于深度优先
 节点按照被访问的顺序存入堆栈中。
 从搜索树的子树返回至一个节点时，检查该节点是否是某一强连通分量的根节点并将其从堆栈中删除。
 	如果某节点是强连通分量的根，则在它之前出堆栈且还不属于其他强连通分量的节点构成了该节点所在的强连通分量。
+
+[源码]
 ```python
 #coding:utf-8
-import heapq
-import copy
-import collections
-import time
 def strongly_connected_components(graph):
     """
     Tarjan's Algorithm (named for its discoverer, Robert Tarjan) is a graph theory algorithm
