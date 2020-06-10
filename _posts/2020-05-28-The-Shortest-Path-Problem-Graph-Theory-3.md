@@ -38,7 +38,6 @@ Python has a heapq module that implements a priority queue using a binary heap. 
 
 ### Complexity
 
-| | |
 |: ---: |: --- :: |
 | Average time complexity | (n log n) |
 | Worst time complexity | O (n log n) |
@@ -124,7 +123,7 @@ if __name__ == '__main__':
     print("Heapsort totoal time is {}s\n".format(T))
 
 ```
-##Source code
+## Source code
 
 Build heap
 ```c 
@@ -309,11 +308,10 @@ int main(void)
 
 ### 复杂度
 
-| | |
 |:---:|:---:|
-|平均时间复杂度| (n\log n)|
-|最坏时间复杂度|	 O(n\log n)|
-|最优时间复杂度|	 O(n\log n)|
+|平均时间复杂度| (nlog n)|
+|最坏时间复杂度|	 O(nlog n)|
+|最优时间复杂度|	 O(nlog n)|
 |空间复杂度|	 O(n) total, O(1) auxiliary|
 |最佳解|	不是|
 
@@ -395,7 +393,7 @@ if __name__ == '__main__':
     print("Heapsort totoal time is {}s\n".format(T))
 
 ```
-##Source code
+## Source code
 
 Build heap
 ```c 
