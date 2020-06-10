@@ -1,7 +1,7 @@
 ---
 title: Heap
 date: 2020-05-28 19:59:00
-tags: [Graph,C]
+tags: [Graph,C,Python]
 music-id: 
 youtube-video-ID: 
 bilibili-video-ID: 
