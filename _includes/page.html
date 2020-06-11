@@ -39,6 +39,10 @@
         {{ list_categories }}
       </div>
     </div>
+  {% elsif page.type == 'about' %}
+
+  <script type="text/javascript" src="/assets/lib/snippet/timecount.js"></script>
+  {% include about.html %}
   {% else %}
     {{ content }}
   {% endif %}
