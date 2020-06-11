@@ -37,6 +37,7 @@
         <div class="content-wrap">
           <div id="content" class="content">
             {{ content }}
+            {% include about.html %}
           </div>
           {% include _third-party/duoshuo-hot-articles.html %}
           {% include _partials/comments.html %}
@@ -98,7 +99,7 @@
       }
   }
   </script>
-  {% include about.html %}
+
 
   {% include _scripts/vendors.html %}
   {% include _scripts/commons.html %}
