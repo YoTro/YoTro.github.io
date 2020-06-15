@@ -60,6 +60,8 @@ Now,it is so easy.Only change `map` to `ocr`
 
 [RegExr](http://regexr.com/) can use `\w/g` get letters and tell you where they are.
 
+### [source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/1.py)
+
 ---
 
 ## The 2 level ##
@@ -83,6 +85,34 @@ We can know the password is `equality`
 
 [http://www.pythonchallenge.com/pc/def/ocr.html](http://www.pythonchallenge.com/pc/def/ocr.html)
 
+### [source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/2.py)
+```python 
+str="g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj."
+key=[chr(i) for i in range(97,123)]#字典键值为a-z
+value=[chr(i) for i in range(99,123)]
+for i in range(97,99):
+	value.append(chr(i))
+#打包到一个字典里
+z=dict(zip(key,value))
+#添加字典
+z[' ']=' '
+z['(']='('
+z[')']=')'
+z['.']='.'
+z['\'']='\''
+t=False
+
+u=list(str)
+k=len(u)+1
+for i in range(k):
+        
+        print z[u[i]],
+        if z[u[i]]=='.':
+                print '\n'
+        if i==k:
+                t=True#循环到最后一个字符退出循环
+```
+
 ---
 
 ## The 3 level ##
@@ -104,6 +134,8 @@ This level tell us how to use `re` which like `xXXXxXXXx`.
 
 
 But the web change from `html` to `php`
+
+### [source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/3.py)
 
 ---
 
@@ -128,6 +160,33 @@ If you don't know what is [re](https://www.runoob.com/python/python-reg-expressi
 
 ```
 http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=(\d+)
+```
+### [source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/4.py)
+```python
+import urllib2,re 
+r=re.compile(r'.*?(\d+)$')  
+nextnothing='12345'  
+i=1
+t=True
+while t:
+                try:
+
+                        f=urllib2.urlopen('http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing=%s'% nextnothing)
+                        result=f.read()
+                        f.close()
+                        print i,result
+                        nextnothing=r.search(result).group(1)
+                        if  nextnothing=='16044':
+                                nextnothing='8022'
+                        if result=='peak.html':
+                                t=False
+                        i+=1
+                except:
+                        if result=='peak.html':
+                                t=False
+                        print 'error'
+                      
+
 ```
 ---
 ## The 5 level ##
@@ -186,10 +245,148 @@ pickle functions
 [http://www.pythonchallenge.com/pc/def/peak.html](http://www.pythonchallenge.com/pc/def/peak.html)
 
 ```
+### [source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/5.py)
+
+```python
+import urllib2,pprint
+import cPickle as pickle
+b=urllib2.urlopen('http://www.pythonchallenge.com/pc/def/banner.p')#get该地址文件，b类型为实例（isinstant）
+result=pickle.Unpickler(b).load()#创造一个unpickler文件反序列化成list
+pprint.pprint(result)#打印result
+output=open('c:\\Users\\Administrator\\Desktop\\5text.txt','w')
+for line in result:
+    print >> output, ' '.join([c[0]*c[1] for c in line])#元组（tuple)元素相乘转成字符串写入5text文件
+output.close()#关闭文件
+```
 ---
 
 ## The 6 level ##
 
 ![loading...](/images/pythonchallenge/6.jpg)
 
+```html
+<!-- <-- zip -->
+
+·····
+
+```
+change the `http://www.pythonchallenge.com/pc/def/channel.html` to `http://www.pythonchallenge.com/pc/def/channel.zip`, then download a zip file.
+
+A readme.txt tell us 
+```
+welcome to my zipped list.
+
+hint1: start from 90052
+hint2: answer is inside the zip
+```
+Every files in this zip has a string: "Next nothing is (a int number)", so we need to travel these files match the number then find a final number
+
+### Answer
+
+```python
+import re
+c = 0
+n = ['90052']#if chose other numbers, iteration will decrease
+while n[0].isdigit():
+    c += 1
+    with open("/Users/jin/Downloads/channel/{}.txt".format(n[0]),"r+") as f:
+              r = f.readlines()
+              n = re.findall(r'(\d+)',r[0])
+    print(c, n[0])#c = 908
+        
+
+```
+it returns `46145` finally which content is `Collect the comments.`
+
+So we need to change our thought. 
+
+According to [zipfile](https://docs.python.org/2.7/library/zipfile.html) module, we know the zipfile has comment, so we should to collect the comments with zipfile module
+
+```
+ **************************************************************
+****************************************************************
+****************************************************************
+**                                                            **
+**   OO    OO    XX      YYYY    GG    GG  EEEEEE NN      NN  **
+**   OO    OO  XXXXXX   YYYYYY   GG   GG   EEEEEE  NN    NN   **
+**   OO    OO XXX  XXX YYY   YY  GG GG     EE       NN  NN    **
+**   OOOOOOOO XX    XX YY        GGG       EEEEE     NNNN     **
+**   OOOOOOOO XX    XX YY        GGG       EEEEE      NN      **
+**   OO    OO XXX  XXX YYY   YY  GG GG     EE         NN      **
+**   OO    OO  XXXXXX   YYYYYY   GG   GG   EEEEEE     NN      **
+**   OO    OO    XX      YYYY    GG    GG  EEEEEE     NN      **
+**                                                            **
+****************************************************************
+ **************************************************************
+```
+### [source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/6.py)
+
+```python
+import re
+import zipfile
+'''
+c = 0
+n = ['67824']
+while n[0].isdigit():
+    c += 1
+    with open("/Users/jin/Downloads/channel/{}.txt".format(n[0]),"r+") as f:
+              r = f.readlines()
+              n = re.findall(r'(\d+)',r[0])
+    print(c, n[0])
+
+ **************************************************************
+****************************************************************
+****************************************************************
+**                                                            **
+**   OO    OO    XX      YYYY    GG    GG  EEEEEE NN      NN  **
+**   OO    OO  XXXXXX   YYYYYY   GG   GG   EEEEEE  NN    NN   **
+**   OO    OO XXX  XXX YYY   YY  GG GG     EE       NN  NN    **
+**   OOOOOOOO XX    XX YY        GGG       EEEEE     NNNN     **
+**   OOOOOOOO XX    XX YY        GGG       EEEEE      NN      **
+**   OO    OO XXX  XXX YYY   YY  GG GG     EE         NN      **
+**   OO    OO  XXXXXX   YYYYYY   GG   GG   EEEEEE     NN      **
+**   OO    OO    XX      YYYY    GG    GG  EEEEEE     NN      **
+**                                                            **
+****************************************************************
+ **************************************************************
+'''     
+s = '/Users/jin/Downloads/channel.zip'
+z = zipfile.ZipFile(s,"r")
+n = '90052.txt'
+convert = '90052'
+comments = []
+while convert.isdigit():
+    #read the information in the archive
+    info = z.read(n)
+    #get comment from the txt
+    comment0 = z.getinfo(n).comment
+    #push to comments
+    comments.append(comment0)
+    #It need to translate byte to str to match numbers
+    info=str(info).encode("utf-8")
+    res = re.findall('\d', info)
+    convert = ''.join(res)
+    n = convert + '.txt'
+    end = ''
+    for c in comments:
+        end += str(c).encode("utf-8")
+    print(end)
+```
+---
+
+## The 7 level ##
+
+```
+it's in the air. look at the letters.
+```
+According to NASA, the gases in Earth's atmosphere include:
+Nitrogen — 78 percent.
+Oxygen — 21 percent.
+Argon — 0.93 percent.
+
+And oxygen is the second largest component of the atmosphere, comprising 20.8% by volume.
+
+### Answer
+
+oxygen
 
