@@ -588,4 +588,114 @@ im.save("/Users/jin/Desktop/first.png")
 
 ### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/9.py)
 
+## The 10 level ##
 
+```
+len(a[30]) = ?
+```
+Click the bull, you will go to this link `http://www.pythonchallenge.com/pc/return/sequence.txt`
+
+```
+a = [1, 11, 21, 1211, 111221, 
+```
+This is a law problem, next number is to count the previous number which has same characters
+like '11' is mean one '1'
+21     -> Two '1' = 1
+1211   -> One '2' + One '1' = 21
+111221 -> One '1' + One '2' + Two '1' = 1211
+
+After you change `bull` to the number, it will direct to login webpage, input the `un: huge pw: file`
+
+### Answer
+
+```python 
+a = '111221'
+k = 4
+while k < 30:
+    j = 0
+    s = ''
+    while j < len(a):
+        c = 1
+        while j < len(a)-1 and a[j] == a[j+1]:
+            c += 1
+            j += 1
+        s = "{}{}{}".format(s, c, a[j])
+        j += 1
+    k += 1
+    a = s
+print len(a)
+```
+### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/10.py)
+
+## The 11 level ##
+
+![cave](http://www.pythonchallenge.com/pc/return/cave.jpg)
+
+The source code has no obvious prompt, but the title is `odd even`, it tell us we need to collect the odd pixels and even pixels to make up a picture
+![evil](/images/pythonchallenge/evil.jpg, "evil")
+### Answer 
+
+```python 
+from PIL import Image
+#import requests
+f1 = "/Users/jin/Desktop/cave.jpg"
+#r = requests.get('http://www.pythonchallenge.com/pc/return/cave.jpg')
+#with open(f1,'wb') as f:
+#   f.write(r.content)
+im = Image.open(f1)
+odd = Image.new(im.mode, (im.size[0]/2, im.size[1]/2))
+even = Image.new(im.mode, (im.size[0]/2, im.size[1]/2))
+ 
+for x in range(1,im.size[0],2):
+   for y in range(1,im.size[1],2):
+       odd.putpixel(((x-1)/2,(y-1)/2),im.getpixel((x,y)))
+ 
+for x in range(1,im.size[0],2):
+   for y in range(1,im.size[1],2):
+       even.putpixel((x/2,y/2),im.getpixel((x,y)))
+ 
+odd.save('/Users/jin/Desktop/odd.jpg')
+even.save('/Users/jin/Desktop/even.jpg')
+```
+### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/11.py)
+
+## The 12 level ##
+
+![dealevil](http://www.pythonchallenge.com/pc/return/evil1.jpg, "evil1")
+It only has a piture which name is evil1
+
+Change the [http://www.pythonchallenge.com/pc/return/evil1.jpg](http://www.pythonchallenge.com/pc/return/evil1.jpg) to [http://www.pythonchallenge.com/pc/return/evil2.jpg](http://www.pythonchallenge.com/pc/return/evil2.jpg)
+
+![evil2](http://www.pythonchallenge.com/pc/return/evil2.jpg)
+
+change the name it will download a picture, the every interval 5 bytes in the file is distributed to five jpg
+
+![dis](/images/pythonchallenge/dis.jpg)
+![pro](/images/pythonchallenge/pro.jpg)
+![port](/images/pythonchallenge/port.jpg)
+![ional](/images/pythonchallenge/ional.jpg)
+![ity](/images/pythonchallenge/ity.jpg)
+
+Try to concatenate them but remove the `ity`
+
+### Answer
+
+```python 
+from PIL import Image
+p = '/Users/jin/Desktop/'
+f = open('/Users/jin/Downloads/evil2.gfx', 'rb')
+f_info = f.read()
+f.close()
+for i in range(5):
+    with open(p+str(i)+'.jpg', 'wb') as fp:
+        fp.write(f_info[i::5])
+
+```
+
+### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/12.py)
+
+## The 13 level ##
+
+![disprop](http://www.pythonchallenge.com/pc/return/disprop.jpg)
+
+Click the `5` , it wil direct to [http://www.pythonchallenge.com/pc/phonebook.php](http://www.pythonchallenge.com/pc/phonebook.php)
