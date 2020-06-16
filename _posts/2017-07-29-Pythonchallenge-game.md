@@ -154,7 +154,7 @@ end. 400 times is more than enough. -->
 
 ![loading...](/images/pythonchallenge/4_urllib2.png "urllib2")
 
-If you don't know what is [re](https://www.runoob.com/python/python-reg-expressions.html) you can check here.
+If you don't know what is [re](https://www.runoob.com/python/python-reg-expressions.html) and [urllib2](https://docs.python.org/2/library/urllib2.html) you can check here.
  
 ![loading...](/images/pythonchallenge/peak.png "peak")
 
@@ -220,7 +220,7 @@ It tell us that `Persistent serialized storage` of the python about `pickle`-Cre
 
 The Tools is use like game save in the hard disk can serialize any type of data such as dict list into a string format.
 
-Also has a module `cPickle`  which for a (much) faster implementation becaus it is written by C,but it named pickle in Python3.
+Also has a module [cPickle](https://docs.python.org/2/library/pickle.html)  which for a (much) faster implementation becaus it is written by C,but it named pickle in Python3.
 
 pickle functions
 
@@ -241,10 +241,8 @@ pickle functions
 
 `channel`
 
-```
 [http://www.pythonchallenge.com/pc/def/peak.html](http://www.pythonchallenge.com/pc/def/peak.html)
 
-```
 ### [source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/5.py)
 
 ```python
@@ -389,4 +387,205 @@ And oxygen is the second largest component of the atmosphere, comprising 20.8% b
 ### Answer
 
 oxygen
+
+## The 8 level ##
+
+![oxygen](http://www.pythonchallenge.com/pc/def/oxygen.png)
+
+We found no prompt in the source code. 
+
+Look at the picture carefully, it has a gray and white color block belt on the picture.
+
+It may be tell us you need to use [PIL](https://pillow.readthedocs.io/en/3.0.x/reference/Image.html) to check these blocks
+
+We found this picture's size is 629x95 , mode is 'RGBA', and if you have learn the color's knowledege, the gray and white block's RGB has same values,like this (110,110,110)
+
+Now , we collect these numbers
+
+```
+[115, 109, 97, 0, 14, 102, 159, 196, 219, 232, 197, 242, 255, 253, 247, 241, 114, 116, 32, 103, 117, 121, 44, 111, 100, 101, 105, 46, 104, 110, 120, 108, 118, 91, 49, 48, 53, 54, 51, 52, 50, 93]
+```
+We have learn decode/encode in 2nd level, so it is easy for us to change them to alphabet with `chr`
+
+> Help on built-in function chr in module __builtin__:
+>
+> chr(...)
+>    chr(i) -> character
+>    
+>    Return a string of one character with ordinal i; 0 <= i < 256.
+
+We got this string
+```
+smart guy, you made it. the next level is [105, 110, 116, 101, 103, 114, 105, 116, 121]
+```
+Then translate again, got `integrity`
+
+### Answer
+
+```python 
+import requests
+from PIL import Image
+url = 'http://www.pythonchallenge.com/pc/def/oxygen.png'
+r = requests.get(url)
+f1 = '/Users/jin/Desktop/oxygen.png'
+with open(f1,'wb') as f:
+    f.write(r.content)
+    f.close()
+
+im = Image.open(f1)
+s = ''
+for i in range(0, im.size[0], 7):
+    if im.getpixel((i,47))[0] == im.getpixel((i,47))[1] and im.getpixel((i,47))[0] == im.getpixel((i,47))[2]:
+        s += ''.join(chr(im.getpixel((i,47))[0]))
+print s
+s=''
+a = [...]#the numbers in the string
+for i in range(len(a)):
+	s+=''.join(chr(a[i]))
+```
+### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/7.py)
+
+## The 8 level ##
+
+![integrity](http://www.pythonchallenge.com/pc/def/integrity.jpg)
+
+Show the source 
+```html 
+<html>
+<head>
+  <title>working hard?</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+	<br><br>
+	<center>
+	<img src="integrity.jpg" width="640" height="480" border="0" usemap="#notinsect"/>
+	<map name="notinsect">
+	<area shape="poly" 
+		coords="179,284,214,311,255,320,281,226,319,224,363,309,339,222,371,225,411,229,404,242,415,252,428,233,428,214,394,207,383,205,390,195,423,192,439,193,442,209,440,215,450,221,457,226,469,202,475,187,494,188,494,169,498,147,491,121,477,136,481,96,471,94,458,98,444,91,420,87,405,92,391,88,376,82,350,79,330,82,314,85,305,90,299,96,290,103,276,110,262,114,225,123,212,125,185,133,138,144,118,160,97,168,87,176,110,180,145,176,153,176,150,182,137,190,126,194,121,198,126,203,151,205,160,195,168,217,169,234,170,260,174,282" 
+		href="../return/good.html" />
+	</map>
+	<br><br>
+	<font color="#303030" size="+2">Where is the missing link?</font>
+</body>
+</html>
+
+<!--
+un: 'BZh91AY&SYA\xaf\x82\r\x00\x00\x01\x01\x80\x02\xc0\x02\x00 \x00!\x9ah3M\x07<]\xc9\x14\xe1BA\x06\xbe\x084'
+pw: 'BZh91AY&SY\x94$|\x0e\x00\x00\x00\x81\x00\x03$ \x00!\x9ah3M\x13<]\xc9\x14\xe1BBP\x91\xf08'
+-->
+```
+Firstly, I click this link `http://www.pythonchallenge.com/pc/return/good.html` , it tell us to input a username and password to login
+
+Then I see the source code again, I found it has two prompts `map coords` and `un,pw`
+The un and pw must be unsername and password
+
+It has same characters in the begin "BZh91AY", I found it is [bz2](https://docs.python.org/2.7/library/bz2.html) de/encode algorithm after google it.
+
+>Help on built-in function decompress in module bz2:
+>
+>decompress(...)
+>    decompress(data) -> decompressed data
+>    
+>    Decompress data in one shot. If you want to decompress data sequentially,
+>    use an instance of BZ2Decompressor instead.
+
+### Answer
+
+```python 
+import re
+import bz2
+import requests
+url = "http://www.pythonchallenge.com/pc/def/integrity.html"
+r = requests.get(url)
+un = re.findall(r'un: \'(.*?)\'', r.content)[0]
+pw = re.findall(r'pw: \'(.*?)\'', r.content)[0]
+print("Username: {}\nPassword: {}\n".format(bz2.decompress(un), bz2.decompress(pw)))
+
+```
+
+## The 9 level ##
+
+![good](http://www.pythonchallenge.com/pc/return/good.jpg)
+
+```
+<!--
+first+second=?
+
+first:
+146,399,163,403,170,393,169,391,166,386,170,381,170,371,170,355,169,346,167,335,170,329,170,320,170,
+310,171,301,173,290,178,289,182,287,188,286,190,286,192,291,194,296,195,305,194,307,191,312,190,316,
+190,321,192,331,193,338,196,341,197,346,199,352,198,360,197,366,197,373,196,380,197,383,196,387,192,
+389,191,392,190,396,189,400,194,401,201,402,208,403,213,402,216,401,219,397,219,393,216,390,215,385,
+215,379,213,373,213,365,212,360,210,353,210,347,212,338,213,329,214,319,215,311,215,306,216,296,218,
+290,221,283,225,282,233,284,238,287,243,290,250,291,255,294,261,293,265,291,271,291,273,289,278,287,
+279,285,281,280,284,278,284,276,287,277,289,283,291,286,294,291,296,295,299,300,301,304,304,320,305,
+327,306,332,307,341,306,349,303,354,301,364,301,371,297,375,292,384,291,386,302,393,324,391,333,387,
+328,375,329,367,329,353,330,341,331,328,336,319,338,310,341,304,341,285,341,278,343,269,344,262,346,
+259,346,251,349,259,349,264,349,273,349,280,349,288,349,295,349,298,354,293,356,286,354,279,352,268,
+352,257,351,249,350,234,351,211,352,197,354,185,353,171,351,154,348,147,342,137,339,132,330,122,327,
+120,314,116,304,117,293,118,284,118,281,122,275,128,265,129,257,131,244,133,239,134,228,136,221,137,
+214,138,209,135,201,132,192,130,184,131,175,129,170,131,159,134,157,134,160,130,170,125,176,114,176,
+102,173,103,172,108,171,111,163,115,156,116,149,117,142,116,136,115,129,115,124,115,120,115,115,117,
+113,120,109,122,102,122,100,121,95,121,89,115,87,110,82,109,84,118,89,123,93,129,100,130,108,132,110,
+133,110,136,107,138,105,140,95,138,86,141,79,149,77,155,81,162,90,165,97,167,99,171,109,171,107,161,
+111,156,113,170,115,185,118,208,117,223,121,239,128,251,133,259,136,266,139,276,143,290,148,310,151,
+332,155,348,156,353,153,366,149,379,147,394,146,399
+
+second:
+156,141,165,135,169,131,176,130,187,134,191,140,191,146,186,150,179,155,175,157,168,157,163,157,159,
+157,158,164,159,175,159,181,157,191,154,197,153,205,153,210,152,212,147,215,146,218,143,220,132,220,
+125,217,119,209,116,196,115,185,114,172,114,167,112,161,109,165,107,170,99,171,97,167,89,164,81,162,
+77,155,81,148,87,140,96,138,105,141,110,136,111,126,113,129,118,117,128,114,137,115,146,114,155,115,
+158,121,157,128,156,134,157,136,156,136
+
+-->
+```
+After connect these node, I got 2 pictures
+
+![first](/images/pythonchallenge/first.png)
+
+It is a bull/cow, so try every words
+
+ps: If you try cow, it will tell you `hmm. it's a male.`
+
+### Answer
+
+```python 
+from PIL import Image
+a = [146,399,163,403,170,393,169,391,166,386,170,381,170,371,170,355,169,346,167,335,170,329,170,320,170,
+310,171,301,173,290,178,289,182,287,188,286,190,286,192,291,194,296,195,305,194,307,191,312,190,316,
+190,321,192,331,193,338,196,341,197,346,199,352,198,360,197,366,197,373,196,380,197,383,196,387,192,
+389,191,392,190,396,189,400,194,401,201,402,208,403,213,402,216,401,219,397,219,393,216,390,215,385,
+215,379,213,373,213,365,212,360,210,353,210,347,212,338,213,329,214,319,215,311,215,306,216,296,218,
+290,221,283,225,282,233,284,238,287,243,290,250,291,255,294,261,293,265,291,271,291,273,289,278,287,
+279,285,281,280,284,278,284,276,287,277,289,283,291,286,294,291,296,295,299,300,301,304,304,320,305,
+327,306,332,307,341,306,349,303,354,301,364,301,371,297,375,292,384,291,386,302,393,324,391,333,387,
+328,375,329,367,329,353,330,341,331,328,336,319,338,310,341,304,341,285,341,278,343,269,344,262,346,
+259,346,251,349,259,349,264,349,273,349,280,349,288,349,295,349,298,354,293,356,286,354,279,352,268,
+352,257,351,249,350,234,351,211,352,197,354,185,353,171,351,154,348,147,342,137,339,132,330,122,327,
+120,314,116,304,117,293,118,284,118,281,122,275,128,265,129,257,131,244,133,239,134,228,136,221,137,
+214,138,209,135,201,132,192,130,184,131,175,129,170,131,159,134,157,134,160,130,170,125,176,114,176,
+102,173,103,172,108,171,111,163,115,156,116,149,117,142,116,136,115,129,115,124,115,120,115,115,117,
+113,120,109,122,102,122,100,121,95,121,89,115,87,110,82,109,84,118,89,123,93,129,100,130,108,132,110,
+133,110,136,107,138,105,140,95,138,86,141,79,149,77,155,81,162,90,165,97,167,99,171,109,171,107,161,
+111,156,113,170,115,185,118,208,117,223,121,239,128,251,133,259,136,266,139,276,143,290,148,310,151,
+332,155,348,156,353,153,366,149,379,147,394,146,399]
+b = [156,141,165,135,169,131,176,130,187,134,191,140,191,146,186,150,179,155,175,157,168,157,163,157,159,
+157,158,164,159,175,159,181,157,191,154,197,153,205,153,210,152,212,147,215,146,218,143,220,132,220,
+125,217,119,209,116,196,115,185,114,172,114,167,112,161,109,165,107,170,99,171,97,167,89,164,81,162,
+77,155,81,148,87,140,96,138,105,141,110,136,111,126,113,129,118,117,128,114,137,115,146,114,155,115,
+158,121,157,128,156,134,157,136,156,136]
+first = a+b
+first = zip(first[::2], first[1::2])
+
+yellow = (255, 238, 25) 
+im = Image.new("RGB", (640,480))
+for i in range(len(first)):
+    im.putpixel(first[i], yellow)
+im.save("/Users/jin/Desktop/first.png")
+```
+
+### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/9.py)
+
 
