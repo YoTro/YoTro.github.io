@@ -760,3 +760,123 @@ print(xmlrpc.phone('Bert'))
 ```
 
 ### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/13.py)
+
+## The 14 level ##
+
+![italy](http://www.pythonchallenge.com/pc/return/italy.jpg)
+![wire](http://www.pythonchallenge.com/pc/return/wire.png)
+
+```html 
+<!-- remember: 100*100 = (100+99+99+98) + (...  -->
+```
+'100+99+99+98' it means move around the outermost in a counter anti-clockwise direction, down 100, right 99, up 99, left 98 
+We found that the picture in the buttom that the size is (10000, 1) the mode is 'RGB'
+
+```python 
+allSteps = [[i, i-1, i-1, i-2] for i in range(100, 0, -2)]
+```
+We need to change the wire.png to square picture
+
+We will get a cat picture
+![cat](http://www.pythonchallenge.com/pc/return/uzi.jpg)
+
+### Answer
+
+```python 
+import urllib2
+from contextlib import closing
+from PIL import Image,ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
+'''
+
+url0 = 'http://www.pythonchallenge.com'
+url1 = 'http://www.pythonchallenge.com/pc/return/wire.png'
+
+PasswordMgr1 = urllib2.HTTPPasswordMgrWithDefaultRealm()
+PasswordMgr1.add_password(None, url0, 'huge', 'file')
+auth_handler = urllib2.HTTPBasicAuthHandler(PasswordMgr1)
+op = urllib2.build_opener(auth_handler)
+urllib2.install_opener(op)
+
+with closing(urllib2.urlopen(url1)) as f:
+    b = open('/Users/jin/Desktop/wire.png','wb')
+    b.write(f.read())
+'''
+
+t = '/Users/jin/Desktop/wire.png'
+t0 = '/Users/jin/Desktop/14.png'
+im = Image.open(t)
+
+data = list(im.getdata())
+
+#create new image object
+im0 = Image.new(im.mode, (100,100))
+#Allocates storage for the image and loads the pixel data. In normal cases, you don’t need to call this method, since the Image class automatically loads an opened image when it is accessed for the first time. This method will close the file associated with the image.
+data0 = im0.load()
+
+allsteps = [[i, i-1, i-1, i-2] for i in range(100, 0, -2)]
+#reduce the dimension
+nsteps  = reduce(lambda x, y: x+y, allsteps)
+#right, up, left, down
+directions = [(1,0), (0,1), (-1,0), (0,-1)]
+direction = 0
+pos = 0
+#start_coord(0,0)
+pos0 = (-1, 0)
+
+for i in nsteps:
+    #forword i steps
+    for j in range(i):
+        #control the direction
+        pos0 = tuple(map(lambda x,y: x+y, pos0, directions[direction]))
+        #write the pixel fo wire.png to new picture
+        data0[pos0] = data[pos]
+        pos += 1
+    #change direction
+    direction = (direction + 1) % 4
+im0.save(t0)
+```
+
+### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/14.py)
+
+## The 15 level ##
+
+![screen15](http://www.pythonchallenge.com/pc/return/screen15.jpg)
+
+```html 
+
+<html>
+<head>
+  <title>whom?</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<br><center>
+<!-- he ain't the youngest, he is the second -->
+<img src="screen15.jpg"><br>
+</body>
+</html>
+
+<!-- todo: buy flowers for tomorrow -->
+```
+We found that the thumbnail in right bottom is Feb, and Feb has 29th, it means this year is leap year.
+
+I think the solution is to find the leap year of the lead
+
+### Answer
+
+```python 
+
+from datetime import date
+
+year = [i for i in xrange(1006, 1997) if ((i%4 == 0 or i%400 == 0) and i%100 != 0) and str(i)[-1] == '6']
+
+birthday = []
+
+for i in year:
+    if date(i, 1, 27).weekday() == 1:
+        birthday.append(i)
+
+print(birthday)
+```
+### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/14.py)
