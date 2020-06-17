@@ -699,3 +699,64 @@ for i in range(5):
 ![disprop](http://www.pythonchallenge.com/pc/return/disprop.jpg)
 
 Click the `5` , it wil direct to [http://www.pythonchallenge.com/pc/phonebook.php](http://www.pythonchallenge.com/pc/phonebook.php)
+The XML and phone tell us it need to use XML to handle and send HTTP to someone
+
+[xmlrpclib](https://docs.python.org/2/library/xmlrpclib.html) is built in module in python
+
+>Help on module xmlrpclib:
+>
+>NAME
+>    xmlrpclib - An XML-RPC client interface for Python.
+>
+>FILE
+>    /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/xmlrpclib.py
+>
+>MODULE DOCS
+>    https://docs.python.org/library/xmlrpclib
+>
+>DESCRIPTION
+>    The marshalling and response parser code can also be used to implement XML-RPC servers.
+
+But you need to know who should call. 
+In previous level, we found evil4.jpg is a square, but it may be has information.
+
+### Answer
+
+```python 
+#coding: utf-8
+#Author: Toryun
+#Date: 2020-06-17 01:13:00
+
+import urllib2
+import xmlrpclib
+from contextlib import closing
+
+url0 = 'http://www.pythonchallenge.com'
+url1 = 'http://www.pythonchallenge.com/pc/return/evil4.jpg'
+url2 = 'http://www.pythonchallenge.com/pc/phonebook.php'
+#create a default password manager
+PasswordMgr1 = urllib2.HTTPPasswordMgrWithDefaultRealm()
+#add password , uri and realm to instance,(“realm”, it refers to the protection scope of current certification。)
+#like /protected_docs is realm
+#GET /protected_docs HTTP/1.1
+#Host: 127.0.0.1:3000
+PasswordMgr1.add_password(None, url0, 'huge', 'file')
+#create a instance of basice authhanlder which has password and username
+auth_handler = urllib2.HTTPBasicAuthHandler(PasswordMgr1)
+#Create an opener object from a list of handlers.   
+#The opener will use several default handlers, including support
+#for HTTP, FTP and when applicable, HTTPS.  
+#If any of the handlers passed as arguments are subclasses of the
+#default handlers, the default handlers will not be used.
+op = urllib2.build_opener(auth_handler)
+urllib2.install_opener(op)
+#closing the with ... as automaticlly
+with closing(urllib2.urlopen(url1)) as f:
+	#check who we should call
+    print(f.read().decode('utf-8'))
+#use xmlrpclib.ServerProxy class to conntect the pythonchallenge.com
+xmlrpc = xmlrpclib.ServerProxy(url2)
+print(xmlrpc.phone('Bert'))
+```
+
+### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/13.py)
