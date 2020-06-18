@@ -863,6 +863,8 @@ We found that the thumbnail in right bottom is Feb, and Feb has 29th, it means t
 
 I think the solution is to find the leap year of the lead
 
+`he ain't the youngest, he is the second` tell us his birthday's rank, google it
+
 ### Answer
 
 ```python 
@@ -880,3 +882,20 @@ for i in year:
 print(birthday)
 ```
 ### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/14.py)
+
+## The 16 level ##
+
+![](http://www.pythonchallenge.com/pc/return/mozart.gif)
+
+```html 
+<html>
+<head>
+  <title>let me get this straight</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<br><center>
+<img src="mozart.gif"><br>
+</body>
+</html>
+```
