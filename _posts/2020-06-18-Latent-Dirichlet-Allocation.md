@@ -24,13 +24,40 @@ $$p(\theta | \alpha) = \frac { \Gamma(\sum_{ i = 1 } ^ { k } \alpha_{ i } ) } { 
 
 This is LDA function, you need to learn these knowledage firstly before study:
 
-1. Distribution: [Multinomial distribution](https://en.wikipedia.org/wiki/Multinomial_distribution), [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution), [Gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution),  [Beta distribution](https://en.wikipedia.org/wiki/Beta_distribution), [Dirichlet distribution](https://en.wikipedia.org/wiki/Dirichlet_distribution)
+1. Distribution: [Multinomial distribution](https://en.wikipedia.org/wiki/Multinomial_distribution), [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution), [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution), [Gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution), [Beta distribution](https://en.wikipedia.org/wiki/Beta_distribution), [Dirichlet distribution](https://en.wikipedia.org/wiki/Dirichlet_distribution)
 
-2. Probablility: [Prior probability](https://en.wikipedia.org/wiki/Prior_probability), [Posterior probability](https://en.wikipedia.org/wiki/Posterior_probability), [Conjugate prior](https://en.wikipedia.org/wiki/Conjugate_prior)
+2. [Bayes' theorem basic](https://en.wikipedia.org/wiki/Bayes%27_theorem): [Prior probability](https://en.wikipedia.org/wiki/Prior_probability), [Posterior probability](https://en.wikipedia.org/wiki/Posterior_probability), [Conjugate prior](https://en.wikipedia.org/wiki/Conjugate_prior), [Likelihood function](https://en.wikipedia.org/wiki/Likelihood_function)
 
-3. [Likelihood function](https://en.wikipedia.org/wiki/Likelihood_function), [Cumulative distribution function](https://en.wikipedia.org/wiki/Cumulative_distribution_function)
 
-4. [Bayes' theorem basic](https://en.wikipedia.org/wiki/Bayes%27_theorem)
+3. [Markov chain Monte Carlo](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo), [Gibbs Sampling](https://en.wikipedia.org/wiki/Gibbs_sampling)
+
+## [Bayes' theorem basic](https://en.wikipedia.org/wiki/Bayes%27_theorem)
+
+p(\theta|x)={p(x|\theta)p(\theta)\over p(x)}
+
+### [Prior probability](https://en.wikipedia.org/wiki/Prior_probability)
+
+p(\theta)
+
+### [Posterior probability](https://en.wikipedia.org/wiki/Posterior_probability)
+
+p(\theta|x)
+
+### [Likelihood](https://en.wikipedia.org/wiki/Likelihood_function)
+
+p(x|\theta)
+
+### [Conjugate prior](https://en.wikipedia.org/wiki/Conjugate_prior)
+
+### [cdf](https://en.wikipedia.org/wiki/Cumulative_distribution_function)
+
+|:--:|:--:|
+|cdf(k, mu, loc=0) | Cumulative distribution function.|
+
+### [pmf](https://en.wikipedia.org/wiki/Probability_mass_function)
+
+|:--:|:--:|
+|pmf(k, mu, loc=0) | Probability mass function|
 
 ## [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution)
 
@@ -58,6 +85,38 @@ ax.legend(loc = 'best', frameon = False)
 plt.show()
 ```
 ![binom](https://docs.scipy.org/doc/scipy/reference/_images/scipy-stats-binom-1_00_00.png)
+
+## [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution), [Gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution)
+
+$$P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda}$$
+
+The number of such events that occur during a fixed time interval is, under the right circumstances, a random number with a Poisson distribution.
+
+such as the number of laser photons hitting a detector in a particular time interval
+
+The Poisson distribution is also the limit of a binomial distribution, for which the probability of success for each trial equals λ divided by the number of trials, as the number of trials approaches infinity 
+
+[scipy.stats.poisson](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.poisson.html?highlight=poisson#scipy.stats.poisson)
+```python
+from scipy.stats import poisson
+import matplotlib.pyplot as plt
+import numpy as numpy
+
+fig, ax = plt.subplots(1, 1)
+
+mu = 0.6
+mean, var, skew, kurt = poisson.stats(mu, moments='mvsk')
+x = np.arange(poisson.ppf(0.01, mu),
+              poisson.ppf(0.99, mu))
+ax.plot(x, poisson.pmf(x, mu), 'bo', ms=8, label='poisson pmf')
+ax.vlines(x, 0, poisson.pmf(x, mu), colors='b', lw=5, alpha=0.5)
+rv = poisson(mu)
+ax.vlines(x, 0, rv.pmf(x), colors='k', linestyles='-', lw=1,
+        label='frozen pmf')
+ax.legend(loc='best', frameon=False)
+plt.show()
+```
+![poisson](https://docs.scipy.org/doc/scipy/reference/_images/scipy-stats-poisson-1_00_00.png)
 
 ## [Gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution)
 
@@ -144,7 +203,7 @@ $$\operatorname {Var}(X)=\operatorname {E}(X-\mu )^{2}={\frac  {\alpha \beta }{(
 
 `Skewness`
 
-$${\frac  {\operatorname {E}(X-\mu )^{3}}{[\operatorname {E}(X-\mu )^{2}]^{{3/2}}}}={\frac  {2(\beta -\alpha ){\sqrt  {\alpha +\beta +1}}}{(\alpha +\beta +2){\sqrt  {\alpha \beta }}}}$$
+$$\frac{\operatorname {E}(X-\mu)^{3}}{[\operatorname {E}(X-\mu)^{2}]^{{3/2}}}=\frac{2(\beta -\alpha ){\sqrt  {\alpha +\beta +1}}}{(\alpha +\beta +2){\sqrt{\alpha \beta }}}$$
 
 [scipy.stats.skew](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.skew.html)
 ```python
@@ -208,7 +267,7 @@ $$f(x_1, x_2, ..., x_k; \alpha_1, \alpha_2,...,\alpha_k)=\frac{1}{B(\alpha)}\pro
 
 $$B(\alpha) = \frac{\prod_{i=1}^{k}\Gamma(\alpha^i)}{\Gamma(\sum_{i=1}^{k}\alpha^i)}, \sum_{i=1}^{k}x^i = 1$$
 
-Dirichlet distribution is a conjugate distribution of polynomial distributions
+Dirichlet distribution is a conjugate distribution of multinomial distribution
 
 [scipy.stats.dirichlet](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.dirichlet.html)
 ```python
@@ -235,3 +294,15 @@ print(dirichlet.rvs(alpha, size=2, random_state=2))
 ```
 
 ![Smoothed_LDA](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Smoothed_LDA.png/377px-Smoothed_LDA.png 1.5x, //upload.wikimedia.org/wikipedia/commons/4/4d/Smoothed_LDA.png)
+
+# References
+
+1. [Scipy.stats](https://docs.scipy.org/doc/scipy/reference/stats.html?highlight=scipy%20stats#module-scipy.stats)
+
+2. Wikipedia
+
+3. zhihu
+
+4. [LDA数学八卦](http://www.52nlp.cn/lda-math-%e6%b1%87%e6%80%bb-lda%e6%95%b0%e5%ad%a6%e5%85%ab%e5%8d%a6)
+
+![参数说明](https://pic4.zhimg.com/80/v2-231d7ba3c5144be574cbb590cc415c17_1440w.png)
