@@ -293,15 +293,15 @@ print(dirichlet.rvs(alpha, size=2, random_state=2))
 
 ```
 
-![Smoothed_LDA](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Smoothed_LDA.png/377px-Smoothed_LDA.png 1.5x, //upload.wikimedia.org/wikipedia/commons/4/4d/Smoothed_LDA.png)
+![Smoothed_LDA](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Smoothed_LDA.png/377px-Smoothed_LDA.png)
 
 # References
 
-1. [Scipy.stats](https://docs.scipy.org/doc/scipy/reference/stats.html?highlight=scipy%20stats#module-scipy.stats)
+1. [Latent Dirichlet Allocation DM Blei, AY Ng, MI Jordan - Journal of Machine Learning Research 3 (2003)](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)
 
 2. Wikipedia
 
-3. zhihu
+3. [Scipy.stats](https://docs.scipy.org/doc/scipy/reference/stats.html?highlight=scipy%20stats#module-scipy.stats)
 
 4. [LDA数学八卦](http://www.52nlp.cn/lda-math-%e6%b1%87%e6%80%bb-lda%e6%95%b0%e5%ad%a6%e5%85%ab%e5%8d%a6)
 
