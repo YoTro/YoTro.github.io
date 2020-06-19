@@ -20,16 +20,28 @@ Now, let me sum up LDA again.
 
 LDA (latent Dirichlet allocation) is a topic model, which can give the topic of each document in the document set in the form of probability distribution. At the same time, it is an unsupervised learning algorithm, which does not need manual annotation of the training set, but only the document set and the number of specified topics K. Another advantage of LDA is that it can find some words to describe each topic. LDA was first proposed by BLEI, David M., Wu Enda and Jordan, Michael I in 2003. At present, LDA has applications in text mining, including text topic recognition, text classification and text similarity calculation.
 
-$$p(\theta | \alpha) = \frac { \Gamma(\sum_{ i = 1 } ^ { k } \alpha_{ i } ) } { \prod_{ i = 1 } ^ { k } \Gamma ( \alpha_{ i } ) } \prod_{ i = 1 } ^ { k } \theta_{ i } ^ { \alpha_{ i } - 1}$$
+> We describe latent Dirichlet allocation (LDA), a generative probabilistic model for collections of
+discrete data such as text corpora. LDA is a three-level hierarchical Bayesian model, in which each
+item of a collection is modeled as a finite mixture over an underlying set of topics. Each topic is, in
+turn, modeled as an infinite mixture over an underlying set of topic probabilities. In the context of
+text modeling, the topic probabilities provide an explicit representation of a document. We present
+efficient approximate inference techniques based on variational methods and an EM algorithm for
+empirical Bayes parameter estimation. We report results in document modeling, text classification,
+and collaborative filtering, comparing to a mixture of unigrams model and the probabilistic LSI
+model.
 
-This is LDA function, you need to learn these knowledage firstly before study:
+*from [Latent Dirichlet Allocation DM Blei, AY Ng, MI Jordan - Journal of Machine Learning Research 3 (2003)](http://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf)*
+
+![LDA](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Smoothed_LDA.png/251px-Smoothed_LDA.png)
+
+You need to learn these knowledage firstly before study:
 
 1. Distribution: [Multinomial distribution](https://en.wikipedia.org/wiki/Multinomial_distribution), [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution), [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution), [Gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution), [Beta distribution](https://en.wikipedia.org/wiki/Beta_distribution), [Dirichlet distribution](https://en.wikipedia.org/wiki/Dirichlet_distribution)
 
 2. [Bayes' theorem basic](https://en.wikipedia.org/wiki/Bayes%27_theorem): [Prior probability](https://en.wikipedia.org/wiki/Prior_probability), [Posterior probability](https://en.wikipedia.org/wiki/Posterior_probability), [Conjugate prior](https://en.wikipedia.org/wiki/Conjugate_prior), [Likelihood function](https://en.wikipedia.org/wiki/Likelihood_function)
 
 
-3. [Markov chain Monte Carlo](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo), [Gibbs Sampling](https://en.wikipedia.org/wiki/Gibbs_sampling)
+3. [Markov chain Monte Carlo](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo), [Gibbs Sampling](https://en.wikipedia.org/wiki/Gibbs_sampling), [EM algorithm](https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm#:~:text=In%20statistics%2C%20an%20expectation%E2%80%93maximization,depends%20on%20unobserved%20latent%20variables.)
 
 ## [Bayes' theorem basic](https://en.wikipedia.org/wiki/Bayes%27_theorem)
 
@@ -292,6 +304,36 @@ print(dirichlet.rvs(alpha, size=2, random_state=2))
 # [0.00156917 0.19033695 0.80809388]]
 
 ```
+
+## [EM algorithm](https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm#:~:text=In%20statistics%2C%20an%20expectation%E2%80%93maximization,depends%20on%20unobserved%20latent%20variables.)
+
+In statistics, an expectation–maximization (EM) algorithm is an iterative method to find (local) maximum likelihood or maximum a posteriori (MAP) estimates of parameters in statistical models, where the model depends on unobserved latent variables. The EM iteration alternates between performing an expectation (E) step, which creates a function for the expectation of the log-likelihood evaluated using the current estimate for the parameters, 
+and a maximization (M) step, which computes parameters maximizing the expected log-likelihood found on the E step. These parameter-estimates are then used to determine the distribution of the latent variables in the next E step.
+
+$$ \hat{\theta}=argmax\sum_{i=1}^{n}{logp(x_{i};\theta)}$$
+
+### [Log-Likelihood Function](https://mathworld.wolfram.com/Log-LikelihoodFunction.html)
+$$F(theta)=lnL(theta)$$
+
+$$L(theta)=product_(i=1)^nf_i(y_i|theta)$$
+
+$$F(theta)=sum_(i=1)^nlnf_i(y_i|theta)$$
+
+The solution steps of maximum likelihood function estimation:
+
+1. Write the likelihood function:
+$$L(\theta)=L(x_ {1},x_ {2},...,x_ {n};\theta)=\prod_ {i=1}^{n}p(x_ {i};\theta),\theta\in\Theta$$
+
+2. Logarithm of likelihood function:
+$$l(\theta)=lnL(\theta)=ln\prod_ {i=1}^{n}p(x_ {i};\theta)=\sum_ {i=1}^{n}{lnp(x_ {i};\theta)}$$
+
+3. differentiate this function equals to 0
+
+4. To solve the log-likelihood function
+
+### [Jensen's Inequality](https://en.wikipedia.org/wiki/Jensen%27s_inequality)
+
+$$f(sum_(i=1)^np_ix_i)<=sum_(i=1)^np_if(x_i)$$
 
 ![Smoothed_LDA](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Smoothed_LDA.png/377px-Smoothed_LDA.png)
 
