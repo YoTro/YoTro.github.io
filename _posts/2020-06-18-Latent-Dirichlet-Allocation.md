@@ -335,6 +335,22 @@ $$l(\theta)=lnL(\theta)=ln\prod_ {i=1}^{n}p(x_ {i};\theta)=\sum_ {i=1}^{n}{lnp(x
 
 $$f(\sum_{i=1}^np_ix_i)<=\sum_{i=1}^np_if(x_i)$$
 
+## LDA Definitions and Symbols
+
+|:--:|:--:|
+|k | Number of topics a document belongs to (a fixed number)|
+|V | Size of the vocabulary|
+|M | Number of documents|
+|N | Number of words in each document|
+|w | A word in a document. This is represented as a |one hot encoded vector of size V (i.e. V — vocabulary size)|
+|**w** |represents a document (i.e. vector of “w”s) of N words|
+|D | Corpus, a collection of M documents|
+|z | A topic from a set of k topics. A topic is a distribution words. For example it might be, Animal = (0.3 Cats, 0.4 Dogs, 0 AI, 0.2 Loyal, 0.1 Evil)|
+|α | Distribution related parameter that governs what the distribution of topics is for all the documents in the corpus looks like|
+|θ | Random matrix where θ(i,j) represents the probability of the i th document to containing the j th topic|
+|β | Distribution related parameter that governs what the distribution of words in each topic looks like|
+|$$\varphi$$ | A random matrix where β(i,j) represents the probability of i th topic containing the j th word.|
+
 ![Smoothed_LDA](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Smoothed_LDA.png/377px-Smoothed_LDA.png)
 
 # References
