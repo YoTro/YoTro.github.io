@@ -45,19 +45,19 @@ You need to learn these knowledage firstly before study:
 
 ## [Bayes' theorem basic](https://en.wikipedia.org/wiki/Bayes%27_theorem)
 
-p(\theta|x)={p(x|\theta)p(\theta)\over p(x)}
+$$p(\theta|x)={p(x|\theta)p(\theta)\over p(x)}$$
 
 ### [Prior probability](https://en.wikipedia.org/wiki/Prior_probability)
 
-p(\theta)
+$$p(\theta)$$
 
 ### [Posterior probability](https://en.wikipedia.org/wiki/Posterior_probability)
 
-p(\theta|x)
+$$p(\theta|x)$$
 
 ### [Likelihood](https://en.wikipedia.org/wiki/Likelihood_function)
 
-p(x|\theta)
+$$p(x|\theta)$$
 
 ### [Conjugate prior](https://en.wikipedia.org/wiki/Conjugate_prior)
 
@@ -98,7 +98,7 @@ plt.show()
 ```
 ![binom](https://docs.scipy.org/doc/scipy/reference/_images/scipy-stats-binom-1_00_00.png)
 
-## [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution), [Gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution)
+## [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution)
 
 $$P(X=k)=\frac{\lambda^k}{k!}e^{-\lambda}$$
 
@@ -313,11 +313,11 @@ and a maximization (M) step, which computes parameters maximizing the expected l
 $$ \hat{\theta}=argmax\sum_{i=1}^{n}{logp(x_{i};\theta)}$$
 
 ### [Log-Likelihood Function](https://mathworld.wolfram.com/Log-LikelihoodFunction.html)
-$$F(theta)=lnL(theta)$$
+$$F(\theta)=lnL(\theta)$$
 
-$$L(theta)=product_(i=1)^nf_i(y_i|theta)$$
+$$ L(\theta)=\prod_{i=1}^nf_i(y_i|\theta)$$
 
-$$F(theta)=sum_(i=1)^nlnf_i(y_i|theta)$$
+$$F(\theta)=\sum_{i=1}^nlnf_i(y_i|\theta)$$
 
 The solution steps of maximum likelihood function estimation:
 
@@ -333,7 +333,7 @@ $$l(\theta)=lnL(\theta)=ln\prod_ {i=1}^{n}p(x_ {i};\theta)=\sum_ {i=1}^{n}{lnp(x
 
 ### [Jensen's Inequality](https://en.wikipedia.org/wiki/Jensen%27s_inequality)
 
-$$f(sum_(i=1)^np_ix_i)<=sum_(i=1)^np_if(x_i)$$
+$$f(\sum_{i=1}^np_ix_i)<=\sum_{i=1}^np_if(x_i)$$
 
 ![Smoothed_LDA](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Smoothed_LDA.png/377px-Smoothed_LDA.png)
 
