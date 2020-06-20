@@ -34,6 +34,8 @@ model.
 
 ![LDA](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Smoothed_LDA.png/251px-Smoothed_LDA.png)
 
+$$p(w_{i},z_{i},\theta _{i},\Phi |\alpha ,\beta )=\prod _{j=1}^{N}p(\theta _{i}|\alpha )p(z_{i,j}|\theta _{i})p(\Phi |\beta )p(w_{i,j}|\phi _{z_{i,j}})$$
+
 You need to learn these knowledage firstly before study:
 
 1. Distribution: [Multinomial distribution](https://en.wikipedia.org/wiki/Multinomial_distribution), [Binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution), [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution), [Gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution), [Beta distribution](https://en.wikipedia.org/wiki/Beta_distribution), [Dirichlet distribution](https://en.wikipedia.org/wiki/Dirichlet_distribution)
@@ -335,6 +337,10 @@ $$l(\theta)=lnL(\theta)=ln\prod_ {i=1}^{n}p(x_ {i};\theta)=\sum_ {i=1}^{n}{lnp(x
 
 $$f(\sum_{i=1}^np_ix_i)<=\sum_{i=1}^np_if(x_i)$$
 
+## [Gibbs Sampling](https://en.wikipedia.org/wiki/Gibbs_sampling)
+
+![Gibbs Sampling](https://lh5.googleusercontent.com/A8gTcsmgRVRe9C-dNGjr7WyyRvX2NFto0aoKHgaPbwxtD4UnCKJPvnF0EXGXVBg7Me3RHxtzpxbhyuVMi4wP8Dt85cGSTHp_LMHOK-yGwCiPXPNhhPo4nruO-nQ4S7drMA, "Gibbs Sampling")
+
 ## LDA Definitions and Symbols
 
 ![Smoothed_LDA](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Smoothed_LDA.png/377px-Smoothed_LDA.png)
@@ -353,7 +359,30 @@ $$f(\sum_{i=1}^np_ix_i)<=\sum_{i=1}^np_if(x_i)$$
 |β | Distribution related parameter that governs what the distribution of words in each topic looks like|
 |φ | A random matrix where φ(i,j) represents the probability of i th topic containing the j th word.|
 
+## LDA generative progress
+
+To actually infer the topics in a corpus, we imagine a generative process whereby the documents are created, so that we may infer, or reverse engineer, it. We imagine the generative process as follows. Documents are represented as random mixtures over latent topics, where each topic is characterized by a distribution over all the words. LDA assumes the following generative process for a corpus $$D$$ consisting of $$M$$ documents each of length $$N_{i}$$:
+
+1. Choose $$\theta_{i} \sim \operatorname {Dir} (\alpha )$$, where $$i\in \{1,\dots ,M\}$$ and $$ =(\alpha )}\mathrm {Dir} (\alpha )$$ is a Dirichlet distribution with a symmetric parameter $$\alpha$$  which typically is sparse ($$\alpha$$ < 1)
+
+2. Choose $$\varphi_{k} \sim \operatorname {Dir} (\beta )$$, where $$k\in \{1,\dots ,K\}$$ and $$\beta$$  typically is sparse
+
+3. For each of the word positions i,j, where $$i\in \{1,\dots ,M\}$$, and $$j\in \{1,\dots ,N_{i}\}$$
+
+(a) Choose a topic $$z_{i,j} \sim \operatorname {Multinomial} (\theta _{i})$$.
+(b) Choose a word $$w_{i,j} \sim \operatorname {Multinomial} (\varphi _{z_{i,j}})$$.
+(Note that multinomial distribution here refers to the multinomial with only one trial, which is also known as the categorical distribution.)
+
+The lengths $$N_{i}$$ are treated as independent of all the other data generating variables ($$w$$ and $$z$$). The subscript is often dropped, as in the plate diagrams shown here.
+
+
 ## [Gensim](https://github.com/RaRe-Technologies/gensim)
+
+Gensim is a Python library for topic modelling, document indexing and similarity retrieval with large corpora. Target audience is the natural language processing (NLP) and information retrieval (IR) community.
+
+Here is a good document to learn the ABC of gensim 
+
+[Gensim Tutorial – A Complete Beginners Guide](https://www.machinelearningplus.com/nlp/gensim-tutorial/#19howtosummarizetextdocuments)
 
 # References
 
