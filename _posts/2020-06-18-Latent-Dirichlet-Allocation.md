@@ -408,37 +408,38 @@ $$P({\boldsymbol {W}},{\boldsymbol {Z}},{\boldsymbol {\theta }},{\boldsymbol {\v
 
 对$$\beta$$,$$\varphi$$求二重积分
 
-$$&P({\boldsymbol {Z}},{\boldsymbol {W}};\alpha ,\beta )=\int _{\boldsymbol {\theta }}\int _{\boldsymbol {\varphi }}P({\boldsymbol {W}},{\boldsymbol {Z}},{\boldsymbol {\theta }},{\boldsymbol {\varphi }};\alpha ,\beta )\,d{\boldsymbol {\varphi }}\,d{\boldsymbol {\theta }}\\={}&\int _{\boldsymbol {\varphi }}\prod _{i=1}^{K}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d{\boldsymbol {\varphi }}\int _{\boldsymbol {\theta }}\prod _{j=1}^{M}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d{\boldsymbol {\theta }}$$
+$${\begin{aligned}&P({\boldsymbol {Z}},{\boldsymbol {W}};\alpha ,\beta )=\int _{\boldsymbol {\theta }}\int _{\boldsymbol {\varphi }}P({\boldsymbol {W}},{\boldsymbol {Z}},{\boldsymbol {\theta }},{\boldsymbol {\varphi }};\alpha ,\beta )\,d{\boldsymbol {\varphi }}\,d{\boldsymbol {\theta }}\\={}&\int _{\boldsymbol {\varphi }}\prod _{i=1}^{K}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d{\boldsymbol {\varphi }}\int _{\boldsymbol {\theta }}\prod _{j=1}^{M}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d{\boldsymbol {\theta }}.\end{aligned}}$$
 
 `对于$$\beta$$`,
 
-$$\int _{\boldsymbol {\theta }}\prod _{j=1}^{M}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d{\boldsymbol {\theta }}=\prod _{j=1}^{M}\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d\theta _{j}$$
+$$\int _{\boldsymbol {\theta }}\prod _{j=1}^{M}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d{\boldsymbol {\theta }}=\prod _{j=1}^{M}\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d\theta_{j}$$
 
 其中, $$\theta \sim {Dir}(\alpha)$$,所以
 
-$$\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d\theta _{j}=\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{\alpha _{i}-1}\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d\theta _{j}$$
+$$\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d\theta _{j}=\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{\alpha _{i}-1}\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d\theta_{j}$$
 
-对于$$\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})$$,
+对于 $$\prod_{t=1}^{N}P(Z_{j,t}\mid\theta_{j})$$,
 
 $$\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})=\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}}$$
 
 首先因为$$z_{i,j}\sim \operatorname {Multinomial} (\theta _{i})$$
-其中令$$n{j，r}^{i}$$为第$$j^{th}$$篇文档中作为第$$i^{th}$$个主题的在词汇表中的第$$r^{th}$$个单词出现的次数。所以，$$n{j，r}^{i}$$是三维的。如果三维中的任何一个维度不受特定值的限制，我们使用带圆括号的点$$（\cdot）$$来表示。例如，$$n{j，（\cdot）}^{i}$$表示在$$j^{th}$$文档中所有作为第$$i^{th}$$个主题的单词出现次数
+其中令$$n{j,r}^{i}$$为第$$j^{th}$$篇文档中作为第$$i^{th}$$个主题的在词汇表中的第$$r^{th}$$个单词出现的次数。所以，$$n{j,r}^{i}$$是三维的。如果三维中的任何一个维度不受特定值的限制，我们使用带圆括号的点$$(\cdot)$$来表示。例如，$$n{j,(\cdot)}^{i}$$表示在$$j^{th}$$文档中所有作为第$$i^{th}$$个主题的单词出现次数
 
 所以对于\theta_{j}的积分可以转换成
 
-$$\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{\alpha _{i}-1}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}}\,d\theta _{j}=\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}+\alpha _{i}-1}\,d\theta _{j}$$
+$$\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{\alpha _{i}-1}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}}\,d\theta _{j}=\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}+\alpha_{i}-1}\,d\theta_{j}$$
 
 又因为
-$$\int_{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}+\alpha _{i}-1}\,d\theta _{j}=1$$
+$$\int_{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}+\alpha _{i}-1}\,d\theta_{j}=1$$
 
 所以
-$$&\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d\theta _{j}=\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}+\alpha _{i}-1}\,d\theta _{j}\\[8pt]={}&{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}{\frac {\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}{\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}}\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}+\alpha _{i}-1}\,d\theta _{j}\\[8pt]={}&{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}{\frac {\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}{\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}}$$
+$${\begin{aligned}&\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d\theta _{j}=\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}+\alpha _{i}-1}\,d\theta _{j}\\[8pt]={}&{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}{\frac {\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}{\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}}\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}+\alpha _{i}-1}\,d\theta _{j}\\[8pt]={}&{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}{\frac {\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}{\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha_{i}\right)}}.\end{aligned}}$$
 
 `对于$$\varphi$$`,
-根$$\theta$$相同的过程
+跟$$\theta$$相同的过程
 
-$$&\int _{\boldsymbol {\varphi }}\prod _{i=1}^{K}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d{\boldsymbol {\varphi }}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}\prod _{r=1}^{V}\varphi _{i,r}^{\beta _{r}-1}\prod _{r=1}^{V}\varphi _{i,r}^{n_{(\cdot ),r}^{i}}\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}\prod _{r=1}^{V}\varphi _{i,r}^{n_{(\cdot ),r}^{i}+\beta _{r}-1}\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}{\frac {\prod _{r=1}^{V}\Gamma (n_{(\cdot ),r}^{i}+\beta _{r})}{\Gamma \left(\sum _{r=1}^{V}n_{(\cdot ),r}^{i}+\beta _{r}\right)}}$$
+$$&\int _{\boldsymbol {\varphi }}\prod _{i=1}^{K}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d{\boldsymbol {\varphi }}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}\prod _{r=1}^{V}\varphi _{i,r}^{\beta _{r}-1}\prod _{r=1}^{V}\varphi _{i,r}^{n_{(\cdot ),r}^{i}}\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}\prod _{r=1}^{V}\varphi _{i,r}^{n_{(\cdot ),r}^{i}+\beta _{r}-1}\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}{\frac {\prod _{r=1}^{V}\Gamma (n_{(\cdot ),r}^{i}+\beta _{r})}{\Gamma \left(\sum _{r=1}^{V}n_{(\cdot ),r}^{i}+\beta_{r}\right)}}$$
 
 最终它们的双重积分等于
-$$P({\boldsymbol {Z}},{\boldsymbol {W}};\alpha ,\beta )=\prod _{j=1}^{M}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}{\frac {\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}{\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}}\times \prod _{i=1}^{K}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}{\frac {\prod _{r=1}^{V}\Gamma (n_{(\cdot ),r}^{i}+\beta _{r})}{\Gamma \left(\sum _{r=1}^{V}n_{(\cdot ),r}^{i}+\beta _{r}\right)}}$$
+
+$$P({\boldsymbol {Z}},{\boldsymbol {W}};\alpha ,\beta )=\prod _{j=1}^{M}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}{\frac {\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}{\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}}\times \prod _{i=1}^{K}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}{\frac {\prod _{r=1}^{V}\Gamma (n_{(\cdot ),r}^{i}+\beta _{r})}{\Gamma \left(\sum _{r=1}^{V}n_{(\cdot ),r}^{i}+\beta_{r}\right)}}$$
