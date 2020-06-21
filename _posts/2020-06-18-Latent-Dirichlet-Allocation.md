@@ -176,7 +176,7 @@ $$\begin{align} f(x; \alpha, \beta) = \frac{1}{B(\alpha, \beta)} x^{\alpha - 1} 
 
 $$\begin{align} \frac{1}{B(\alpha, \beta)} = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)} \end{align}$$
 
-[Conjugate prior] of binomial distributions [Likelihood function](https://en.wikipedia.org/wiki/Likelihood_function) of binomial distribution)
+[Conjugate prior](https://en.wikipedia.org/wiki/Conjugate_prior) of binomial distributions
 
 You can understand it as observing the probability distribution of a group of experiments from different angles. The beta distribution is to study the distribution of theta given a set of data x, while the binomial distribution is to study the distribution of X given theta
 
@@ -341,6 +341,10 @@ $$f(\sum_{i=1}^np_ix_i)<=\sum_{i=1}^np_if(x_i)$$
 
 ![Gibbs Sampling](https://lh5.googleusercontent.com/A8gTcsmgRVRe9C-dNGjr7WyyRvX2NFto0aoKHgaPbwxtD4UnCKJPvnF0EXGXVBg7Me3RHxtzpxbhyuVMi4wP8Dt85cGSTHp_LMHOK-yGwCiPXPNhhPo4nruO-nQ4S7drMA, "Gibbs Sampling")
 
+The Gibbs sampling is an alternative to deterministic algorithms for EM algorithm
+
+Obtaining a sequence of observations which are approximately from a specified multivariate probability distribution, when direct sampling is difficult. This sequence can be used to approximate the joint distribution (e.g., to generate a histogram of the distribution); to approximate the marginal distribution of one of the variables, or some subset of the variables (for example, the unknown parameters or latent variables); or to compute an integral (such as the expected value of one of the variables).
+
 ## LDA Definitions and Symbols
 
 ![Smoothed_LDA](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Smoothed_LDA.png/377px-Smoothed_LDA.png)
@@ -406,11 +410,13 @@ Here is a good article to learn the ABC of gensim
 
 $$P({\boldsymbol {W}},{\boldsymbol {Z}},{\boldsymbol {\theta }},{\boldsymbol {\varphi }};\alpha ,\beta )=\prod _{i=1}^{K}P(\varphi _{i};\beta )\prod _{j=1}^{M}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})P(W_{j,t}\mid \varphi _{Z_{j,t}})$$
 
+## LDA概率模型推导过程
+
 对$$\beta$$,$$\varphi$$求二重积分
 
 $${\begin{aligned}&P({\boldsymbol {Z}},{\boldsymbol {W}};\alpha ,\beta )=\int _{\boldsymbol {\theta }}\int _{\boldsymbol {\varphi }}P({\boldsymbol {W}},{\boldsymbol {Z}},{\boldsymbol {\theta }},{\boldsymbol {\varphi }};\alpha ,\beta )\,d{\boldsymbol {\varphi }}\,d{\boldsymbol {\theta }}\\={}&\int _{\boldsymbol {\varphi }}\prod _{i=1}^{K}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d{\boldsymbol {\varphi }}\int _{\boldsymbol {\theta }}\prod _{j=1}^{M}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d{\boldsymbol {\theta }}.\end{aligned}}$$
 
-`对于$$\beta$$`,
+对于$$\beta$$,
 
 $$\int _{\boldsymbol {\theta }}\prod _{j=1}^{M}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d{\boldsymbol {\theta }}=\prod _{j=1}^{M}\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d\theta_{j}$$
 
@@ -423,9 +429,9 @@ $$\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta 
 $$\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})=\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}}$$
 
 首先因为$$z_{i,j}\sim \operatorname {Multinomial} (\theta _{i})$$
-其中令$$n{j,r}^{i}$$为第$$j^{th}$$篇文档中作为第$$i^{th}$$个主题的在词汇表中的第$$r^{th}$$个单词出现的次数。所以，$$n{j,r}^{i}$$是三维的。如果三维中的任何一个维度不受特定值的限制，我们使用带圆括号的点$$(\cdot)$$来表示。例如，$$n{j,(\cdot)}^{i}$$表示在$$j^{th}$$文档中所有作为第$$i^{th}$$个主题的单词出现次数
+其中$$n_{j,r}^{i}$$表示第$$j^{th}$$篇文档中作为第$$i^{th}$$个主题的在词汇表中的第$$r^{th}$$个单词出现的次数。所以，$$n_{j,r^{i}}$$是三维的。如果三维中的任何一个维度不受特定值的限制，我们使用带圆括号的点$$(\cdot)$$来表示。例如，$$n_{j,(\cdot)}^{i}$$表示在$$j^{th}$$文档中所有作为第$$i^{th}$$个主题的单词出现次数
 
-所以对于\theta_{j}的积分可以转换成
+所以对于$$\theta_{j}$$的积分可以转换成
 
 $$\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{\alpha _{i}-1}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}}\,d\theta _{j}=\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}+\alpha_{i}-1}\,d\theta_{j}$$
 
@@ -435,7 +441,7 @@ $$\int_{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alph
 所以
 $${\begin{aligned}&\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d\theta _{j}=\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}+\alpha _{i}-1}\,d\theta _{j}\\[8pt]={}&{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}{\frac {\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}{\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}}\int _{\theta _{j}}{\frac {\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}}\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}+\alpha _{i}-1}\,d\theta _{j}\\[8pt]={}&{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}{\frac {\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}{\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha_{i}\right)}}.\end{aligned}}$$
 
-`对于$$\varphi$$`,
+对于$$\varphi$$,
 跟$$\theta$$相同的过程
 
 $$&\int _{\boldsymbol {\varphi }}\prod _{i=1}^{K}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d{\boldsymbol {\varphi }}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}\prod _{r=1}^{V}\varphi _{i,r}^{\beta _{r}-1}\prod _{r=1}^{V}\varphi _{i,r}^{n_{(\cdot ),r}^{i}}\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}\prod _{r=1}^{V}\varphi _{i,r}^{n_{(\cdot ),r}^{i}+\beta _{r}-1}\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}{\frac {\prod _{r=1}^{V}\Gamma (n_{(\cdot ),r}^{i}+\beta _{r})}{\Gamma \left(\sum _{r=1}^{V}n_{(\cdot ),r}^{i}+\beta_{r}\right)}}$$
@@ -443,3 +449,4 @@ $$&\int _{\boldsymbol {\varphi }}\prod _{i=1}^{K}P(\varphi _{i};\beta )\prod _{j
 最终它们的双重积分等于
 
 $$P({\boldsymbol {Z}},{\boldsymbol {W}};\alpha ,\beta )=\prod _{j=1}^{M}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}{\frac {\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}{\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}}\times \prod _{i=1}^{K}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}{\frac {\prod _{r=1}^{V}\Gamma (n_{(\cdot ),r}^{i}+\beta _{r})}{\Gamma \left(\sum _{r=1}^{V}n_{(\cdot ),r}^{i}+\beta_{r}\right)}}$$
+
