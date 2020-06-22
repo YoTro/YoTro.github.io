@@ -4,7 +4,7 @@ date: 2020-06-18 10:40:00
 tags: [Graph,python, Probablility]
 music-id: 
 youtube-video-ID: 
-bilibili-video-ID: 
+bilibili-video-ID: BV1Xz4y1R7cv
 mathjax: true
 ---
 
@@ -343,11 +343,11 @@ $$f(\sum_{i=1}^np_ix_i)<=\sum_{i=1}^np_if(x_i)$$
 
 ## [Gibbs Sampling](https://en.wikipedia.org/wiki/Gibbs_sampling)
 
-![Gibbs Sampling](https://lh5.googleusercontent.com/A8gTcsmgRVRe9C-dNGjr7WyyRvX2NFto0aoKHgaPbwxtD4UnCKJPvnF0EXGXVBg7Me3RHxtzpxbhyuVMi4wP8Dt85cGSTHp_LMHOK-yGwCiPXPNhhPo4nruO-nQ4S7drMA, "Gibbs Sampling")
+![Gibbs Sampling](https://image.jiqizhixin.com/uploads/editor/7e215236-47d6-4a17-aba2-a0a5e3d29a3d/image__14_.png, "Gibbs Sampling")
 
 The Gibbs sampling is an alternative to deterministic algorithms for EM algorithm
 
-Obtaining a sequence of observations which are approximately from a specified multivariate probability distribution, when direct sampling is difficult. This sequence can be used to approximate the joint distribution (e.g., to generate a histogram of the distribution); to approximate the marginal distribution of one of the variables, or some subset of the variables (for example, the unknown parameters or latent variables); or to compute an integral (such as the expected value of one of the variables).
+Obtaining a sequence of observations which are approximately from a specified multivariate probability distribution, when direct sampling is difficult. This sequence can be used to approximate the joint distribution (e.g., to generate a histogram of the distribution); to approximate the [marginal distribution](https://en.wikipedia.org/wiki/Marginal_distribution) of one of the variables, or some subset of the variables (for example, the unknown parameters or latent variables); or to compute an integral (such as the expected value of one of the variables).
 
 ## LDA Definitions and Symbols
 
@@ -403,6 +403,8 @@ Here is a good article to learn the ABC of gensim
 3. [Scipy.stats](https://docs.scipy.org/doc/scipy/reference/stats.html?highlight=scipy%20stats#module-scipy.stats)
 
 4. [LDA数学八卦](http://www.52nlp.cn/lda-math-%e6%b1%87%e6%80%bb-lda%e6%95%b0%e5%ad%a6%e5%85%ab%e5%8d%a6)
+
+5. [Bishop C. M. (2006). Pattern Recognition and Machine Learning. Springer.](http://users.isr.ist.utl.pt/~wurmd/Livros/school/Bishop%20-%20Pattern%20Recognition%20And%20Machine%20Learning%20-%20Springer%20%202006.pdf)
 
 <span id="CN"> 
 
