@@ -68,6 +68,10 @@ $$p(x|\theta)$$
 |:--:|:--:|
 |cdf(k, mu, loc=0) | Cumulative distribution function.|
 
+$$F(x) = \int_{-\infty }^{x}f(x)\,dt$$
+
+Cumulative distribution function's derivative can be used as probability density function
+
 ### [pmf](https://en.wikipedia.org/wiki/Probability_mass_function)
 
 |:--:|:--:|
@@ -217,7 +221,7 @@ $$\operatorname {Var}(X)=\operatorname {E}(X-\mu )^{2}={\frac  {\alpha \beta }{(
 
 `Skewness`
 
-$$\frac{\operatorname {E}(X-\mu)^{3}}{[\operatorname {E}(X-\mu)^{2}]^{{3/2}}}=\frac{2(\beta -\alpha ){\sqrt  {\alpha +\beta +1}}}{(\alpha +\beta +2){\sqrt{\alpha \beta }}}$$
+$$\frac{2\,(\beta-\alpha)\sqrt{\alpha+\beta+1}}{(\alpha+\beta+2)\sqrt{\alpha\beta}}$$
 
 [scipy.stats.skew](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.skew.html)
 ```python
@@ -416,7 +420,7 @@ $$P({\boldsymbol {W}},{\boldsymbol {Z}},{\boldsymbol {\theta }},{\boldsymbol {\v
 
 $${\begin{aligned}&P({\boldsymbol {Z}},{\boldsymbol {W}};\alpha ,\beta )=\int _{\boldsymbol {\theta }}\int _{\boldsymbol {\varphi }}P({\boldsymbol {W}},{\boldsymbol {Z}},{\boldsymbol {\theta }},{\boldsymbol {\varphi }};\alpha ,\beta )\,d{\boldsymbol {\varphi }}\,d{\boldsymbol {\theta }}\\={}&\int _{\boldsymbol {\varphi }}\prod _{i=1}^{K}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d{\boldsymbol {\varphi }}\int _{\boldsymbol {\theta }}\prod _{j=1}^{M}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d{\boldsymbol {\theta }}.\end{aligned}}$$
 
-对于$$\beta$$,
+对于$$\theta$$,
 
 $$\int _{\boldsymbol {\theta }}\prod _{j=1}^{M}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d{\boldsymbol {\theta }}=\prod _{j=1}^{M}\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})\,d\theta_{j}$$
 
@@ -444,7 +448,7 @@ $${\begin{aligned}&\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_
 对于$$\varphi$$,
 跟$$\theta$$相同的过程
 
-$$&\int _{\boldsymbol {\varphi }}\prod _{i=1}^{K}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d{\boldsymbol {\varphi }}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}\prod _{r=1}^{V}\varphi _{i,r}^{\beta _{r}-1}\prod _{r=1}^{V}\varphi _{i,r}^{n_{(\cdot ),r}^{i}}\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}\prod _{r=1}^{V}\varphi _{i,r}^{n_{(\cdot ),r}^{i}+\beta _{r}-1}\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}{\frac {\prod _{r=1}^{V}\Gamma (n_{(\cdot ),r}^{i}+\beta _{r})}{\Gamma \left(\sum _{r=1}^{V}n_{(\cdot ),r}^{i}+\beta_{r}\right)}}$$
+$${\begin{aligned}&\int _{\boldsymbol {\varphi }}\prod _{i=1}^{K}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d{\boldsymbol {\varphi }}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}P(\varphi _{i};\beta )\prod _{j=1}^{M}\prod _{t=1}^{N}P(W_{j,t}\mid \varphi _{Z_{j,t}})\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}\prod _{r=1}^{V}\varphi _{i,r}^{\beta _{r}-1}\prod _{r=1}^{V}\varphi _{i,r}^{n_{(\cdot ),r}^{i}}\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}\int _{\varphi _{i}}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}\prod _{r=1}^{V}\varphi _{i,r}^{n_{(\cdot ),r}^{i}+\beta _{r}-1}\,d\varphi _{i}\\[8pt]={}&\prod _{i=1}^{K}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}{\frac {\prod _{r=1}^{V}\Gamma (n_{(\cdot ),r}^{i}+\beta _{r})}{\Gamma \left(\sum _{r=1}^{V}n_{(\cdot ),r}^{i}+\beta_{r}\right)}}.\end{aligned}}$$
 
 最终它们的双重积分等于
 
