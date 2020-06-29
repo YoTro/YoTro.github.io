@@ -63,10 +63,17 @@ $$p(x|\theta)$$
 
 ### [Conjugate prior](https://en.wikipedia.org/wiki/Conjugate_prior)
 
+### [pdf](https://en.wikipedia.org/wiki/Probability_density_function)
+
+|:--:|:--:|
+|pdf(k, mu, loc=0, scale) | Probability density function|
+
+$$f(x)={\frac {\partial ^{n}F}{\partial x_{1}\cdots \partial x_{n}}}{\bigg |}_{x}$$
+
 ### [cdf](https://en.wikipedia.org/wiki/Cumulative_distribution_function)
 
 |:--:|:--:|
-|cdf(k, mu, loc=0) | Cumulative distribution function.|
+|cdf(k, mu, loc=0, scale) | Cumulative distribution function.|
 
 $$F(x) = \int_{-\infty }^{x}f(x)\,dt$$
 
@@ -435,7 +442,7 @@ $$\int _{\theta _{j}}P(\theta _{j};\alpha )\prod _{t=1}^{N}P(Z_{j,t}\mid \theta 
 $$\prod _{t=1}^{N}P(Z_{j,t}\mid \theta _{j})=\prod _{i=1}^{K}\theta _{j,i}^{n_{j,(\cdot )}^{i}}$$
 
 首先因为$$z_{i,j}\sim \operatorname {Multinomial} (\theta _{i})$$
-其中$$n_{j,r}^{i}$$表示第$$j^{th}$$篇文档中作为第$$i^{th}$$个主题的在词汇表中的第$$r^{th}$$个单词出现的次数。所以，$$n_{j,r^{i}}$$是三维的。如果三维中的任何一个维度不受特定值的限制，我们使用带圆括号的点$$(\cdot)$$来表示。例如，$$n_{j,(\cdot)}^{i}$$表示在$$j^{th}$$文档中所有作为第$$i^{th}$$个主题的单词出现次数
+其中$$n_{j,r}^{i}$$表示第$$j^{th}$$篇文档中作为第$$i^{th}$$个主题的在词汇表中的第$$r^{th}$$个单词出现的次数。所以，$$n_{j,r^{i}}$$是三维的。如果三维中的任何一个维度不受特定值的限制，我们使用带圆括号的点$$(\cdot)$$来表示。例如，$$n_{j,(\cdot)}^{i}$$表示在$$j^{th}$$文档中所有作为第$$i^{th}$$个主题的所有单词出现次数
 
 所以对于$$\theta_{j}$$的积分可以转换成
 
