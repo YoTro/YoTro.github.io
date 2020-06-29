@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://www.cs.usfca.edu/~galles/visualization/Trie.html -->
+<html><style type="text/css" id="night-mode-pro-style">html {background-color: #FFFFFF !important; filter: sepia(0%) !important;} body {background-color: #FFFFFF;}</style><link type="text/css" rel="stylesheet" id="night-mode-pro-link"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>
+			Trie Visualization
+		</title>
+		
+		<!-- css sheet for how the page is laid out -->
+		
+		<link rel="stylesheet" href="./Trie Visualization_files/visualizationPageStyle.css">
+			
+			
+		<!-- jqueury stuff.  Only used for the animation speed slider. -->
+		<link rel="stylesheet" href="./Trie Visualization_files/jquery-ui-1.8.11.custom.css">
+		<script src="./Trie Visualization_files/jquery-1.5.2.min.js"></script>
+		<script src="./Trie Visualization_files/jquery-ui-1.8.11.custom.min.js"></script>
+				
+				
+		<!-- Javascript for the actual visualization code -->
+		<script type="application/javascript" src="./Trie Visualization_files/CustomEvents.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/UndoFunctions.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/AnimatedObject.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/AnimatedLabel.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/AnimatedCircle.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/AnimatedRectangle.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/AnimatedLinkedList.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/HighlightCircle.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/Line.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/ObjectManager.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/AnimationMain.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/Algorithm.js"> </script>
+		<script type="application/javascript" src="./Trie Visualization_files/Trie.js"> </script> 
+				
+	 </head> 
+	
+	<body onload="init();" class="VisualizationMainPage" cz-shortcut-listen="true" style="">
+		
+		<div id="container">
+			
+			<div id="header">  
+				<h1>Trie (Prefix Tree)</h1>
+			</div>
+			
+			<div id="mainContent"> 
+				
+				<div id="algoControlSection">
+					<!-- Table for buttons to control specific animation (insert/find/etc) -->
+					<!-- (filled in by javascript code specific to the animtion) -->
+					<table id="AlgorithmSpecificControls"></table> 
+				</div>
+				
+					<!-- Drawing canvas where all animation is done.  Note:  can be resized in code -->
+									
+				<canvas id="canvas" width="1000" height="500"></canvas>
+				<div id="generalAnimationControlSection">
+					<!-- Table for buttons to control general animation (play/pause/undo/etc) ->
+					<!-- (filled in by javascript code, specifically AnimationMain.js)  -->
+
+					<table id="GeneralAnimationControls"> </table>		
+				</div>
+				
+			</div> <!-- mainContent -->
+			
+			<div id="footer">  
+				<p><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">Algorithm Visualizations</a></p>
+			</div>
+
+		</div><!-- container -->
+	
+
+</body></html>
