@@ -883,7 +883,7 @@ print(birthday)
 ```
 ### [Source code](https://github.com/YoTro/Python_repository/blob/master/Pygame/14.py)
 
-## The 16 level ##
+## [The 16 level](http://www.pythonchallenge.com/pc/return/mozart.html) ##
 
 ![](http://www.pythonchallenge.com/pc/return/mozart.gif)
 
@@ -898,4 +898,60 @@ print(birthday)
 <img src="mozart.gif"><br>
 </body>
 </html>
+```
+Let us solve what the image want to express.
+
+```python 
+from PIL import Image
+im = Image.open('/Users/jin/Desktop/mozart.gif')
+w, h = im.size#(640,480)
+m = im.mode #'p'
+#change to 'rgb' mode
+im_rgb = im.convert()
+pixels = [im_rgb.getpixel((c, r)) for r in range(h) for c in range(w)]
+for i in pixels:
+    print(i)
+```
+You will find purple rgb value in here (255, 0, 255)
+```
+(153, 51, 51)
+(247, 247, 247)
+(255, 0, 255)
+(255, 0, 255)
+(255, 0, 255)
+(255, 0, 255)
+(255, 0, 255)
+(251, 251, 251)
+(102, 51, 51)
+```
+Count how many pixels of purple in the image
+```python 
+c = 0
+for j in pixels:
+    if j == (255, 0, 255):
+        c += 1
+print(c)#2400
+```
+`2400/480 = 5` it means every rows have 5 purple pixels, and we need to put the purple straightly
+
+### Answer
+
+```python 
+from PIL import Image 
+im = Image.open('/Users/jin/Desktop/mozart.gif')
+im_new = Image.new('RGB',(640, 480))#make a new image
+w, h = im.size
+
+im_rgb = im.convert("RGB")
+p = []
+purple = (255, 0, 255)
+
+for i in range(h):
+    p.append([im_rgb.getpixel((c, i)) for c in range(w)])
+for i in range(h):
+    pos = p[i].index(purple)
+    p[i] = p[i][pos:] + p[i][:pos]
+    for j in range(w):
+        im_new.putpixel((j,i), p[i][j])
+im_new.show()
 ```
