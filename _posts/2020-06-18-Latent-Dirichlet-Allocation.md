@@ -351,14 +351,13 @@ $${\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\si
 
 1. $$L(\mu, \sigma^{2}) = \prod_{i=0}^n {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}$$
 
-2. $$lnL(\mu, \sigma^{2}) = ln\prod_{i=0}^n {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}\\&=ln(2\pi\sigma^{2})^{-{\frac {n}{2}}}+ln exp({-{\sum _{i=1}^{n}\frac {(x_{i}-\mu)^{2}}{2\sigma^{2}}}})\\&={-\frac {n}{2}ln2\pi\sigma^{2}}-{\sum _{i=1}^{n}\frac {(x_{i}-\mu)^{2}}{2\sigma^{2}}}\\&={-\frac {n}{2}}(ln2\pi+ln\sigma^{2}) - \frac {1}{2\sigma^{2}}\sum_{i=1}^{n}(x_{i}-\mu)^{2}$$
+2. $$lnL(\mu, \sigma^{2}) &= ln\prod_{i=0}^n {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}\\&=ln(2\pi\sigma^{2})^{-{\frac {n}{2}}}+ln exp({-{\sum _{i=1}^{n}\frac {(x_{i}-\mu)^{2}}{2\sigma^{2}}}})\\&={-\frac {n}{2}ln2\pi\sigma^{2}}-{\sum _{i=1}^{n}\frac {(x_{i}-\mu)^{2}}{2\sigma^{2}}}\\&={-\frac {n}{2}}(ln2\pi+ln\sigma^{2}) - \frac {1}{2\sigma^{2}}\sum_{i=1}^{n}(x_{i}-\mu)^{2}$$
 
 3. $$\left\{\begin{matrix}
- &\frac {\partial ln(L)}{\partial \mu} = \frac {1}{\sigma^{2}}\sum_{i=1}^n(x_{i}-\mu) = 0 
-  \\& \frac {\partial ln(L)}{\partial \sigma^2} = -\frac {n}{2\sigma^{2}}+\frac {1}{2\sigma^{4}}\sum_{i=1}^{n}(x_{i}-\mu)^2 = 0
+ \frac {\partial ln(L)}{\partial \mu} = \frac {1}{\sigma^{2}}\sum_{i=1}^n(x_{i}-\mu) = 0 
+  \\ \frac {\partial ln(L)}{\partial \sigma^2} = -\frac {n}{2\sigma^{2}}+\frac {1}{2\sigma^{4}}\sum_{i=1}^{n}(x_{i}-\mu)^2 = 0
 \end{matrix}\right.\Rightarrow \left\{ \begin{matrix}
 \sum_{i=1}^n(x_{i}-\mu) = 0 \\ \frac {1}{n}\sum_{i=1}^{n}(x_{i}-\mu)^2 = \sigma^{2}
-
 \end{matrix}\right.$$
 
 4. The results is 
