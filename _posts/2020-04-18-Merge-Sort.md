@@ -1,3 +1,4 @@
+---
 title: Merge Sort
 date: 2020-04-18 18:34:00
 tags: [Sorting Algorithm]
