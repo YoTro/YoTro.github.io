@@ -487,3 +487,4 @@ $${\begin{aligned}&\int _{\boldsymbol {\varphi }}\prod _{i=1}^{K}P(\varphi _{i};
 
 $$P({\boldsymbol {Z}},{\boldsymbol {W}};\alpha ,\beta )=\prod _{j=1}^{M}{\frac {\Gamma \left(\sum _{i=1}^{K}\alpha _{i}\right)}{\prod _{i=1}^{K}\Gamma (\alpha _{i})}}{\frac {\prod _{i=1}^{K}\Gamma (n_{j,(\cdot )}^{i}+\alpha _{i})}{\Gamma \left(\sum _{i=1}^{K}n_{j,(\cdot )}^{i}+\alpha _{i}\right)}}\times \prod _{i=1}^{K}{\frac {\Gamma \left(\sum _{r=1}^{V}\beta _{r}\right)}{\prod _{r=1}^{V}\Gamma (\beta _{r})}}{\frac {\prod _{r=1}^{V}\Gamma (n_{(\cdot ),r}^{i}+\beta _{r})}{\Gamma \left(\sum _{r=1}^{V}n_{(\cdot ),r}^{i}+\beta_{r}\right)}}$$
 
+未完待续...
