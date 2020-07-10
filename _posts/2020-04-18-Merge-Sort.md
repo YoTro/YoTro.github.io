@@ -161,7 +161,7 @@ int main(void){
 	for (int i = 0; i < n; i++){
 		matrix[i] = (int*)malloc(sizeof(int)*n);
 	}
-	int a[3][3] = \{{1,5,9},{10,11,13},{12,13,15}\};
+	int a[3][3] = {\{1,5,9},{10,11,13},{12,13,15}\};
 	for (int i = 0; i < n; i++){
 		for (int j = 0; j < n; j++){
 			matrix[i][j] = a[i][j];
