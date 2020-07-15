@@ -29,8 +29,7 @@ Note:
 ```
 ## [Solution](https://github.com/YoTro/CToryun/blob/master/Sorting/Inversion.c)
 
-
-```c []
+```c
 //
 //  Inversion.c
 //  Function: get the inversion on array used by mergesort, regulartravel, Fenwick tree
@@ -206,7 +205,7 @@ int main(void){
 }
 
 ```
-```python []
+```python
 class BIT:
     def __init__(self, n):
         self.n = n
