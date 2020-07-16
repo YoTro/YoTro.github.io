@@ -116,7 +116,80 @@ class binarytree():
 2. The deleted node has only one child node
 3. The deleted node has 2 child nodes
 
+```python
+ def delete(self,x):
+        if self.root is None:
+            return 0
+        else:
+            queue = []
+            q = []
+            tag = 0
+            queue.append(self.root)
+            while len(queue)>0:
+                node = queue.pop(0)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+                q.append(node)
+            while len(q)>0:
+                node = q.pop(0)
+                if node.value == x:
+                    tag = 1
+                    if (node.left==node.right==None):
+                        print ("删除的节点值为{}".format(node.value))
+                        node.value = None
+                        return
+                    elif not node.left or not node.right:
+                        if not node.left:
+                            print ("删除的节点值为{},补缺的节点为{}".format(node.value,node.right.value))
+                            node.value = node.right.value
+                            node.right = None
+                            return
+                        if not node.right:
+                            print ("删除的节点值为{},补缺的节点为{}".format(node.value,node.left.value))
+                            node.value = node.left.value
+                            node.left = None
+                            return
+                    else:
+                        tmp = q.pop()
+                        while not tmp.value:
+                            tmp = q.pop()
+                        print ("删除的节点值为{},补缺的节点为{}".format(node.value,tmp.value))
+                        node.value = tmp.value
+                        tmp.value = None
+                        break
+                        
+                if tag != 1 and len(q)==0:
+                    #print tag
+                    print("\nWe can't find {} in this tree".format(x))
 
+```
+
+### Insertion BST 
+
+```python
+    def insert(self,x):
+        '''以左节点小于右节点方式做插入操作(BST)'''
+        if self.root is None:
+            self.root = treenode(x)
+            return
+        else:
+            stack = []
+            stack.append(self.root)
+            while len(stack) > 0:
+                node = stack.pop()
+                if node.right and node.value <= x:
+                    stack.append(node.right)
+                elif node.left and node.value > x:
+                    stack.append(node.left)
+                elif not node.right and node.value <= x:
+                    node.right = treenode(x)
+                    node.right.height = 1 + node.height
+                elif not node.left and node.value > x:
+                    node.left = treenode(x)
+                    node.left.height = 1 + node.height
+```
 ### Depth-first search of binary tree
 
 These searches are referred to as depth-first search (DFS), since the search tree is deepened as much as possible on each child before going to the next sibling. For a binary tree, they are defined as access operations at each node, starting with the current node, whose algorithm is as follows:
@@ -130,6 +203,27 @@ Go down one level to the recursive argument N. If N exists (is non-empty) execut
 Return by going up one level and arriving at the parent node of N.
 In the examples (L) is mostly performed before (R). But (R) before (L) is also possible, see (RNL).
 
+```python 
+    def DFS(self):
+        '''deep fisrt search'''
+        print("深度优先遍历:\n")
+        if self.root:
+            stack = []
+            stack.append(self.root)
+            p = []
+            while len(stack)>0:
+                node = stack.pop()
+                p.append(node.value)
+                print node.value,
+                if node.right:
+                    stack.append(node.right)                
+                if node.left:
+                    stack.append(node.left)
+                #print p
+        else:
+            return
+```
+
 ### Pre-order (NLR)
 
 Access the data part of the current node.
@@ -137,6 +231,19 @@ Traverse the left subtree by recursively calling the pre-order function.
 Traverse the right subtree by recursively calling the pre-order function.
 The pre-order traversal is a topologically sorted one, because a parent node is processed before any of its child nodes is done.
 
+```python
+    def NLR(self,root):
+        '''Pre-order
+        (L)	Recursively traverse N's left subtree.
+        (R)	Recursively traverse N's right subtree.
+        (N)	Process the current node N itself.
+
+        '''
+        if root:
+            print root.value,
+            self.NLR(root.left)
+            self.NLR(root.right)
+```
 ### In-order (LNR)
 
 Traverse the left subtree by recursively calling the in-order function.
@@ -144,12 +251,65 @@ Access the data part of the current node.
 Traverse the right subtree by recursively calling the in-order function.
 In a binary search tree ordered such that in each node the key is greater than all keys in its left subtree and less than all keys in its right subtree, in-order traversal retrieves the keys in ascending sorted order.
 
+```python
+    def LNR(self,root):
+        '''In-order'''
+        if root:
+            self.LNR(root.left)
+            print root.value,
+            self.LNR(root.right)
+    def LNR2(self, root):
+        '''利用栈中序遍历'''
+        stack,rst = [root],[]
+        while stack:
+            i = stack.pop()
+            if isinstance(i,treenode):
+                stack.extend([i.right,i.val,i.left])
+                print stack
+            elif isinstance(i,int):
+                rst.append(i)
+        return rst
+```
 ### Post-order (LRN)
 
 Traverse the left subtree by recursively calling the post-order function.
 Traverse the right subtree by recursively calling the post-order function.
 Access the data part of the current node.
 
+```python
+    def LRN(self,root):
+        '''Post-order'''
+        if root:
+            self.LRN(root.left)
+            self.LRN(root.right)
+            print root.value,
+```
+
+### Judge whether it is subtree of this binary tree 
+
+```python
+    def identical(self, a, b):
+        '''判定两棵子树是否相同'''
+        if not a and not b:  # 两个 node 都为空为 True
+            return True
+        if a is None or b is None:  # 一方空，一方不空，为False
+            return False
+        # 3. 返回值 
+        #否则说明两个 node 都非空，那么如果两个树相等必须满足3个条件，即当前 node 的值相等，且各自左右子树也对应相等
+        return a.val == b.val and \
+               self.identical(a.left, b.left) and \
+               self.identical(a.right, b.right)
+
+    def isSubtree(self, s, t):
+        '''判定两棵树是否相同'''
+        if not s:
+            return False  # 边界，如果s为空直接返回False
+
+        if self.identical(s, t):  #1. 终止条件 若 s 和 t 对应的两棵树相同则返回True
+            return True
+        #2. 循环操作 不然的话就继续探索 s 的左右子树是否和 t 相等
+        return self.isSubtree(s.left, t) or self.isSubtree(s.right, t)
+```
 ## Source code
 
 [My Github Code](https://github.com/YoTro/Python_repository/blob/master/Trees/BST.py)
