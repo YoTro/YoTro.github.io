@@ -76,7 +76,13 @@ class TreeNode():
 		self.left = None #left node
 		self.right = None #right node
 ```
-
+```c
+typedef struct {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right; 
+}TreeNode;
+```
 ### BFS() build Binarytree
 
 ```python 
