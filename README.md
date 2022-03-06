@@ -20,6 +20,8 @@ CN|[EN](https://github.com/YoTro/YoTro.github.io/blob/master/README.en.md)
 - 数学公式（[MathJax](https://www.mathjax.org/)）
 - RSS（[jekyll-feed](https://github.com/jekyll/jekyll-feed)）
 - 多语言支持
+- 头部视频嵌入 (Youtube/Bilibili)
+- 音乐播放 (网易云)
 
 ### 评论系统
 
