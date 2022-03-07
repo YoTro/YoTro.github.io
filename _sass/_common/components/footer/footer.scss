@@ -1,11 +1,13 @@
 .footer {
   font-size: 14px;
   color: $grey-dark;
-
+  
   img { border: none; }
 }
 
 .footer-inner { text-align: center; }
+
+.copyright { text-align: center; }
 
 .with-love {
   display: inline-block;
@@ -17,7 +19,7 @@
 
 .powered-by {
   margin-right: 10px;
-
+  text-align: center;
   &::after {
     content: "|";
     padding-left: 10px;
