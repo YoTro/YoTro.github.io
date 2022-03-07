@@ -1,6 +1,6 @@
 ---
 title: The Differention of Bash and Zsh
-date: 2020-07-09 10:40:00
+date: 2021-03-05 10:40:00
 tags: [Bash]
 music-id: 
 youtube-video-ID: 
