@@ -11,7 +11,7 @@ CN|[EN](https://github.com/YoTro/YoTro.github.io/blob/master/README.en.md)
 - 文章目录（[TOC](http://projects.jga.me/toc/)）
 - 文章标签
 - Emoji（[Jemoji](https://github.com/jekyll/jemoji)）
-- 评论（[Disqus](https://disqus.com/)）
+- 评论（[Disqus](https://disqus.com/)/Facebook）
 - Google Analytics
 - 联系方式设置（Email, Facebook, Twitter, 微博, 知乎……）
 - Web 语意化
@@ -24,7 +24,4 @@ CN|[EN](https://github.com/YoTro/YoTro.github.io/blob/master/README.en.md)
 - 音乐播放 (网易云)
 - 在线交流 (Messenger内置自动回复机器人)
 
-### 评论系统
-
-目前支持 Disqus/Facebook
 
