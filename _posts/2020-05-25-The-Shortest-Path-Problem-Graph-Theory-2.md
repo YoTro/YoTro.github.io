@@ -617,7 +617,7 @@ void strongly_connected_components(int graph[6][6], stack *s, int size, int rows
 int main(void){
 	int v = 6;
 	//Adjacency matrix
-	int graph[6][6] = {{0,1,0,0,0,0},{0,0,1,0,0,0},{1,0,0,0,0,0},{0,1,1,0,1,0},{0,0,0,1,0,1},{0,0,1,0,0,0}};
+	int graph[6][6] = {% raw %}{{0,1,0,0,0,0},{0,0,1,0,0,0},{1,0,0,0,0,0},{0,1,1,0,1,0},{0,0,0,1,0,1},{0,0,1,0,0,0}}{% endraw %};
     stack s;
     int n = 6;
     InitStack(&s);
@@ -1315,7 +1315,7 @@ void strongly_connected_components(int graph[6][6], stack *s, int size, int rows
 int main(void){
 	int v = 6;
 	//Adjacency matrix 图的邻接矩阵
-	int graph[6][6] = {{0,1,0,0,0,0},{0,0,1,0,0,0},{1,0,0,0,0,0},{0,1,1,0,1,0},{0,0,0,1,0,1},{0,0,1,0,0,0}};
+	int graph[6][6] = {% raw %}{{0,1,0,0,0,0},{0,0,1,0,0,0},{1,0,0,0,0,0},{0,1,1,0,1,0},{0,0,0,1,0,1},{0,0,1,0,0,0}}{% endraw %};
 	//初始化dfn,low,onStack
     stack s;
     int n = 6;
