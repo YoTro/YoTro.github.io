@@ -22,7 +22,9 @@ CN|[EN](https://github.com/YoTro/YoTro.github.io/blob/master/README.en.md)
 - 多语言支持
 - 头部视频嵌入 (Youtube/Bilibili)
 - 音乐播放 (网易云)
+- 在线交流 (Messenger内置自动回复机器人)
 
 ### 评论系统
 
-目前支持 Disqus 
+目前支持 Disqus/Facebook
+
