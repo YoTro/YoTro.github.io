@@ -13,7 +13,7 @@ mathjax: true
 
 [EN](#EN)|[CN](#CN)
 
-![Radix sort](/images/Algorithm\ formula/Radix_sort.gif)
+![Radix sort](/images/Algorithm%20formula/Radix_sort.gif)
 
 <span id="EN"> 
 
