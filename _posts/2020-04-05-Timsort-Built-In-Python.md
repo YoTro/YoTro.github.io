@@ -120,8 +120,6 @@ You could see my code here [source code](https://github.com/YoTro/Python_reposit
 
 1. [Tim Peters’s description of the algorithm](https://svn.python.org/projects/python/trunk/Objects/listsort.txt)
 
-2. 
-
 
 
 <span id="CN">
@@ -223,4 +221,3 @@ minrun = merge_compute_minrun(nRemaining)
 
 1. [Tim Peters’s description of the algorithm](https://svn.python.org/projects/python/trunk/Objects/listsort.txt)
 
-2. 
