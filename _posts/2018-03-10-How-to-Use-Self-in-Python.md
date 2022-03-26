@@ -50,7 +50,7 @@ To make the class more secure, we can call these private attributes  and public 
 Like This: 
 
 | | |
-| :----: || :----: |
+| :----: | :----: |
 |private attributes|"__name"|
 |public attributes |"name"  |
 
