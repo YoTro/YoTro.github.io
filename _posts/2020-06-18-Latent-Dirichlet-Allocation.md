@@ -141,7 +141,7 @@ ax.vlines(x, 0, rv.pmf(x), colors='k', linestyles='-', lw=1,
 ax.legend(loc='best', frameon=False)
 plt.show()
 ```
-![poisson](https://docs.scipy.org/doc/scipy/reference/_images/scipy-stats-poisson-1_00_00.png)
+![poisson](https://docs.scipy.org/doc//scipy-1.3.2/reference/_images/scipy-stats-poisson-1_00_00.png)
 
 ## [Gamma distribution](https://en.wikipedia.org/wiki/Gamma_distribution)
 
@@ -179,7 +179,7 @@ ax.hist(r, density=True, histtype='stepfilled', alpha=0.2)
 ax.legend(loc='best', frameon=False)
 plt.show()
 ```
-![gamma](https://docs.scipy.org/doc/scipy/reference/_images/scipy-stats-gamma-1.png)
+![gamma](https://docs.scipy.org/doc/scipy/_images/scipy-stats-gamma-1.png)
 
 ## [Beta distribution](https://en.wikipedia.org/wiki/Beta_distribution)
 
@@ -216,7 +216,7 @@ ax.legend(loc='best', frameon=False)
 plt.show()
 
 ```
-![beta](https://docs.scipy.org/doc/scipy/reference/_images/scipy-stats-beta-1.png)
+![beta](https://docs.scipy.org/doc/scipy/_images/scipy-stats-beta-1.png)
 
 `Expectation`
 
@@ -263,7 +263,7 @@ for distname in distnames:
     ax.legend()
 plt.show()
 ```
-![kurtosis](https://docs.scipy.org/doc/scipy/reference/_images/scipy-stats-kurtosis-1.png)
+![kurtosis](https://docs.scipy.org/doc/scipy/_images/scipy-stats-kurtosis-1.png)
 
 ## [Multinomial distribution](https://en.wikipedia.org/wiki/Multinomial_distribution)
 
@@ -351,7 +351,12 @@ $${\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\si
 
 1. $$L(\mu, \sigma^{2}) = \prod_{i=0}^n {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}$$
 
-2. $$lnL(\mu, \sigma^{2}) &= ln{\prod_{i=0}^n {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}\\&=ln(2\pi\sigma^{2})^{-{\frac {n}{2}}}+ln exp({-{\sum _{i=1}^{n}\frac {(x_{i}-\mu)^{2}}{2\sigma^{2}}}})\\&={-\frac {n}{2}ln2\pi\sigma^{2}}-{\sum _{i=1}^{n}\frac {(x_{i}-\mu)^{2}}{2\sigma^{2}}}\\&={-\frac {n}{2}}(ln2\pi+ln\sigma^{2}) - \frac {1}{2\sigma^{2}}\sum_{i=1}^{n}(x_{i}-\mu)^{2}$$
+2. $$\begin{align}
+lnL(\mu, \sigma^{2}) &= ln{\prod_{i=0}^n {\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}}\\
+&=ln(2\pi\sigma^{2})^{-{\frac {n}{2}}}+ln e^{({-{\sum _{i=1}^{n}\frac {(x_{i}-\mu)^{2}}{2\sigma^{2}}}})}\\
+&={-\frac {n}{2}ln2\pi\sigma^{2}}-{\sum _{i=1}^{n}\frac {(x_{i}-\mu)^{2}}{2\sigma^{2}}}\\
+&={-\frac {n}{2}}(ln2\pi+ln\sigma^{2}) - \frac {1}{2\sigma^{2}}\sum_{i=1}^{n}(x_{i}-\mu)^{2}
+\end{align}$$
 
 3. $$\left\{\begin{matrix}
  \frac {\partial ln(L)}{\partial \mu} = \frac {1}{\sigma^{2}}\sum_{i=1}^n(x_{i}-\mu) = 0 
@@ -374,7 +379,7 @@ $$f(\sum_{i=1}^np_ix_i)<=\sum_{i=1}^np_if(x_i)$$
 
 ## [Gibbs Sampling](https://en.wikipedia.org/wiki/Gibbs_sampling)
 
-![Gibbs Sampling](https://image.jiqizhixin.com/uploads/editor/7e215236-47d6-4a17-aba2-a0a5e3d29a3d/image__14_.png, "Gibbs Sampling")
+![Gibbs Sampling](https://image.jiqizhixin.com/uploads/editor/7e215236-47d6-4a17-aba2-a0a5e3d29a3d/image__14_.png", "Gibbs Sampling")
 
 The Gibbs sampling is an alternative to deterministic algorithms for EM algorithm
 
