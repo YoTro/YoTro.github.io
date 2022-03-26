@@ -37,7 +37,7 @@ Python has a heapq module that implements a priority queue using a binary heap. 
 ## [heapsort](https://en.wikipedia.org/wiki/Heapsort)
 
 ### Complexity
-
+| | |
 |: ---: |: --- :: |
 | Average time complexity | (n log n) |
 | Worst time complexity | O (n log n) |
@@ -293,8 +293,9 @@ int main(void)
 
 
 ## 操作
+	
 | | |
-|: ---: |: --- :: |
+|: ---: |: --- : |
 |操作	|描述	|时间复杂度|
 |build	|创建一个空堆	|O(n)|
 |insert	|向堆中插入一个新元素	|O(log n)|
@@ -307,6 +308,7 @@ int main(void)
 ## [堆排序](https://en.wikipedia.org/wiki/Heapsort)
 
 ### 复杂度
+	
 | | |
 |:---:|:---:|
 |平均时间复杂度| (nlog n)|
