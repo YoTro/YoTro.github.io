@@ -12,8 +12,8 @@ mathjax: true
 # [Merge sort](https://en.wikipedia.org/wiki/Merge_sort)
 
 Merge sort (also commonly spelled mergesort) is an efficient, general-purpose, comparison-based stable sorting algorithm. 
-![loading...]("https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif", "mergesort")
-![loading...]("https://upload.wikimedia.org/wikipedia/commons/e/e6/Merge_sort_algorithm_diagram.svg", "mergesort")
+![loading...](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif  "mergesort")
+![loading...](https://upload.wikimedia.org/wikipedia/commons/e/e6/Merge_sort_algorithm_diagram.svg  "mergesort")
 
 ## Complexity
 
