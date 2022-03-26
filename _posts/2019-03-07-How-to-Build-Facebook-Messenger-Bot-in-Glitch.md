@@ -7,7 +7,7 @@ music-id: 468882985
 ---  
 > source from http://baiaman.com/facebook-chatbot-tutorial
 > https://developers.facebook.com/docs/messenger-platform/getting-started/quick-start?locale=zh_TW
-![Messenger Bot](/images/Plugin/Messengerbot/messenger_bot.gif)
+> ![Messenger Bot](/images/Plugin/Messengerbot/messenger_bot.gif)
 
 ## Introduce
 The [Glitch](https://glitch.com) is free register and build a project website.Provide a free public service and many interested projects,you could test your project online,let's becutiful feature I love it so much.
