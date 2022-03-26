@@ -12,9 +12,12 @@ mathjax: true
 # [Merge sort](https://en.wikipedia.org/wiki/Merge_sort)
 
 Merge sort (also commonly spelled mergesort) is an efficient, general-purpose, comparison-based stable sorting algorithm. 
-![loading...](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Merge-sort-example-300px.gif/220px-Merge-sort-example-300px.gif, "mergesort")
+![loading...]("https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif", "mergesort")
+![loading...]("https://upload.wikimedia.org/wikipedia/commons/e/e6/Merge_sort_algorithm_diagram.svg", "mergesort")
 
 ## Complexity
+
+| | |
 |:---:|:--:|
 | Time | $$O(N\log(N))$$ |
 
@@ -243,7 +246,7 @@ int main(void){
 
 ```
 
-## Leetcode Reversepairs in arrays(https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)
+## [Leetcode Reversepairs in arrays](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)
 
 ```
 Find the total number of reverse pairs in this array.
