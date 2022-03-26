@@ -48,6 +48,7 @@ People=People()
 In this way we can package this class very well. The external only needs to call the inside variable without knowing the internal implementation details inside.(**Everything is an object in Python**)  
 To make the class more secure, we can call these private attributes  and public attributes.
 Like This:  
+| | |
 | :----: || :----: |
 |private attributes|"__name"|
 |public attributes |"name"  |
