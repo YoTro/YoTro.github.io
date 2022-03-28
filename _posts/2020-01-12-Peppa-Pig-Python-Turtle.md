@@ -299,9 +299,9 @@ t.seth(0)
 t.circle(70,20)
 t.circle(10,330)
 t.circle(70,30)
+```
 
 
-{% endhighlight %}
 
 # Homura Akemi
 
@@ -309,8 +309,7 @@ t.circle(70,30)
 
 [Source code](https://github.com/Seraphir/turtle-vectorgraph/blob/master/homura.py)
 
-{% highlight ruby linenos %}
-
+```
 #-*-coding:UTF-8-*-
 #Time: 2020-01-13 14:34:00
 import turtle as te
