@@ -309,7 +309,7 @@ t.circle(70,30)
 
 [Source code](https://github.com/Seraphir/turtle-vectorgraph/blob/master/homura.py)
 
-```
+```py
 #-*-coding:UTF-8-*-
 #Time: 2020-01-13 14:34:00
 import turtle as te
