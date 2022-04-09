@@ -127,7 +127,7 @@ $$\begin{eqnarray}
 |5.|biases|$$\beta$$|
 |6.|scales|$$\gamma$$|
 |7.|l.out_c|当前层的输出通道数|
-|8.|l.delta|当前层敏感度图|
+|8.|l.delta|当前层累积误差|
 
 
 
@@ -362,23 +362,23 @@ $$\begin{eqnarray}
 ```c
 void backward_bias(float *bias_updates, float *delta, int batch, int n, int size)
 {
-    int i,b;
-    for(b = 0; b < batch; ++b){
-        for(i = 0; i < n; ++i){
-            bias_updates[i] += sum_array(delta+size*(i+b*n), size);
+    int i,b,f;
+    for(f = 0; f < n; ++f){
+        float sum = 0;
+        for(b = 0; b < batch; ++b){
+            for(i = 0; i < size; ++i){
+                int index = i + size*(f + n*b);
+                sum += delta[index];
+            }
         }
+        scale_updates[f] += sum;
     }
 }
-float sum_array(float *a, int n)
-{
-    int i;
-    float sum = 0;
-    for(i = 0; i < n; ++i) sum += a[i];
-    return sum;
-}
+
 ```
 
 # 参考
 
 1. [pjreddie.com/darknet/](https://github.com/pjreddie/darknet)
 2. [The implementation of BN by Pytorch](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html)
+3. [CSE 490g1 / 599g1 Homework 2](https://github.com/pjreddie/dl-hw2)
