@@ -140,6 +140,7 @@ menu_icons:
   categories: th
   schedule: calendar
   tags: tags
+  resume: folder-user
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
