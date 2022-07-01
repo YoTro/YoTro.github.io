@@ -3,6 +3,7 @@ title:
   category: Category
   tag: Tag
   schedule: Schedule
+  resume: Resume
 
 author: Author
 
@@ -12,6 +13,7 @@ menu:
   categories: Categories
   tags: Tags
   about: About
+  resume: Resume
   search: Search
   schedule: Schedule
   sitemap: Sitemap
