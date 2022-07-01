@@ -6,7 +6,7 @@
 # Site
 title: "YoTro"
 subtitle:
-description: "Python2.7,learning data structure and algorithms"
+description: "Python2/3,learning data structure and algorithms"
 author: Toryun
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: en
@@ -122,7 +122,7 @@ menu:
   archives: /archives/
   tags: /tags/
   about: /about/
-  resume: /resume.html
+  resume: /resume/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
