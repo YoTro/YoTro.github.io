@@ -1,0 +1,841 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9;IE=8;IE=7;IE=EDGE">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="alternate" media="handheld" href="#" />
+    <meta charset="utf-8">
+    <title>钟金的简历</title>
+    <style>
+        * {
+            outline: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: "Hiragino Sans GB", "Microsoft Yahei", "SimSun", Arial, "Helvetica Neue", Helvetica;
+            color: #333;
+            word-wrap: break-word;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        main,
+        menu,
+        nav,
+        section,
+        summary {
+            display: block;
+        }
+
+        progress {
+            display: inline-block;
+            vertical-align: baseline;
+        }
+
+        a {
+            color: #555;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #00b38a;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 10px 0;
+            font-weight: normal;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        p+p {
+            margin-top: 10px;
+        }
+
+        img {
+            border: 0;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            margin: 0;
+            padding: 0;
+            border: 1px solid #ededed;
+            border-radius: 0;
+            font-family: "Hiragino Sans GB", "Microsoft Yahei", "SimSun", Arial, "Helvetica Neue", Helvetica;
+        }
+
+        textarea {
+            overflow: auto;
+        }
+
+        label,
+        select,
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        input[type="radio"],
+        input[type="checkbox"],
+        input[type="file"] {
+            cursor: pointer;
+        }
+
+        input[type=text],
+        input[type=password],
+        textarea {
+            font-family: "Microsoft Yahei", "SimSun", Arial, "Helvetica Neue", Helvetica;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th,
+        td {
+            padding: 0;
+        }
+
+        strong {
+            font-weight: normal;
+        }
+
+        em,
+        i {
+            font-style: normal;
+        }
+
+        dl,
+        dt,
+        dd {
+            margin: 0;
+        }
+
+        ::selection {
+            color: #fff;
+            background-color: #00b38a;
+        }
+
+        ::-moz-selection {
+            color: #fff;
+            background-color: #00b38a;
+        }
+
+        ul,
+        ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #container {
+            width: 720px;
+            margin: 50px auto 54px auto;
+            border: 1px solid #e3ebe9;
+            border-radius: 5px;
+        }
+
+        .mr-template {
+            padding: 50px 50px 10px;
+        }
+
+        .mr-template .mr-template_title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .mr-template .mr-template_title span {
+            font-size: 18px;
+            color: #333333;
+            font-weight: 600;
+            position: relative;
+            margin-left: 10px;
+        }
+
+        .mr-template .mr-template_title span:before {
+            content: '';
+            display: block;
+            border-left: 3px solid #00B38A;
+            height: 16px;
+            width: 3px;
+            position: absolute;
+            left: -7px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .mr-template .mr_md_del {
+            display: none;
+        }
+
+        /***** 基本信息 ****/
+
+        .basic {
+            padding: 50px;
+            background: #FAFAFA;
+            border-radius: 5px 5px 0 0;
+            border-bottom: 1px solid #E3EBE9;
+            display: flex;
+        }
+
+        .basic .basic-photo {
+            height: 88px;
+            width: 88px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .basic .basic-photo img {
+            height: 105px;
+            width: 88px;
+            position: absolute;
+            top: 0;
+            /* border-radius: 50%;*/
+        }
+
+        .basic .basic-photo .basic-photo_shadow {
+            display: none;
+        }
+
+        .basic .basic-photo:hover .basic-photo_shadow {
+            display: block;
+        }
+
+        .basic .basic-info {
+            position: relative;
+            width: 100%;
+            margin-left: 20px;
+            flex: 1;
+        }
+
+        .basic .basic-info .edit-btn {
+            position: absolute;
+            right: 0;
+            top: 4px;
+        }
+
+        .basic .basic-info .basic-name-area {
+            overflow: hidden;
+            height: 37px;
+            margin-bottom: 11px;
+        }
+
+        .basic .basic-info .basic-name {
+            float: left;
+            max-width: 250px;
+            font-size: 26px;
+            color: #00B38A;
+            font-weight: 600;
+            line-height: 37px;
+        }
+
+        .basic .basic-info .icon-sex {
+            width: 13px;
+            height: 13px;
+            float: left;
+            margin-top: 16px;
+            margin-left: 10px;
+            background: none;
+        }
+
+        .basic .basic-info .icon-sex.icon-sex__male {
+            background: url(https://www.lgstatic.com/common/image/pc/icon_man.png);
+        }
+
+        .basic .basic-info .icon-sex.icon-sex__female {
+            background: url(https://www.lgstatic.com/common/image/pc/icon_woman.png);
+        }
+
+        .basic .basic-info .basic-self {
+            margin-top: 20px;
+        }
+
+        .basic .basic-info p {
+            font-size: 14px;
+            color: #333333;
+            line-height: 20px;
+            margin-top: 6px;
+        }
+
+        .basic .basic-info i {
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .basic .basic-info .basic-tel_icon {
+            width: 11px;
+            height: 14px;
+            margin-right: 2px;
+            background: url(https://www.lgstatic.com/common/image/pc/icon_phone.png);
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .basic .basic-info .basic-email_icon {
+            width: 14px;
+            height: 11px;
+            margin-right: 2px;
+            background: url(https://www.lgstatic.com/common/image/pc/icon_mail.png);
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .basic .basic-info .basic-tel {
+            margin-right: 20px;
+        }
+
+        .basic-tel span {
+            vertical-align: middle;
+        }
+
+        .basic-email span {
+            vertical-align: middle;
+        }
+
+        /***** 基本信息 end ****/
+
+        /***** 自我描述 ****/
+
+        .per .per-self_content {
+            position: relative;
+        }
+
+        .per .per-self_content .per-self_des {
+            margin-top: 13px;
+            font-size: 14px;
+            color: #666666;
+            line-height: 30px;
+        }
+
+        .per .per-self_content .per-self_des p {
+            margin-top: 0;
+        }
+
+        .per .per-self_content .per-self_des ol {
+            list-style-type: decimal;
+            -webkit-padding-start: 20px;
+        }
+        .per .per-self_content .per-self_des ul {
+            list-style: disc;
+            -webkit-padding-start: 20px;
+        }
+
+        /***** 自我描述 end ****/
+
+        /***** 工作经历 ****/
+
+        .work-exp .work-exp_list {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .work-exp .work-exp_list .exp-list_time {
+            font-size: 14px;
+            color: #666666;
+            position: absolute;
+            right: 0;
+        }
+
+        .work-exp .work-exp_list .exp-list_top {
+            display: flex;
+            align-items: center;
+        }
+
+        .work-exp .work-exp_list .exp-list_top img {
+            width: 46px;
+            height: 46px;
+            margin-right: 10px;
+        }
+
+        .work-exp .work-exp_list .exp-list_top .exp-list_right {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            height: 46px;
+            justify-content: space-between;
+        }
+
+        .work-exp .work-exp_list .exp-list_top .exp-list_right p,
+        .work-exp .work-exp_list .exp-list_top .exp-list_right strong {
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .work-exp .work-exp_list .exp-list_top .exp-list_right strong {
+            font-weight: 600;
+        }
+
+        .work-exp .work-exp_list .tagboard {
+            margin: 20px 0 10px;
+        }
+
+        .work-exp .work-exp_list .exp-list_content {
+            font-size: 14px;
+            color: #666666;
+            line-height: 30px;
+        }
+
+        .tagboard .tagboard-tag {
+            font-size: 12px;
+            color: #999;
+            line-height: 18px;
+            padding: 3px 10px;
+            border: 1px solid #EAEDEC;
+            border-radius: 100px;
+            margin-right: 10px;
+        }
+
+        .work-exp .work-exp_list .exp-list_content ul, .work-exp .work-exp_list .exp-list_content_highlight ul {
+            list-style: disc;
+            -webkit-padding-start: 20px;
+        }
+
+        .work-exp .work-exp_list .exp-list_content ol, .work-exp .work-exp_list .exp-list_content_highlight ol {
+            list-style-type: decimal;
+            -webkit-padding-start: 20px;
+        }
+        /***** 工作经历 end ****/
+
+        /***** 项目经历 ****/
+
+        .pro-exp .pro-exp_list {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_title {
+            font-size: 14px;
+            color: #333333;
+            font-weight: 600;
+            cursor: default;
+            display: flex;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_title .exp-project_name, .pro-exp .pro-exp_list .exp-list_title .exp-project_company span {
+            max-width: 222px;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_title .exp-project_company {
+            display: flex;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_time {
+            font-size: 14px;
+            color: #666666;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_content,
+        .pro-exp .pro-exp_list .exp-project_des {
+            font-size: 14px;
+            color: #666666;
+            line-height: 30px;
+            margin-top: 10px;
+        }
+
+        .pro-exp .exp-list_title.active:hover {
+            color: #00B38A;
+            cursor: pointer;
+        }
+        .pro-exp .exp-project_url {
+            font-size: 14px;
+            color: #666;
+            line-height: 30px;
+        }
+        .pro-exp .pro-exp_list .exp-list_content ul, .pro-exp .pro-exp_list .exp-project_des ul {
+            list-style: disc;
+            -webkit-padding-start: 20px;
+        }
+
+        .pro-exp .pro-exp_list .exp-list_content ol,.pro-exp .pro-exp_list .exp-project_des ol{
+            list-style-type:decimal;-webkit-padding-start:20px
+        }
+
+        /***** 项目经历 end ****/
+
+        /***** 教育经历 ****/
+
+        .edu-exp .edu-exp_list {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_time {
+            font-size: 14px;
+            color: #666666;
+            position: absolute;
+            right: 0;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top {
+            display: flex;
+            align-items: center;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top img {
+            width: 46px;
+            height: 46px;
+            margin-right: 10px;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            height: 46px;
+            justify-content: space-between;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right p,
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right strong {
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .edu-exp .edu-exp_list .exp-list_top .exp-list_right strong {
+            font-weight: 600;
+        }
+
+
+        /***** 教育经历 end ****/
+
+        /***** 社交主页 ****/
+
+        .social-page .social-page_list {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .social-page .social-page_list .social-page_content {
+            display: flex;
+        }
+
+        .social-page .social-page_list .social-page_content img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .social-page .social-page_list .social-page_content p {
+            font-size: 14px;
+            color: #666666;
+        }
+
+
+        /***** 社交主页 end ****/
+                /***** 图片作品 ****/
+
+        .portfolio-page .portfolio-list{
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .portfolio-page .portfolio-list .portfolio-content{
+            font-size: 14px;
+            color: #666666;
+        }
+
+
+        /***** 图片作品 end ****/
+    </style>
+</head>
+
+    <body>
+        <div id="container">
+            <!-- 基本信息 -->
+            <div class="basic" id="baseInfo">
+                <div class="basic-photo" style="margin-top : 20px;">
+                    <img class="mr_headimg user-avatar" id="userpic" src="https://www.lgstatic.com/i/image6/M01/81/50/CioPOWJpASaAVtsyABAFxONCTRU887.png" width="120" height="120"  alt="头像"
+                    />
+                </div>
+                <div class="basic-info">
+                    <div class="basic-name-area">
+                        <p class="basic-name female">钟金</p>
+                            <!-- 性别 
+                            <i class="icon-sex icon-sex__male"></i>
+                             -->
+                    </div>
+                                <p>
+                                    <span class="basic-company">深圳市二砂深联有限公司</span>
+                                    <span> / </span>
+                                    <span class="basic-job">电商运营</span>
+                                </p>
+                            <p class="basic-self">
+                                    <span class="basic-exp">5年工作经验 / </span>
+                                    <span class="basic-edu">本科 . 统招  
+                                         / 
+                                    </span>
+                                    <span class="basic-age">26岁 / </span>
+                                    <span class="basic-state">已离职</span>
+                            </p>
+                    <p>
+                            <span class="basic-tel">
+                                <i class="basic-tel_icon"></i>
+                                <span>15669012019</span>
+                            </span>
+                            <span class="basic-email">
+                                <i class="basic-email_icon"></i>
+                                <span>1329776780@qq.com</span>
+                            </span>
+                    </p>
+                </div>
+            </div>
+            <!-- /基本信息 -->
+
+            <!-- 
+            <div class="mr-template per" id="perAbility">
+                <div class="mr-template_title">
+                    <span>个人优势</span>
+                </div>
+                <div class="tagboard integrative-tag">
+                    <div class="integrative-tag_content">
+                    </div>
+                </div>
+                <div class="per-self_content">
+                        <div class="per-self_des">
+                            <p>经验丰富, 耐心专注，团队性强</p>
+                        </div>
+                </div>
+            </div>
+            /自我描述 -->
+
+
+            <!-- 工作经历 -->
+                <div class="mr-template work-exp" id="workExp">
+                    <div class="mr-template_title">
+                        <span>工作经历</span>
+                    </div>
+                        <ol class="work-exp_group">
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2022.05-2021.7</p>
+                                <div class="exp-list_top">
+                                    <img src="https://i.postimg.cc/fLS6jcvH/sawa-44x44.png" alt="公司Logo">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>深圳市二砂深联有限公司</span>
+                                             ／
+                                                <span>Amazon</span>
+                                        </strong>
+                                        <p>amazon店铺负责人</p>
+                                    </div>
+                                </div>
+                                <div class="tagboard">
+                                </div>
+                                <div class="exp-list_content">
+                                    <p>从0-1开亚马逊店铺：</p>
+                                    <p>1. 市场调研： <a href="https://kdocs.cn/l/ckehApNGOhRB">BSR(Cut-Off-Wheels)-99-US-220524</a></p>
+                                    <p>2. <a href="https://note.youdao.com/s/PJr6kNeM">砂威成本试算</a></p>
+                                    <p>3. <a href="https://kdocs.cn/l/ckqbLj0ytTdR">自制FBA利润计算表</a></p>
+                                    <p>4. <a href="https://note.youdao.com/s/6CjUhAEz">亚马逊开店准备资料</a></p>
+                                    <p>完成进度：差vat，品牌备案</p>
+                                    <p>从0-1做<a href="https://shop.m.taobao.com/shop/shop_index.htm?user_id=2653447950">淘宝店铺</a>：</p>
+                                    两个月从0做到每日稳定出5单500元一天，共三个产品，前期刷单做评价，6/20开始直通车只开了两个礼拜，第一个礼拜共两个标准计划，每日100，后一个礼拜共5个计划，每日限额240
+                                    <p>开直通车效果展示</p>
+                                    <p><img src="https://i.postimg.cc/ZqZL7BvL/1.png"></p>
+                                    <p><img src="https://i.postimg.cc/j27b8kBm/2.png"></p>
+                                    <p>本产品是标品，关键词很少，第一个礼拜用广泛匹配，发现点击率很低，制定多个对比计划（除了图不一样其他都完全相同），参考销量头部的商品制作多款图片，第二个礼拜换图同时提高每日广告费用</p>
+                                </div>
+                            </li>
+                            <hr>
+                    <ol class="work-exp_group">
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2020.08-2021.10</p>
+                                <div class="exp-list_top">
+                                    <img src="https://www.lgstatic.com/i/image/M00/00/5C/Cgp3O1ZEQZuADAtsAAAC_oHV_DM435.png" alt="公司Logo">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>深圳市通拓科技有限公司</span>
+                                             ／
+                                                <span>Wish</span>
+                                        </strong>
+                                        <p>Wish运营专员</p>
+                                    </div>
+                                </div>
+                                <div class="tagboard">
+                                </div>
+                                <div class="exp-list_content">
+                                    <p>1. 主要负责汽摩配和工具仪器类, 运营模式: 精品, 国家: 欧美 </p>
+<p>2. 淡季月销售额50万, 旺季80万, 毛利率23.7%, pb占比5%~7%,一周上架出单率(50%~100%) </p>
+<p>3. 业绩排名12/35 </p>
+<p>4. 推过两个爆款在wish部门单品销售额排名一个前5, 一个前10 </p>
+<p>5. 运营主要工作: 每日管理广告, 维护老品, 刊登新品, 调研市场, 清理库存</p>
+<p>6. 每周开周会会报上周刊登的新品情况及下周推过计划 </p>
+<p>OBD产品调研案例: <a href="https://note.youdao.com/s/Gu00ADmN">https://note.youdao.com/s/Gu00ADmN</a></p>
+                                </div>
+                            </li>
+                            <hr>
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2019.06-2020.05</p>
+                                <div class="exp-list_top">
+                                    <img src="https://www.lgstatic.com/i/image/M00/06/AF/Cgp3O1bNJgaACTJ6AAMnojlXRzA523.jpg" alt="公司Logo">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>深圳市有棵树科技股份有限公司</span>
+                                             ／
+                                                <span>AliExpress</span>
+                                        </strong>
+                                        <p>速卖通运营专员</p>
+                                    </div>
+                                </div>
+                                <div class="tagboard">
+                                </div>
+                                <div class="exp-list_content">
+                                    <ol>
+ <li>主要产品：汽摩配件，运营模式: 铺货, 国家: 俄罗斯、欧美</li>
+ <li>负责3个汽车品类店铺和一个家具店的运营管理，平均每月销售额为50万,毛利率为17%,无广告费</li>
+ <li>其中两个都是我用两个月从品牌认证到海外仓(全欧洲)申请全新的店铺做到800美金/天(汽配)和200美金/天(家具)，另外一个汽配老店铺是从200做到1000美金一天(从入职到转正)。还有一个汽配店铺业绩是500美金/天。店铺好评率都在91%以上, 其中两个95%以上</li>
+ <li>业绩在速卖通排名中上，汽配每个店铺有两个热销款</li>
+ <li>每日工作: 策划店铺日常推广（制订每日折扣、优惠券等），报名平台活动（FD、俄团等), 全球交易助手上架产品, 调研对手市场</li>
+</ol>
+                                </div>
+                            </li>
+                            <hr>
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2018.07-2019.05</p>
+                                <div class="exp-list_top">
+                                    <img src="https://www.lgstatic.com/i/image/M00/22/93/Cgp3O1cVhAOAXeFNAAATiX9iaro391.jpg" alt="公司Logo">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span>深圳市创腾科技有限责任公司</span>
+                                             ／
+                                                <span>B2C</span>
+                                        </strong>
+                                        <p>B2C运营专员</p>
+                                    </div>
+                                </div>
+                                <div class="tagboard">
+                                </div>
+                                <div class="exp-list_content">
+                                    <ol>
+ <li>核心产品是玩具，运营模式: 精品, 国家: 欧美</li>
+ <li>运营两个自建网站，一个卖魔方一个是nerf配件，魔方Alexa最高排名40万，nerf水弹枪Alexa最高排名60万，Facebook粉丝魔方2.6k，nerf700,IG粉丝(魔方3k,nerf200)</li>
+ <li>合作过YouTube网红粉丝最多是20万，合作过3个专业论坛</li>
+ <li>线下赞助过意大利魔方赛事(参与人员80+)</li>
+ <li>开发过批发资源4个，总共金额4k美金</li>
+ <li>选品: 最成功的一个是一个礼拜卖出140单，客单价23美金, 还有一个是和红人粉丝合作开发的客单价200美金,2单/天</li>
+</ol>
+                                </div>
+                            </li>
+                            <hr>
+                            <li class="work-exp_list">
+                                <p class="exp-list_time">2017.07-2018.05</p>
+                                <div class="exp-list_top">
+                                    <img src="https://i.postimg.cc/3JzF2DxR/419u-UEQc-H2-L-jpg.png" alt="公司Logo">
+                                    <div class="exp-list_right">
+                                        <strong class="exp-list_title">
+                                            <span><a href="https://www.amazon.com/sp?ie=UTF8&seller=A30SV448KIM4NW&isAmazonFulfilled=1">温州市古润电子商务有限公司</a></span>
+                                             ／
+                                                <span>Amazon</span>
+                                        </strong>
+                                        <p>亚马逊运营助理</p>
+                                    </div>
+                                </div>
+                                <div class="tagboard">
+                                </div>
+                                <div class="exp-list_content">
+                                    <ol>
+ <li>产品：五金卫浴(化妆镜)，运营模式: 精品，国家: 美国</li>
+ <li>行业前十的企业, 旺季有3万美金一个月，客单价50美金</li>
+ <li>BS: 做过一款小类目排名76</li>
+ <li>工作日常: 负责产品上架，优化listing，FBA备库，邮件处理</li>
+ <li>选品: 其中5款总月销售额1万美金，毛利率50%</li>
+</ol>
+                                </div>
+                            </li>
+                    </ol>
+                </div>
+            <!-- /工作经历 -->
+
+            <!-- 项目经历 -->
+            <!-- /项目经历 -->
+                <!-- 教育经历 -->
+                    <div class="mr-template edu-exp" id="eduExp">
+                        <div class="mr-template_title">
+                            <span>教育经历</span>
+                        </div>
+                        <ol class="edu-exp_group">
+                                <li class="edu-exp_list">
+                                    <p class="exp-list_time">2014.09-2018.06</p>
+                                    <div class="exp-list_top">
+                                        <img src="https://www.lgstatic.com/i/image/M00/AD/51/Cgp3O1i1E7mAPGaiAAAPzhUXR0082.jpeg" alt="学校Logo">
+                                        <div class="exp-list_right">
+                                            <strong>江西师范大学</strong>
+                                            <p>本科  . 统招  / 电子商务</p>
+                                        </div>
+                                    </div>
+                                </li>
+                        </ol>
+                    </div>
+                <!-- /教育经历 -->
+
+            <!-- 社交主页 -->
+                <div class="mr-template social-page" id="socialPage">
+                    <div class="mr-template_title">
+                        <span>社交主页</span>
+                    </div>
+                    <ol class="social-page_group">
+                            <li class="social-page_list">
+                                <div class="social-page_content">
+                                    <img src="https://www.lgstatic.com/common/image/social/github@2x.png" alt="">
+                                    <p><a href="http://github.com/YoTro">http://github.com/YoTro</a></p>
+                                </div>
+                            </li>
+                    </ol>
+                </div>
+            <!-- /社交主页 -->
+            <!-- 其他 -->
+                <div class="mr-template social-page" id="socialPage">
+                    <div class="mr-template_title">
+                        <span>其他</span>
+                    </div>
+                    <ol class="social-page_group">
+                            <li class="social-page_list">
+                                <div class="social-page_content">
+                                    <ul>
+                                        <li><strong>技能 :</strong> Ps，Pr, Word，Excel，Python</li>
+                                        <li><strong>证书 :</strong> Cet-4</li>
+                                        <li><strong>爱好 :</strong> 羽毛球, 乒乓球 LOL, 历史文学, 数学, 鬼畜</li>
+                                    </ul>
+                                </div>
+                            </li>
+                    </ol>
+                </div>
+            <!-- /其他 -->
+        </div>
+    <script type="text/javascript" crossorigin="anonymous" src="https://www.lagou.com/upload/oss.js?v=1010"></script></body>
+
+</html>
