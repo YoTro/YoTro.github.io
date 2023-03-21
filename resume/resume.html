@@ -155,15 +155,15 @@
     }
 
     #container {
-        width: 61.8%;
+        width: 80.9%;
         margin: 50px auto 54px auto;
         border: 1px solid #e3ebe9;
         border-radius: 5px;
     }
-    /* 当屏幕宽度小于等于768像素时应用以下样式 */
-    @media only screen and (max-width: 768px) {
+    /* 在电脑端（宽度大于等于768px）应用的样式 */
+    @media (min-width: 768px) {
       #container {
-        width: 80.9%;
+        width: 768px;
         margin: 50px auto 54px auto;
         border: 1px solid #e3ebe9;
         border-radius: 5px;
