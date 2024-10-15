@@ -75,12 +75,12 @@ Layer Normalization 论文的三位作者分别是 **Jimmy Lei Ba**、**Jamie Ry
 
 | **步骤**               | **Layer Normalization (LN) 伪代码**                                                                                          | **Batch Normalization (BN) 伪代码**                                                                                           |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| **输入**               | - 输入特征 \( x \in \mathbb{R}^{d} \)（每个样本维度为 \( d \)）                                                                | - 输入特征 \( x \in \mathbb{R}^{m \times d} \)（batch size 为 \( m \)，维度为 \( d \)）                                        |
-| **1. 计算均值**        | - 对每个样本的特征维度计算均值：<br> \( \mu = \frac{1}{d} \sum_{i=1}^{d} x_i \)                                                | - 对 mini-batch 计算每一维特征的均值：<br> \( \mu_B = \frac{1}{m} \sum_{i=1}^{m} x_i \)                                       |
-| **2. 计算方差**        | - 对每个样本的特征维度计算方差：<br> \( \sigma^2 = \frac{1}{d} \sum_{i=1}^{d} (x_i - \mu)^2 \)                                  | - 对 mini-batch 计算每一维特征的方差：<br> \( \sigma_B^2 = \frac{1}{m} \sum_{i=1}^{m} (x_i - \mu_B)^2 \)                      |
-| **3. 标准化**          | - 将每个特征标准化：<br> \( \hat{x}_i = \frac{x_i - \mu}{\sqrt{\sigma^2 + \epsilon}} \)                                         | - 将 mini-batch 中每个特征标准化：<br> \( \hat{x}_i = \frac{x_i - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}} \)                     |
-| **4. 缩放和平移**      | - 应用可学习参数对标准化后的输出进行缩放和平移：<br> \( y_i = \gamma \hat{x}_i + \beta \)                                        | - 应用可学习参数对标准化后的输出进行缩放和平移：<br> \( y_i = \gamma \hat{x}_i + \beta \)                                      |
-| **输出**               | - 输出归一化后的特征：\( y \in \mathbb{R}^d \)                                                                                 | - 输出归一化后的特征：\( y \in \mathbb{R}^{m \times d} \)   
+| **输入**               | - 输入特征 $$( x \in \mathbb{R}^{d} )$$（每个样本维度为 $$( d )$$）                                                                | - 输入特征 $$( x \in \mathbb{R}^{m \times d} )$$（batch size 为 $$( m )$$，维度为 $$( d )$$）                                        |
+| **1. 计算均值**        | - 对每个样本的特征维度计算均值：<br> $$( \mu = \frac{1}{d} \sum_{i=1}^{d} x_i )$$                                                | - 对 mini-batch 计算每一维特征的均值：<br> $$( \mu_B = \frac{1}{m} \sum_{i=1}^{m} x_i )$$                                       |
+| **2. 计算方差**        | - 对每个样本的特征维度计算方差：<br> $$( \sigma^2 = \frac{1}{d} \sum_{i=1}^{d} (x_i - \mu)^2 )$$                                  | - 对 mini-batch 计算每一维特征的方差：<br> $$( \sigma_B^2 = \frac{1}{m} \sum_{i=1}^{m} (x_i - \mu_B)^2 )$$                      |
+| **3. 标准化**          | - 将每个特征标准化：<br> $$( \hat{x}_i = \frac{x_i - \mu}{\sqrt{\sigma^2 + \epsilon}} )$$                                         | - 将 mini-batch 中每个特征标准化：<br> $$( \hat{x}_i = \frac{x_i - \mu_B}{\sqrt{\sigma_B^2 + \epsilon}} )$$                     |
+| **4. 缩放和平移**      | - 应用可学习参数对标准化后的输出进行缩放和平移：<br> $$( y_i = \gamma \hat{x}_i + \beta )$$                                        | - 应用可学习参数对标准化后的输出进行缩放和平移：<br> $$( y_i = \gamma \hat{x}_i + \beta )$$                                      |
+| **输出**               | - 输出归一化后的特征：$$( y \in \mathbb{R}^d )$$                                                                                 | - 输出归一化后的特征：$$( y \in \mathbb{R}^{m \times d} )$$
 
 # 数据集
 
