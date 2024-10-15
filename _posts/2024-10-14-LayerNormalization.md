@@ -116,12 +116,12 @@ Layer Normalization 论文的三位作者分别是 **Jimmy Lei Ba**、**Jamie Ry
 
 # 效果
 
-![Loading...](images/MachineLearing/Layer Normalization/LN_Fig1.png"Figure 1")
-![Loading...](images/MachineLearing/Layer Normalization/LN_Fig2.png"Figure 2")
-![Loading...](images/MachineLearing/Layer Normalization/LN_Fig3.png"Figure 3")
-![Loading...](images/MachineLearing/Layer Normalization/LN_Fig4.png"Figure 4")
-![Loading...](images/MachineLearing/Layer Normalization/LN_Fig5.png"Figure 5")
-![Loading...](images/MachineLearing/Layer Normalization/LN_Fig6.png"Figure 6")
+![Loading...](images/MachineLearing/LayerNormalization/LN_Fig1.png "Figure 1")
+![Loading...](images/MachineLearing/LayerNormalization/LN_Fig2.png "Figure 2")
+![Loading...](images/MachineLearing/LayerNormalization/LN_Fig3.png "Figure 3")
+![Loading...](images/MachineLearing/LayerNormalization/LN_Fig4.png "Figure 4")
+![Loading...](images/MachineLearing/LayerNormalization/LN_Fig5.png "Figure 5")
+![Loading...](images/MachineLearing/LayerNormalization/LN_Fig6.png "Figure 6")
 
 # 参考
 
