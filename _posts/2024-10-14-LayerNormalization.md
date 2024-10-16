@@ -123,7 +123,224 @@ Layer Normalization 论文的三位作者分别是 **Jimmy Lei Ba**、**Jamie Ry
 ![Loading...](/images/MachineLearing/LayerNormalization/LN_Fig5.png "Figure 5")
 ![Loading...](/images/MachineLearing/LayerNormalization/LN_Fig6.png "Figure 6")
 
+# Code精读
+[The source of cpp](https://github.com/pytorch/pytorch/blob/main/aten/src/ATen/native/layer_norm.cpp)
+
+### 1. **计算均值**
+
+在 `layer_norm_cpu` 函数中，均值的计算通过 `mean` 进行处理：
+
+```cpp
+auto M_N = _check_layer_norm_inputs(input, normalized_shape, weight, bias);
+auto M = M_N.first;
+auto N = M_N.second;
+...
+Tensor mean = at::empty({M}, X->options().dtype(dtype));
+```
+
+**公式**：
+
+$$\mu = \frac{1}{N} \sum_{i=1}^{N} x_i$$
+
+这里，`mean` 用于存储输入的均值。
+
+### 2. **计算方差（标准差的倒数）**
+
+在 `layer_norm_with_mean_rstd_out` 函数中，方差和其倒数的计算是通过 `LayerNormKernel` 完成的：
+
+```cpp
+LayerNormKernel(kCPU, input, gamma, beta, M, N, eps, &out, &mean, &rstd);
+```
+
+在 `LayerNormKernel` 的实现中，会计算方差 $$\sigma^2$$ 和标准差的倒数：
+
+```cpp
+const auto invstd = at::rsqrt(var + eps);
+```
+
+**公式**：
+
+$$\sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2$$
+$$\hat{\sigma} = \frac{1}{\sqrt{\sigma^2 + \epsilon}}$$
+
+这里，`rstd` 用于存储标准差的倒数。
+
+### 3. **标准化**
+
+标准化操作在 `LayerNormKernel` 内部进行，其中的实现部分：
+
+```cpp
+Y_ptr[j] = (X_ptr[j] + bias) * rstd_val;
+```
+
+**公式**：
+
+$$\hat{x}_i = \frac{x_i - \mu}{\sqrt{\sigma^2 + \epsilon}}$$
+
+这里，`Y_ptr[j]` 存储了归一化后的输出。
+
+### 4. **仿射变换（缩放和平移）**
+
+在 `layer_norm_cpu` 函数中，应用缩放和平移的部分如下：
+
+```cpp
+if (weight.defined() && bias.defined()) {
+    out = bias.addcmul(out, weight, 1);
+} else if (weight.defined()) {
+    out = out.mul(weight);
+} else if (bias.defined()) {
+    out = out.add(bias);
+}
+```
+
+**公式**：
+
+$$y_i = \gamma \cdot \hat{x}_i + \beta$$
+
+这里，`out` 是归一化后的输出，`weight` 和 `bias` 分别对应于可学习参数 $$\gamma$$ 和 $$\beta$$。
+
+### 5. **反向传播**
+
+[The source of cpp](https://github.com/pytorch/pytorch/blob/main/aten/src/ATen/native/cpu/layer_norm_kernel.cpp)
+
+在反向传播函数 `layer_norm_backward_cpu` 中，更新梯度的操作涉及的部分为：
+
+```cpp
+LayerNormBackwardKernel(kCPU, dY, *X, mean, rstd, *gamma, M, N, &dX, &dgamma, &dbeta);
+```
+
+反向传播涉及的公式可以与前向传播的相反：
+
+$$\frac{\partial L}{\partial x_i}, \quad \frac{\partial L}{\partial \gamma}, \quad \frac{\partial L}{\partial \beta}$$
+
+其中 $$L$$ 是损失函数，反向传播计算梯度用于更新模型的参数。
+在 PyTorch 源代码中，`LayerNormBackwardKernel` 函数通常会定义在 `layer_norm.cpp` 或者其他与 Layer Normalization 相关的实现文件中。这个函数主要负责计算 Layer Normalization 的反向传播。
+
+#### 1. **`LayerNormBackwardKernel` 的定义**
+
+`LayerNormBackwardKernel` 是通过 `REGISTER_DISPATCH` 宏注册的，因此它在后续代码中会被具体实现并调用。它的实现通常涉及到输入的梯度、均值、标准差和可学习参数的梯度计算。
+
+```cpp
+REGISTER_DISPATCH(LayerNormBackwardKernel, &LayerNormBackwardKernelImpl);
+```
+
+#### 2. **`LayerNormBackwardKernelImpl` 的代码**
+
+具体的实现位于 `LayerNormBackwardKernelImpl` 中。这个实现会用到之前的 `layer_norm_backward_frame` 函数。以下是代码中的关键部分和它们所对应的公式。
+
+##### **计算梯度的主要部分**
+
+```cpp
+void LayerNormBackwardKernelImpl(
+    const Tensor& dY,
+    const Tensor& X,
+    const Tensor& mean,
+    const Tensor& rstd,
+    const Tensor& gamma,
+    int64_t M,
+    int64_t N,
+    Tensor* dX,
+    Tensor* dgamma,
+    Tensor* dbeta) {
+  ...
+  layer_norm_backward_frame<T, T2, opmath_t>(dY_data, X_data, mean_data, rstd_data, gamma_data, dX_data, dgamma_buffer_ptr, dbeta_buffer_ptr, scale, gamma_null, dX_null, dgamma_null, dbeta_null, N, i);
+}
+```
+
+#### 3. **公式对应**
+
+##### **计算对 $$\gamma$$ 的梯度**
+
+在 `layer_norm_backward_frame` 中，计算对权重 $$\gamma$$ 的梯度的部分如下：
+
+```cpp
+if (!dgamma_null) {
+    const opmath_t a = rstd_data[i];
+    const opmath_t b = -a * mean_data[i];
+    vec::map3<T>(
+        [a, b](Vec dgamma, Vec dy, Vec x) {
+            return dgamma + dy * (Vec(a) * x + Vec(b));
+        },
+        dgamma_buffer_ptr,
+        dY_ptr,
+        X_ptr,
+        N);
+}
+```
+
+**对应公式**：
+
+$$\frac{\partial L}{\partial \gamma} = \sum_i \frac{\partial L}{\partial y_i} \cdot \hat{x}_i$$
+
+`dy` 是输出的梯度，`x` 是输入，计算后得到对 $$\gamma$$ 的梯度。
+
+##### **计算对输入 $$x$$ 的梯度**
+
+对输入的梯度 $$\frac{\partial L}{\partial x}$$ 的计算如下：
+
+```cpp
+if (!dX_null) {
+    T* dX_ptr = dX_data + i * N;
+    ...
+    vec::map2<T>(
+        [a, b, c](Vec dy, Vec x) {
+            return Vec(a) * dy + Vec(b) * x + Vec(c);
+        },
+        dX_ptr,
+        dY_ptr,
+        X_ptr,
+        N);
+}
+```
+
+**对应公式**：
+
+$$\frac{\partial L}{\partial x_i} = \frac{1}{\sqrt{\sigma^2 + \epsilon}} \left( \frac{\partial L}{\partial \hat{x}_i} - \frac{\sum_j \frac{\partial L}{\partial \hat{x}_j}}{N} - \hat{x}_i \frac{\sum_j \frac{\partial L}{\partial \hat{x}_j} \hat{x}_j}{N} \right)$$
+
+`dy` 是输出的梯度，`x` 是输入，计算后得到对输入 $$x$$ 的梯度。
+
+##### **计算对偏置 $$\beta$$ 的梯度**
+
+计算对偏置 $$\beta$$ 的梯度的部分如下：
+
+```cpp
+if (!dbeta_null) {
+    vec::map2<T>(
+        [](Vec dbeta, Vec dy) { return dbeta + dy; },
+        dbeta_buffer_ptr,
+        dbeta_buffer_ptr,
+        dY_ptr,
+        N);
+}
+```
+
+**对应公式**：
+
+$$\frac{\partial L}{\partial \beta} = \sum_i \frac{\partial L}{\partial y_i}$$
+
+`dy` 是输出的梯度。
+
+#### 代码中体现公式的部分总结
+
+| 数学公式                          | 代码片段                                                     | 描述                                       |
+|----------------------------------|-------------------------------------------------------------|--------------------------------------------|
+| $$\frac{\partial L}{\partial \gamma}$$ | `vec::map3<T>(...);`                                        | 计算对 $$\gamma$$ 的梯度                |
+| $$\frac{\partial L}{\partial x_i}$$ | `vec::map2<T>(...);`                                        | 计算输入的梯度 $$\frac{\partial L}{\partial x_i}$$ |
+| $$\frac{\partial L}{\partial \beta}$$ | `vec::map2<T>(...);`                                        | 计算对 $$\beta$$ 的梯度                  |
+
+### 总结
+以下是上述代码中体现公式的关键部分：
+
+| 公式                          | 代码片段                                        | 描述                                       |
+|-------------------------------|------------------------------------------------|--------------------------------------------|
+| $$\mu = \frac{1}{N} \sum x_i$$ | `Tensor mean = at::empty({M}, X->options().dtype(dtype));` | 初始化均值张量。                          |
+| $$\sigma^2 = \frac{1}{N} \sum (x_i - \mu)^2$$ | `const auto invstd = at::rsqrt(var + eps);` | 计算标准差的倒数。                         |
+| $$\hat{x}_i = \frac{x_i - \mu}{\sqrt{\sigma^2 + \epsilon}}$$ | `Y_ptr[j] = (X_ptr[j] + bias) * rstd_val;` | 对输入进行标准化处理。                    |
+| $$y_i = \gamma \cdot \hat{x}_i + \beta$$ | `out = bias.addcmul(out, weight, 1);` | 应用可学习参数进行仿射变换。               |
+| $$\frac{\partial L}{\partial x_i}$$ | `LayerNormBackwardKernel(...)`              | 计算反向传播的梯度更新。                   |
+
 # 参考
 
 1. [Implementation of the paper: Layer Normalization](https://github.com/ryankiros/layer-norm/tree/master)
 2. [The implementation of LN by Pytorch](https://pytorch.org/docs/stable/generated/torch.nn.LayerNorm.html#torch.nn.LayerNorm)
+3. [The source code for Layer Normalization in PyTorch (C++)](https://github.com/pytorch/pytorch/blob/main/aten/src/ATen/native/layer_norm.cpp)
