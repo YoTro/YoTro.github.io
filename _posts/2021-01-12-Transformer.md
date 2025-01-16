@@ -108,18 +108,18 @@ cos(\frac{pos}{10000^{\frac{k}{d}} } ) &\text{if k = 2i +1}
 ## 编码器(Encoder)
 
 由6层相同的层构成, 每层有2个子层, 1层为多头自注意力层, 1层为position-wise全连接前馈网络层(FFN), 其中position-wise是一种处理方式,表示不考虑元素的相对位置而采取相同的操作. 通过残差连接包围两个子层
-然后连接层归一化([Layer Normalization](https://en.wikipedia.org/wiki/Layer_normalization)), 输出维度为d_{model} = 512
+然后连接层归一化([Layer Normalization](https://en.wikipedia.org/wiki/Layer_normalization)), 输出维度为$$d_{model} = 512$$
 
 ## 解码器(Decoder)
 由6个相同层构成, 每层有3个子层, 1层为掩码多头自注意力层(Masked Multi-heads self-attetion mechanism), 1层为position-wise全连接前馈网络层(FFN), 1层是多头自注意力层(它接入编码器的输出). 通过残差连接包围两个子层
-然后连接层归一化([Layer Normalization](https://en.wikipedia.org/wiki/Layer_normalization)), 输出维度为d_{model} = 512
+然后连接层归一化([Layer Normalization](https://en.wikipedia.org/wiki/Layer_normalization)), 输出维度为$$d_{model} = 512$$
 
 Mask的主要目的是防作弊, 防止后位置影响前位置
 
 ## 多头自注意力机制(Multi-heads Self Attention)
 
 ### 缩放点积注意力(Scaled Dot-Product Attention)
-![Scaled Dot-Product Attention 缩放点积注意力](https://i.sstatic.net/X4hnf.png)
+![Scaled Dot-Product Attention 缩放点积注意力](https://production-media.paperswithcode.com/methods/35184258-10f5-4cd0-8de3-bd9bc8f88dc3.png)
 
 $$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k} })V$$
 
@@ -132,29 +132,31 @@ $$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k} })V$$
 假设组成Q,K的随机变量是独立的且服从均值为0,方差为1的分布, 则
 $$z^2 = \frac{1}{d_k} \sum_{i = 1}{d_k}\sum_{j = 1}^{d_k}(q_ik_j - \mu)^2$$
 
+$$\begin{matrix}
 其中，
-$$\mu = E(q_i,k_j) = \frac{1}{d_k^2} \sum_{i = 1}^{d_k}\sum_{j = 1}^{d_k}(q_ik_j)$$
+\mu = E(q_i,k_j) = \frac{1}{d_k^2} \sum_{i = 1}^{d_k}\sum_{j = 1}^{d_k}(q_ik_j)\\
 并且，
-$$E(q_i) = \frac{1}{d_k}\sum_{i=1}^{d_k}q_i=0$$
-$$E(k_j) = \frac{1}{d_k}\sum_{j=1}^{d_k}k_j=0$$
+E(q_i) = \frac{1}{d_k}\sum_{i=1}^{d_k}q_i=0\\
+E(k_j) = \frac{1}{d_k}\sum_{j=1}^{d_k}k_j=0\\
 所以，
-$$E(q_i,k_j) =E(q_i)E(k_j) = 0$$
+E(q_i,k_j) =E(q_i)E(k_j) = 0\\
 此外，
-$$V(q_i) = \frac{1}{d_k} \sum_{i=1}^{d_k}(q_i-E(q_i))^2 = \frac{1}{d_k} \sum_{i=1}^{d_k}q_i^2=1$$
-$$V(k_j) = \frac{1}{d_k} \sum_{j=1}^{d_k}(k_j-E(k_j))^2 = \frac{1}{d_k} \sum_{j=1}^{d_k}k_j^2=1$$
+V(q_i) = \frac{1}{d_k} \sum_{i=1}^{d_k}(q_i-E(q_i))^2 = \frac{1}{d_k} \sum_{i=1}^{d_k}q_i^2=1\\
+V(k_j) = \frac{1}{d_k} \sum_{j=1}^{d_k}(k_j-E(k_j))^2 = \frac{1}{d_k} \sum_{j=1}^{d_k}k_j^2=1\\
 所以，
-$$z^2 = \frac{1}{d_k} \sum_{i = 1}{d_k}\sum_{j = 1}^{d_k}(q_ik_j)^2=V(q_i)V(k_j)d_k=d_k\Rightarrow std(z) = \sqrt{d_k}$$
+z^2 = \frac{1}{d_k} \sum_{i = 1}{d_k}\sum_{j = 1}^{d_k}(q_ik_j)^2=V(q_i)V(k_j)d_k=d_k\Rightarrow std(z) = \sqrt{d_k}
+\end{matrix}$$
 
 ### 多头注意力(Multi-Head Attention)
 
-![多头注意力](https://i.sstatic.net/0alvY.png)
+![多头注意力](https://production-media.paperswithcode.com/methods/multi-head-attention_l1A3G7a.png)
 
 $$\begin{matrix}
 MultiHead(Q, K, V) = Concat(head_1, head_2,...,head_h)W^O
 \\\text{Where }head_i = Attention(QW_i^Q, KW_i^K, VW_i^V)
 \end{matrix}$$
 - h = 8
-- $$d_k = d_v=d_{model}/h = 64$$
+- $$d_k = d_v=d_{model}/h = $$64
 - $$W^O$$表示输出权重矩阵，$$\in \mathbb{R} ^{hd_v\times d_{model}}$$
 - $$W_i^Q$$ 是 第 i 个头注意力的查询(Query)权重矩阵,$$\in \mathbb{R} ^{d_k\times d_{model}}$$
 - $$W_i^K$$ 是第 i 个头注意力的键(Key)权重矩阵,$$\in \mathbb{R} ^{d_k\times d_{model}}$$
@@ -191,6 +193,7 @@ $$\begin{matrix}
 
 1. 预热阶段：从0到4000步，学习率逐渐增大。
 2. 后期阶段：从4000步之后，学习率逐渐减小。
+
 ## 正则化(Regularization)
 
 ### 残差随机失活(Residual Dropout)
@@ -210,9 +213,9 @@ $$y=F(x)+Dropout(x)$$
 2. 将剩余的概率（ϵ）均匀分配给所有其他类别（例如，0.05）。
 
 **例如**：
-类别 1：[0.9, 0.05, 0.05]
-类别 2：[0.05, 0.9, 0.05]
-类别 3：[0.05, 0.05, 0.9]
+- 类别 1：[0.9, 0.05, 0.05]
+- 类别 2：[0.05, 0.9, 0.05]
+- 类别 3：[0.05, 0.05, 0.9]
 
 **适用场景**：
 - 大规模分类问题，尤其是当存在过拟合或泛化问题时。
@@ -232,7 +235,7 @@ $$y=F(x)+Dropout(x)$$
 
 # 优点
 
-| **特点/优点**               | **Transformer**                                       | **RNN**                                              | **LSTM**                                               |
+| **特点/优点**               | **Transformer**                                       | **RNN**                                              | **[LSTM](https://www.bioinf.jku.at/publications/older/2604.pdf)**                                               |
 |----------------------------|------------------------------------------------------|------------------------------------------------------|-------------------------------------------------------|
 | **模型架构**               | 基于自注意力机制（Self-Attention）                    | 基于递归神经网络，逐步处理序列数据                    | 基于长短时记忆单元（LSTM）解决 RNN 的长期依赖问题         |
 | **并行处理**               | 可以并行处理整个序列，适合大规模数据训练              | 逐步处理，无法并行处理，训练速度慢                      | 逐步处理，虽然有记忆单元，但仍无法完全并行               |
@@ -262,7 +265,7 @@ $$y=F(x)+Dropout(x)$$
 - 3.5 天
 
 # 效果
-![Better BLEU scores](https://i.sstatic.net/o4SRo.png)
+![Better BLEU scores](https://www.researchgate.net/publication/323904682/figure/tbl1/AS:669287350013962@1536581947447/The-Transformer-achieves-better-BLEU-scores-than-previous-state-of-the-art-models-on-the.png)
 ![English constituency parsing](https://debuggercafe.com/wp-content/uploads/2023/09/transformer-english-constituency-parsing-result.png)
 
 # Code精读
@@ -1331,6 +1334,26 @@ class MultiheadAttention(Module):
         self.linear2 = Linear(dim_feedforward, d_{model}, bias=bias, **factory_kwargs)
 ```
 ## [编码器的官方pytorch实现](https://github.com/pytorch/pytorch/blob/main/torch/nn/modules/transformer.py#L310)
+
+### 嵌套张量（Nested Tensor）：
+
+- **嵌套张量（Nested Tensor）** 是一种特殊的数据结构，它可以处理具有不同长度的序列（例如不同长度的句子或不同大小的图像）。这种结构对于处理不规则的序列数据非常有用，特别是在处理包含填充（padding）的批次数据时。
+  
+- 默认情况下，`TransformerEncoder` 会使用常规的张量（Tensor）作为输入，这要求所有的序列（例如一个批次中的多个句子）具有相同的长度。若序列的长度不一致，需要填充（padding）以使它们对齐。这在很多情况下可能导致不必要的计算浪费。
+
+- **`enable_nested_tensor=True`** 时，输入数据将自动转换为嵌套张量。嵌套张量能够灵活地处理不同长度的序列，它会在内部以更加高效的方式存储不规则序列的数据，减少对填充的依赖，从而提升性能。尤其是在填充率较高时，使用嵌套张量能显著减少计算量并提高性能。
+
+### 稀疏路径加速(sparsity fast path)
+
+- **目的**：主要用于加速稀疏数据的计算
+- **触发条件**：只要有一个条件不满足，就不会启用 "sparsity fast path"
+  - **编码层的实例化**:encoder_layer 必须是 TransformerEncoderLayer。
+  - **归一化层的配置**：(norm_first)在注意力机制之前不使用归一化。
+  - **批处理顺序**：batch_first批处理维度在最前面。
+  - **嵌入维度一致性**（`_qkv_same_embed_dim` 是否为 `True`）：自注意力中的查询、键、值的嵌入维度应该相同。
+  - **自注意力机制中的偏置和激活函数的设置**：有in_proj_bias偏置项，激活函数是 ReLU 或 GELU
+  - **注意力头数奇偶性**：必须是偶数。
+
 ```python
 class TransformerEncoder(Module):
     r"""TransformerEncoder is a stack of N encoder layers.
@@ -1368,13 +1391,13 @@ class TransformerEncoder(Module):
         mask_check: bool = True,
     ) -> None:
         super().__init__()
-        torch._C._log_api_usage_once(f"torch.nn.modules.{self.__class__.__name__}")
-        self.layers = _get_clones(encoder_layer, num_layers)
+        torch._C._log_api_usage_once(f"torch.nn.modules.{self.__class__.__name__}")#torch._C._log_api_usage_once 是一个内部统计功能，用于记录和追踪 "torch.nn.modules.TransformerEncoder" 的使用频率
+        self.layers = _get_clones(encoder_layer, num_layers)#复制N层编码层
         self.num_layers = num_layers
-        self.norm = norm
+        self.norm = norm#默认层归一化
         # this attribute saves the value providedat object construction
         self.enable_nested_tensor = enable_nested_tensor
-        # this attribute controls whether nested tensors are used
+        # this attribute controls whether nested tensors are used 如果 self.use_nested_tensor 为 True，则模型会使用嵌套张量的优化路径，否则使用传统的张量结构进行计算
         self.use_nested_tensor = enable_nested_tensor
         self.mask_check = mask_check
 
@@ -1436,6 +1459,7 @@ class TransformerEncoder(Module):
         Shape:
             see the docs in :class:`~torch.nn.Transformer`.
         """
+        #屏蔽填充位置
         src_key_padding_mask = F._canonical_mask(
             mask=src_key_padding_mask,
             mask_name="src_key_padding_mask",
@@ -1460,7 +1484,7 @@ class TransformerEncoder(Module):
         why_not_sparsity_fast_path = ""
         str_first_layer = "self.layers[0]"
         batch_first = first_layer.self_attn.batch_first
-        is_fastpath_enabled = torch.backends.mha.get_fastpath_enabled()
+        is_fastpath_enabled = torch.backends.mha.get_fastpath_enabled()#mha (Multi-Head Attention) 
 
         if not is_fastpath_enabled:
             why_not_sparsity_fast_path = (
@@ -1556,7 +1580,380 @@ class TransformerEncoder(Module):
 
 
 ```
+[编码器中的每一层TransformerEncoderLayer的pytorch官方实现](https://github.com/pytorch/pytorch/blob/main/torch/nn/modules/transformer.py#L630)
+```python
+class TransformerEncoderLayer(Module):
+    r"""TransformerEncoderLayer is made up of self-attn and feedforward network.
 
+    .. note::
+        See `this tutorial <https://pytorch.org/tutorials/intermediate/transformer_building_blocks.html>`_
+        for an in depth discussion of the performant building blocks PyTorch offers for building your own
+        transformer layers.
+
+    This standard encoder layer is based on the paper "Attention Is All You Need".
+    Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez,
+    Lukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. In Advances in
+    Neural Information Processing Systems, pages 6000-6010. Users may modify or implement
+    in a different way during application.
+
+    TransformerEncoderLayer can handle either traditional torch.tensor inputs,
+    or Nested Tensor inputs.  Derived classes are expected to similarly accept
+    both input formats.  (Not all combinations of inputs are currently
+    supported by TransformerEncoderLayer while Nested Tensor is in prototype
+    state.)
+
+    If you are implementing a custom layer, you may derive it either from
+    the Module or TransformerEncoderLayer class.  If your custom layer
+    supports both torch.Tensors and Nested Tensors inputs, make its
+    implementation a derived class of TransformerEncoderLayer. If your custom
+    Layer supports only torch.Tensor inputs, derive its implementation from
+    Module.
+
+    Args:
+        d_model: the number of expected features in the input (required).
+        nhead: the number of heads in the multiheadattention models (required).
+        dim_feedforward: the dimension of the feedforward network model (default=2048).
+        dropout: the dropout value (default=0.1).
+        activation: the activation function of the intermediate layer, can be a string
+            ("relu" or "gelu") or a unary callable. Default: relu
+        layer_norm_eps: the eps value in layer normalization components (default=1e-5).
+        batch_first: If ``True``, then the input and output tensors are provided
+            as (batch, seq, feature). Default: ``False`` (seq, batch, feature).
+        norm_first: if ``True``, layer norm is done prior to attention and feedforward如果为 True，则在自注意力和前馈层前应用层归一化，否则在层之后应用
+            operations, respectively. Otherwise it's done after. Default: ``False`` (after).
+        bias: If set to ``False``, ``Linear`` and ``LayerNorm`` layers will not learn an additive
+            bias. Default: ``True``.
+
+    Examples::
+        >>> encoder_layer = nn.TransformerEncoderLayer(d_model=512, nhead=8)
+        >>> src = torch.rand(10, 32, 512)
+        >>> out = encoder_layer(src)
+
+    Alternatively, when ``batch_first`` is ``True``:
+        >>> encoder_layer = nn.TransformerEncoderLayer(d_model=512, nhead=8, batch_first=True)
+        >>> src = torch.rand(32, 10, 512)
+        >>> out = encoder_layer(src)
+
+    Fast path:
+        forward() will use a special optimized implementation described in
+        `FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness`_ if all of the following
+        conditions are met:
+
+        - Either autograd is disabled (using ``torch.inference_mode`` or ``torch.no_grad``) or no tensor
+          argument ``requires_grad``
+        - training is disabled (using ``.eval()``)
+        - batch_first is ``True`` and the input is batched (i.e., ``src.dim() == 3``)
+        - activation is one of: ``"relu"``, ``"gelu"``, ``torch.functional.relu``, or ``torch.functional.gelu``
+        - at most one of ``src_mask`` and ``src_key_padding_mask`` is passed
+        - if src is a `NestedTensor <https://pytorch.org/docs/stable/nested.html>`_, neither ``src_mask``
+          nor ``src_key_padding_mask`` is passed
+        - the two ``LayerNorm`` instances have a consistent ``eps`` value (this will naturally be the case
+          unless the caller has manually modified one without modifying the other)
+
+        If the optimized implementation is in use, a
+        `NestedTensor <https://pytorch.org/docs/stable/nested.html>`_ can be
+        passed for ``src`` to represent padding more efficiently than using a padding
+        mask. In this case, a `NestedTensor <https://pytorch.org/docs/stable/nested.html>`_ will be
+        returned, and an additional speedup proportional to the fraction of the input that
+        is padding can be expected.
+
+        .. _`FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness`:
+         https://arxiv.org/abs/2205.14135
+    `TransformerEncoderLayer`由自注意力机制（self-attn）和前馈网络（feedforward network）组成。
+
+    **注意**：
+    有关PyTorch提供的高效构建块来构建您自己的transformer层的深入讨论，请参阅[此教程](https://pytorch.org/tutorials/intermediate/transformer_building_blocks.html)。
+
+    此标准的编码器层基于论文《Attention Is All You Need》：
+    - Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Lukasz Kaiser, 和 Illia Polosukhin。2017年。Attention is all you need. 发表在《神经信息处理系统进展》上，第6000-6010页。用户可以根据需要修改或以不同方式实现。
+
+    `TransformerEncoderLayer`可以处理传统的`torch.tensor`输入，或`Nested Tensor`输入。衍生类预计也应接受这两种输入格式。（目前，`TransformerEncoderLayer`并不支持所有输入格式的组合，特别是当`Nested Tensor`处于原型状态时。）
+
+    如果您正在实现自定义层，您可以选择从`Module`或`TransformerEncoderLayer`类派生。如果您的自定义层支持`torch.Tensor`和`Nested Tensors`输入，建议将其实现为`TransformerEncoderLayer`的派生类。如果自定义层仅支持`torch.Tensor`输入，请从`Module`类派生。
+
+    参数：
+    - `d_model`：输入中预期的特征数量（必需）。
+    - `nhead`：多头自注意力模型中的头数（必需）。
+    - `dim_feedforward`：前馈网络模型的维度（默认为2048）。
+    - `dropout`：dropout值（默认为0.1）。
+    - `activation`：中间层的激活函数，可以是字符串（"relu"或"gelu"）或一个一元可调用对象。默认为`relu`。
+    - `layer_norm_eps`：层归一化组件中的eps值（默认为1e-5）。
+    - `batch_first`：如果为`True`，则输入和输出的张量将按(batch, seq, feature)格式提供。默认为`False`（seq, batch, feature）。
+    - `norm_first`：如果为`True`，则在自注意力和前馈层操作之前应用层归一化。否则，在层之后应用。默认为`False`（之后）。
+    - `bias`：如果设置为`False`，则`Linear`和`LayerNorm`层将不学习附加偏置。默认为`True`。
+
+    示例：
+    python
+    >>> encoder_layer = nn.TransformerEncoderLayer(d_model=512, nhead=8)
+    >>> src = torch.rand(10, 32, 512)
+    >>> out = encoder_layer(src)
+
+
+    或者，当`batch_first`为`True`时：
+    python
+    >>> encoder_layer = nn.TransformerEncoderLayer(d_model=512, nhead=8, batch_first=True)
+    >>> src = torch.rand(32, 10, 512)
+    >>> out = encoder_layer(src)
+
+
+    快速路径：
+    `forward()`将使用一种特殊的优化实现（在论文`FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness`中描述）如果满足以下所有条件：
+
+    - 使用`torch.inference_mode`或`torch.no_grad`禁用autograd，或者没有张量参数需要梯度（`requires_grad`为`False`）。
+    - 禁用训练模式（使用`.eval()`）。
+    - `batch_first`为`True`且输入是批处理（即`src.dim() == 3`）。
+    - 激活函数为以下之一：`"relu"`、`"gelu"`、`torch.functional.relu`或`torch.functional.gelu`。
+    - 至多传递一个`src_mask`或`src_key_padding_mask`。
+    - 如果`src`是`NestedTensor`，则不传递`src_mask`或`src_key_padding_mask`。
+    - 两个`LayerNorm`实例具有一致的`eps`值（除非调用者手动修改了其中一个而没有修改另一个）。
+
+    如果优化实现被使用，则可以将`NestedTensor`传递给`src`，它可以比使用填充掩码更有效地表示填充。在这种情况下，返回一个`NestedTensor`，并且可以期望根据输入中填充的比例获得额外的加速。
+
+    详细信息请参见[FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness](https://arxiv.org/abs/2205.14135)。
+    """
+
+    __constants__ = ["norm_first"]
+
+    def __init__(
+        self,
+        d_model: int,
+        nhead: int,
+        dim_feedforward: int = 2048,
+        dropout: float = 0.1,
+        activation: Union[str, Callable[[Tensor], Tensor]] = F.relu,
+        layer_norm_eps: float = 1e-5,
+        batch_first: bool = False,
+        norm_first: bool = False,
+        bias: bool = True,
+        device=None,
+        dtype=None,
+    ) -> None:
+        factory_kwargs = {"device": device, "dtype": dtype}
+        super().__init__()
+        self.self_attn = MultiheadAttention(
+            d_model,
+            nhead,
+            dropout=dropout,
+            bias=bias,
+            batch_first=batch_first,
+            **factory_kwargs,
+        )
+        # Implementation of Feedforward model
+        self.linear1 = Linear(d_model, dim_feedforward, bias=bias, **factory_kwargs)
+        self.dropout = Dropout(dropout)
+        self.linear2 = Linear(dim_feedforward, d_model, bias=bias, **factory_kwargs)
+
+        self.norm_first = norm_first
+        self.norm1 = LayerNorm(d_model, eps=layer_norm_eps, bias=bias, **factory_kwargs)
+        self.norm2 = LayerNorm(d_model, eps=layer_norm_eps, bias=bias, **factory_kwargs)
+        self.dropout1 = Dropout(dropout)
+        self.dropout2 = Dropout(dropout)
+
+        # Legacy string support for activation function.
+        if isinstance(activation, str):
+            activation = _get_activation_fn(activation)
+
+        # We can't test self.activation in forward() in TorchScript,
+        # so stash some information about it instead.
+        if activation is F.relu or isinstance(activation, torch.nn.ReLU):
+            self.activation_relu_or_gelu = 1
+        elif activation is F.gelu or isinstance(activation, torch.nn.GELU):
+            self.activation_relu_or_gelu = 2
+        else:
+            self.activation_relu_or_gelu = 0
+        self.activation = activation
+
+    def __setstate__(self, state):
+        super().__setstate__(state)
+        if not hasattr(self, "activation"):
+            self.activation = F.relu
+
+    def forward(
+        self,
+        src: Tensor,
+        src_mask: Optional[Tensor] = None,
+        src_key_padding_mask: Optional[Tensor] = None,
+        is_causal: bool = False,
+    ) -> Tensor:
+        r"""Pass the input through the encoder layer.
+
+        Args:
+            src: the sequence to the encoder layer (required).
+            src_mask: the mask for the src sequence (optional).
+            src_key_padding_mask: the mask for the src keys per batch (optional).
+            is_causal: If specified, applies a causal mask as ``src mask``.
+                Default: ``False``.
+                Warning:
+                ``is_causal`` provides a hint that ``src_mask`` is the
+                causal mask. Providing incorrect hints can result in
+                incorrect execution, including forward and backward
+                compatibility.
+
+        Shape:
+            see the docs in :class:`~torch.nn.Transformer`.
+        """
+        src_key_padding_mask = F._canonical_mask(
+            mask=src_key_padding_mask,
+            mask_name="src_key_padding_mask",
+            other_type=F._none_or_dtype(src_mask),
+            other_name="src_mask",
+            target_type=src.dtype,
+        )
+
+        src_mask = F._canonical_mask(
+            mask=src_mask,
+            mask_name="src_mask",
+            other_type=None,
+            other_name="",
+            target_type=src.dtype,
+            check_other=False,
+        )
+
+        is_fastpath_enabled = torch.backends.mha.get_fastpath_enabled()
+
+        why_not_sparsity_fast_path = ""
+        if not is_fastpath_enabled:
+            why_not_sparsity_fast_path = (
+                "torch.backends.mha.get_fastpath_enabled() was not True"
+            )
+        elif not src.dim() == 3:
+            why_not_sparsity_fast_path = (
+                f"input not batched; expected src.dim() of 3 but got {src.dim()}"
+            )
+        elif self.training:
+            why_not_sparsity_fast_path = "training is enabled"
+        elif not self.self_attn.batch_first:
+            why_not_sparsity_fast_path = "self_attn.batch_first was not True"
+        elif self.self_attn.in_proj_bias is None:
+            why_not_sparsity_fast_path = "self_attn was passed bias=False"
+        elif not self.self_attn._qkv_same_embed_dim:
+            why_not_sparsity_fast_path = "self_attn._qkv_same_embed_dim was not True"
+        elif not self.activation_relu_or_gelu:
+            why_not_sparsity_fast_path = "activation_relu_or_gelu was not True"
+        elif not (self.norm1.eps == self.norm2.eps):
+            why_not_sparsity_fast_path = "norm1.eps is not equal to norm2.eps"
+        elif src.is_nested and (
+            src_key_padding_mask is not None or src_mask is not None
+        ):
+            why_not_sparsity_fast_path = "neither src_key_padding_mask nor src_mask are not supported with NestedTensor input"
+        elif self.self_attn.num_heads % 2 == 1:
+            why_not_sparsity_fast_path = "num_head is odd"
+        elif torch.is_autocast_enabled():
+            why_not_sparsity_fast_path = "autocast is enabled"
+        elif any(
+            len(getattr(m, "_forward_hooks", {}))
+            + len(getattr(m, "_forward_pre_hooks", {}))
+            for m in self.modules()
+        ):
+            why_not_sparsity_fast_path = "forward pre-/hooks are attached to the module"
+        if not why_not_sparsity_fast_path:
+            tensor_args = (
+                src,
+                self.self_attn.in_proj_weight,
+                self.self_attn.in_proj_bias,
+                self.self_attn.out_proj.weight,
+                self.self_attn.out_proj.bias,
+                self.norm1.weight,
+                self.norm1.bias,
+                self.norm2.weight,
+                self.norm2.bias,
+                self.linear1.weight,
+                self.linear1.bias,
+                self.linear2.weight,
+                self.linear2.bias,
+            )
+
+            # We have to use list comprehensions below because TorchScript does not support
+            # generator expressions.
+            _supported_device_type = [
+                "cpu",
+                "cuda",
+                torch.utils.backend_registration._privateuse1_backend_name,
+            ]
+            if torch.overrides.has_torch_function(tensor_args):
+                why_not_sparsity_fast_path = "some Tensor argument has_torch_function"
+            elif not all(
+                (x.device.type in _supported_device_type) for x in tensor_args
+            ):
+                why_not_sparsity_fast_path = (
+                    "some Tensor argument's device is neither one of "
+                    f"{_supported_device_type}"
+                )
+            elif torch.is_grad_enabled() and any(x.requires_grad for x in tensor_args):
+                why_not_sparsity_fast_path = (
+                    "grad is enabled and at least one of query or the "
+                    "input/output projection weights or biases requires_grad"
+                )
+
+            if not why_not_sparsity_fast_path:
+                merged_mask, mask_type = self.self_attn.merge_masks(
+                    src_mask, src_key_padding_mask, src
+                )
+                return torch._transformer_encoder_layer_fwd(
+                    src,
+                    self.self_attn.embed_dim,
+                    self.self_attn.num_heads,
+                    self.self_attn.in_proj_weight,
+                    self.self_attn.in_proj_bias,
+                    self.self_attn.out_proj.weight,
+                    self.self_attn.out_proj.bias,
+                    self.activation_relu_or_gelu == 2,
+                    self.norm_first,
+                    self.norm1.eps,
+                    self.norm1.weight,
+                    self.norm1.bias,
+                    self.norm2.weight,
+                    self.norm2.bias,
+                    self.linear1.weight,
+                    self.linear1.bias,
+                    self.linear2.weight,
+                    self.linear2.bias,
+                    merged_mask,
+                    mask_type,
+                )
+
+        # see Fig. 1 of https://arxiv.org/pdf/2002.04745v1.pdf
+        x = src
+        if self.norm_first:
+            x = x + self._sa_block(
+                self.norm1(x), src_mask, src_key_padding_mask, is_causal=is_causal
+            )
+            x = x + self._ff_block(self.norm2(x))
+        else:
+            x = self.norm1(
+                x
+                + self._sa_block(x, src_mask, src_key_padding_mask, is_causal=is_causal)
+            )
+            x = self.norm2(x + self._ff_block(x))
+
+        return x
+
+    # self-attention block
+    # x 被同时传递给了查询（Query）、键（Key）和值（Value），这在自注意力层中是常见的做法，因为在transformer的encoder部分，查询、键和值通常是相同的（即来自同一输入）
+    # need_weights=False 表示我们不需要返回注意力权重。
+    def _sa_block(
+        self,
+        x: Tensor,
+        attn_mask: Optional[Tensor],
+        key_padding_mask: Optional[Tensor],
+        is_causal: bool = False,
+    ) -> Tensor:
+        x = self.self_attn(
+            x,
+            x,
+            x,
+            attn_mask=attn_mask,
+            key_padding_mask=key_padding_mask,
+            need_weights=False,
+            is_causal=is_causal,
+        )[0]
+        return self.dropout1(x)
+
+    # feed forward block
+    def _ff_block(self, x: Tensor) -> Tensor:
+        x = self.linear2(self.dropout(self.activation(self.linear1(x))))
+        return self.dropout2(x)
+```
 ## [解码器的官方pytorch实现](https://github.com/pytorch/pytorch/blob/main/torch/nn/modules/transformer.py#L533)
 ```python
 class TransformerDecoder(Module):
@@ -1576,7 +1973,7 @@ class TransformerDecoder(Module):
         >>> decoder_layer = nn.TransformerDecoderLayer(d_{model}=512, nhead=8)
         >>> transformer_decoder = nn.TransformerDecoder(decoder_layer, num_layers=6)
         >>> memory = torch.rand(10, 32, 512)
-        >>> tgt = torch.rand(20, 32, 512)
+        >>> tgt = torch.rand(20, 32, 512)#目标序列（Target Sequence）
         >>> out = transformer_decoder(tgt, memory)
     """
 
@@ -1608,7 +2005,7 @@ class TransformerDecoder(Module):
         r"""Pass the inputs (and mask) through the decoder layer in turn.
 
         Args:
-            tgt: the sequence to the decoder (required).
+            tgt: the sequence to the decoder (required).目标序列（Target Sequence）
             memory: the sequence from the last layer of the encoder (required).
             tgt_mask: the mask for the tgt sequence (optional).
             memory_mask: the mask for the memory sequence (optional).
@@ -1656,9 +2053,227 @@ class TransformerDecoder(Module):
         return output
 
 ```
+[解码器中的每一层TransformerDecoderLayer的pytorch官方实现](https://github.com/pytorch/pytorch/blob/main/torch/nn/modules/transformer.py#L630)
+```python
+class TransformerDecoderLayer(Module):
+    r"""TransformerDecoderLayer is made up of self-attn, multi-head-attn and feedforward network.
+
+    .. note::
+        See `this tutorial <https://pytorch.org/tutorials/intermediate/transformer_building_blocks.html>`_
+        for an in depth discussion of the performant building blocks PyTorch offers for building your own
+        transformer layers.
+
+    This standard decoder layer is based on the paper "Attention Is All You Need".
+    Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez,
+    Lukasz Kaiser, and Illia Polosukhin. 2017. Attention is all you need. In Advances in
+    Neural Information Processing Systems, pages 6000-6010. Users may modify or implement
+    in a different way during application.
+
+    Args:
+        d_model: the number of expected features in the input (required).
+        nhead: the number of heads in the multiheadattention models (required).
+        dim_feedforward: the dimension of the feedforward network model (default=2048).
+        dropout: the dropout value (default=0.1).
+        activation: the activation function of the intermediate layer, can be a string
+            ("relu" or "gelu") or a unary callable. Default: relu
+        layer_norm_eps: the eps value in layer normalization components (default=1e-5).
+        batch_first: If ``True``, then the input and output tensors are provided
+            as (batch, seq, feature). Default: ``False`` (seq, batch, feature).
+        norm_first: if ``True``, layer norm is done prior to self attention, multihead
+            attention and feedforward operations, respectively. Otherwise it's done after.
+            Default: ``False`` (after).
+        bias: If set to ``False``, ``Linear`` and ``LayerNorm`` layers will not learn an additive
+            bias. Default: ``True``.
+
+    Examples::
+        >>> decoder_layer = nn.TransformerDecoderLayer(d_model=512, nhead=8)
+        >>> memory = torch.rand(10, 32, 512)
+        >>> tgt = torch.rand(20, 32, 512)
+        >>> out = decoder_layer(tgt, memory)
+
+    Alternatively, when ``batch_first`` is ``True``:
+        >>> decoder_layer = nn.TransformerDecoderLayer(d_model=512, nhead=8, batch_first=True)
+        >>> memory = torch.rand(32, 10, 512)
+        >>> tgt = torch.rand(32, 20, 512)
+        >>> out = decoder_layer(tgt, memory)
+    """
+
+    __constants__ = ["norm_first"]
+
+    def __init__(
+        self,
+        d_model: int,
+        nhead: int,
+        dim_feedforward: int = 2048,
+        dropout: float = 0.1,
+        activation: Union[str, Callable[[Tensor], Tensor]] = F.relu,
+        layer_norm_eps: float = 1e-5,
+        batch_first: bool = False,
+        norm_first: bool = False,
+        bias: bool = True,
+        device=None,
+        dtype=None,
+    ) -> None:
+        factory_kwargs = {"device": device, "dtype": dtype}
+        super().__init__()
+        self.self_attn = MultiheadAttention(
+            d_model,
+            nhead,
+            dropout=dropout,
+            batch_first=batch_first,
+            bias=bias,
+            **factory_kwargs,
+        )
+        self.multihead_attn = MultiheadAttention(
+            d_model,
+            nhead,
+            dropout=dropout,
+            batch_first=batch_first,
+            bias=bias,
+            **factory_kwargs,
+        )
+        # Implementation of Feedforward model
+        self.linear1 = Linear(d_model, dim_feedforward, bias=bias, **factory_kwargs)
+        self.dropout = Dropout(dropout)
+        self.linear2 = Linear(dim_feedforward, d_model, bias=bias, **factory_kwargs)
+
+        self.norm_first = norm_first
+        self.norm1 = LayerNorm(d_model, eps=layer_norm_eps, bias=bias, **factory_kwargs)
+        self.norm2 = LayerNorm(d_model, eps=layer_norm_eps, bias=bias, **factory_kwargs)
+        self.norm3 = LayerNorm(d_model, eps=layer_norm_eps, bias=bias, **factory_kwargs)
+        self.dropout1 = Dropout(dropout)
+        self.dropout2 = Dropout(dropout)
+        self.dropout3 = Dropout(dropout)
+
+        # Legacy string support for activation function.
+        if isinstance(activation, str):
+            self.activation = _get_activation_fn(activation)
+        else:
+            self.activation = activation
+
+    def __setstate__(self, state):
+        if "activation" not in state:
+            state["activation"] = F.relu
+        super().__setstate__(state)
+
+    def forward(
+        self,
+        tgt: Tensor,
+        memory: Tensor,
+        tgt_mask: Optional[Tensor] = None,
+        memory_mask: Optional[Tensor] = None,
+        tgt_key_padding_mask: Optional[Tensor] = None,
+        memory_key_padding_mask: Optional[Tensor] = None,
+        tgt_is_causal: bool = False,
+        memory_is_causal: bool = False,
+    ) -> Tensor:
+        r"""Pass the inputs (and mask) through the decoder layer.
+
+        Args:
+            tgt: the sequence to the decoder layer (required).
+            memory: the sequence from the last layer of the encoder (required).
+            tgt_mask: the mask for the tgt sequence (optional).
+            memory_mask: the mask for the memory sequence (optional).
+            tgt_key_padding_mask: the mask for the tgt keys per batch (optional).
+            memory_key_padding_mask: the mask for the memory keys per batch (optional).
+            tgt_is_causal: If specified, applies a causal mask as ``tgt mask``.
+                Default: ``False``.
+                Warning:
+                ``tgt_is_causal`` provides a hint that ``tgt_mask`` is
+                the causal mask. Providing incorrect hints can result in
+                incorrect execution, including forward and backward
+                compatibility.
+            memory_is_causal: If specified, applies a causal mask as
+                ``memory mask``.
+                Default: ``False``.
+                Warning:
+                ``memory_is_causal`` provides a hint that
+                ``memory_mask`` is the causal mask. Providing incorrect
+                hints can result in incorrect execution, including
+                forward and backward compatibility.
+
+        Shape:
+            see the docs in :class:`~torch.nn.Transformer`.
+        """
+        # see Fig. 1 of https://arxiv.org/pdf/2002.04745v1.pdf
+
+        x = tgt
+        if self.norm_first:
+            x = x + self._sa_block(
+                self.norm1(x), tgt_mask, tgt_key_padding_mask, tgt_is_causal
+            )
+            x = x + self._mha_block(
+                self.norm2(x),
+                memory,
+                memory_mask,
+                memory_key_padding_mask,
+                memory_is_causal,
+            )
+            x = x + self._ff_block(self.norm3(x))
+        else:
+            x = self.norm1(
+                x + self._sa_block(x, tgt_mask, tgt_key_padding_mask, tgt_is_causal)
+            )
+            x = self.norm2(
+                x
+                + self._mha_block(
+                    x, memory, memory_mask, memory_key_padding_mask, memory_is_causal
+                )
+            )
+            x = self.norm3(x + self._ff_block(x))
+
+        return x
+
+    # self-attention block
+    def _sa_block(
+        self,
+        x: Tensor,
+        attn_mask: Optional[Tensor],
+        key_padding_mask: Optional[Tensor],
+        is_causal: bool = False,
+    ) -> Tensor:
+        x = self.self_attn(
+            x,
+            x,
+            x,
+            attn_mask=attn_mask,
+            key_padding_mask=key_padding_mask,
+            is_causal=is_causal,
+            need_weights=False,
+        )[0]
+        return self.dropout1(x)
+
+    # multihead attention block
+    def _mha_block(
+        self,
+        x: Tensor,
+        mem: Tensor,
+        attn_mask: Optional[Tensor],
+        key_padding_mask: Optional[Tensor],
+        is_causal: bool = False,
+    ) -> Tensor:
+        x = self.multihead_attn(
+            x,
+            mem,
+            mem,
+            attn_mask=attn_mask,
+            key_padding_mask=key_padding_mask,
+            is_causal=is_causal,
+            need_weights=False,
+        )[0]
+        return self.dropout2(x)
+
+    # feed forward block
+    def _ff_block(self, x: Tensor) -> Tensor:
+        x = self.linear2(self.dropout(self.activation(self.linear1(x))))
+        return self.dropout3(x)
+
+
+
+```
 # 参考
 
-[Word Embeddings: Encoding Lexical Semantics](https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html)
-[如何理解Transformer论文中的positional encoding，和三角函数有什么关系？](https://www.zhihu.com/question/347678607/answer/2301693596)
-[神经网络中 warmup 策略为什么有效；有什么理论解释么？](https://www.zhihu.com/question/338066667)
-[哈佛大学对于Transformer的实现](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
+1. [Word Embeddings: Encoding Lexical Semantics](https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html)
+2. [如何理解Transformer论文中的positional encoding，和三角函数有什么关系？](https://www.zhihu.com/question/347678607/answer/2301693596)
+3. [神经网络中 warmup 策略为什么有效；有什么理论解释么？](https://www.zhihu.com/question/338066667)
+4. [哈佛大学对于Transformer的实现](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
