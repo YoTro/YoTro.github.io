@@ -6,6 +6,10 @@
           inlineMath: [ ['$$','$$'], ["\\(","\\)"]  ],
           processEscapes: true,
           skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        chtml: {
+          scale: 1,  // Adjust the scale for responsive design
+          matchFontHeight: true
         }
       });
     </script>
@@ -18,6 +22,16 @@
         }
       });
     </script>
+        <!-- Ensure responsive behavior -->
+    <style>
+    .mjx-chtml.MJXc-display {
+        display: block;
+        max-width: 100%; /* 限制最大宽度为屏幕宽度 */
+        overflow-x: auto; /* 允许水平滚动 */
+        white-space: nowrap; /* 防止公式内容换行 */
+        margin: 0 auto; /* 保持公式居中 */
+      }
+    </style>
     <script type="text/javascript" src="{{ site.mathjax.cdn }}"></script>
   {% endif %}
 {% endif %}
