@@ -130,22 +130,23 @@ $$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k} })V$$
 #### 为什么乘以$$\frac{1}{\sqrt{d_k}}$$而不是$$\frac{1}{d_k}$$
 
 假设组成Q,K的随机变量是独立的且服从均值为0,方差为1的分布, 则
+
 $$z^2 = \frac{1}{d_k} \sum_{i = 1}{d_k}\sum_{j = 1}^{d_k}(q_ik_j - \mu)^2$$
 
-$$\begin{matrix}
+$$\begin{align}
 其中，
-\mu = E(q_i,k_j) = \frac{1}{d_k^2} \sum_{i = 1}^{d_k}\sum_{j = 1}^{d_k}(q_ik_j)\\
+\mu &= E(q_i,k_j) = \frac{1}{d_k^2} \sum_{i = 1}^{d_k}\sum_{j = 1}^{d_k}(q_ik_j)\\
 并且，
-E(q_i) = \frac{1}{d_k}\sum_{i=1}^{d_k}q_i=0\\
-E(k_j) = \frac{1}{d_k}\sum_{j=1}^{d_k}k_j=0\\
+E(q_i) &= \frac{1}{d_k}\sum_{i=1}^{d_k}q_i=0\\
+E(k_j) &= \frac{1}{d_k}\sum_{j=1}^{d_k}k_j=0\\
 所以，
-E(q_i,k_j) =E(q_i)E(k_j) = 0\\
+E(q_i,k_j) &=E(q_i)E(k_j) = 0\\
 此外，
-V(q_i) = \frac{1}{d_k} \sum_{i=1}^{d_k}(q_i-E(q_i))^2 = \frac{1}{d_k} \sum_{i=1}^{d_k}q_i^2=1\\
-V(k_j) = \frac{1}{d_k} \sum_{j=1}^{d_k}(k_j-E(k_j))^2 = \frac{1}{d_k} \sum_{j=1}^{d_k}k_j^2=1\\
+V(q_i) &= \frac{1}{d_k} \sum_{i=1}^{d_k}(q_i-E(q_i))^2 = \frac{1}{d_k} \sum_{i=1}^{d_k}q_i^2=1\\
+V(k_j) &= \frac{1}{d_k} \sum_{j=1}^{d_k}(k_j-E(k_j))^2 = \frac{1}{d_k} \sum_{j=1}^{d_k}k_j^2=1\\
 所以，
-z^2 = \frac{1}{d_k} \sum_{i = 1}{d_k}\sum_{j = 1}^{d_k}(q_ik_j)^2=V(q_i)V(k_j)d_k=d_k\Rightarrow std(z) = \sqrt{d_k}
-\end{matrix}$$
+z^2 &= \frac{1}{d_k} \sum_{i = 1}{d_k}\sum_{j = 1}^{d_k}(q_ik_j)^2=V(q_i)V(k_j)d_k=d_k\Rightarrow std(z) = \sqrt{d_k}
+\end{align}$$
 
 ### 多头注意力(Multi-Head Attention)
 
