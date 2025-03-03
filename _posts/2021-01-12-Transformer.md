@@ -57,7 +57,16 @@ mathjax: true
 
 它是一种深度学习架构, 由编码器和解码器组成, 利用“多头自注意力机制”, 应用于自然语言处理,计算机视觉.
 
-![Transformer Full Architecture](https://upload.wikimedia.org/wikipedia/commons/3/34/Transformer%2C_full_architecture.png)
+![Transformer Full Architecture](https://arxiv.org/html/1706.03762v7/extracted/1706.03762v7/Figures/ModalNet-21.png)
+## shifted right（右移）
+
+将目标序列整体向右移动一个位置，
+
+解码器的输入（tgt）： ["<BOS>", "I", "love", "NLP"]
+
+而目标输出（tgt_y）： ["I", "love", "NLP", "<EOS>"]
+
+目的：对齐t-1时刻的token（例如："<BOS>"）预测t时刻的目标token（例如："I"）
 
 ## 输入嵌入（Input Embedding）
 
@@ -103,7 +112,6 @@ cos(\frac{pos}{10000^{\frac{k}{d}} } ) &\text{if k = 2i +1}
 ### 为什么是10000
 
 1. 实验得出
-
 
 ## 编码器(Encoder)
 
@@ -162,6 +170,40 @@ MultiHead(Q, K, V) = Concat(head_1, head_2,...,head_h)W^O
 - $$W_i^Q$$ 是 第 i 个头注意力的查询(Query)权重矩阵,$$\in \mathbb{R} ^{d_k\times d_{model}}$$
 - $$W_i^K$$ 是第 i 个头注意力的键(Key)权重矩阵,$$\in \mathbb{R} ^{d_k\times d_{model}}$$
 - $$W_i^V$$ 是第 i 个头注意力的值(Value)权重矩阵,$$\in \mathbb{R} ^{d_v\times d_{model}}$$
+
+#### 为什么MHA不能是任意个，而是h=8(即16个多头注意力)
+
+显然并不是一定要16个MHA, 根据[Are Sixteen Heads Really Better than One?](https://arxiv.org/pdf/1905.10650)中通过实验发现，即使在训练时使用了多个注意力头，在测试时很多头是可以被移除而不显著影响模型性能的。多头注意力可能并不是每个头都必不可少，有些可能是冗余的。
+
+在前面的实验中，研究表明**某些注意力头比其他头更重要**。为了深入了解这一现象，研究团队在**训练的不同阶段**进行了逐步剪枝实验，以观察注意力头重要性在训练过程中的变化。
+
+##### **1. 研究方法**
+- 选用 **IWSLT 2014 德英翻译数据集** 训练一个小型 Transformer（6 层，8 头/层）。
+- 在**每个训练周期（epoch）**进行剪枝实验，测试剪枝后模型性能下降的程度。
+- **记录 BLEU 分数的变化**，并使用对数尺度绘制不同训练阶段的趋势。
+
+##### **2. 主要发现**
+1. **训练初期（epoch 1-2）**：
+   - 头的重要性分布较均匀，即**所有注意力头对模型的贡献大致相同**。
+   - 剪枝的影响呈 **线性下降**，表明早期训练阶段模型对所有头的依赖较为均匀。
+
+2. **训练中后期（epoch 10 及以后）**：
+   - 出现了一批**冗余的注意力头**，这些头被剪枝后仍能保持 **85%-90% 的原始 BLEU 分数**。
+   - **最多可剪掉 40% 的注意力头，而不会显著降低翻译质量**。
+
+3. **注意力头的重要性在训练过程中逐渐分化**：
+   - 早期（epoch 1-2）：所有头贡献相似，无明显主次。
+   - 中期（epoch 10+）：模型逐渐学习到最重要的头，并开始依赖它们，而其他头变得可有可无。
+
+##### **3. 关联信息理论**
+研究结果与 **Shwartz-Ziv 和 Tishby（2017）** 关于神经网络训练的两阶段理论相吻合：
+- **阶段 1：经验风险最小化（Empirical Risk Minimization）**  
+  - 目标：最大化输入与标签的互信息，模型学习尽可能多的信息。
+  - 早期训练阶段，所有注意力头贡献接近，尚未区分出最重要的头。
+
+- **阶段 2：压缩阶段（Compression Phase）**  
+  - 目标：最小化输入信息冗余，模型开始仅保留最有效的信息通道。
+  - 训练后期，少数头变得更重要，而其他头逐渐被模型忽略，成为冗余头。
 
 ### 掩码多头注意力(Masked Multi-Head Attention)
 
@@ -2277,4 +2319,5 @@ class TransformerDecoderLayer(Module):
 1. [Word Embeddings: Encoding Lexical Semantics](https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html)
 2. [如何理解Transformer论文中的positional encoding，和三角函数有什么关系？](https://www.zhihu.com/question/347678607/answer/2301693596)
 3. [神经网络中 warmup 策略为什么有效；有什么理论解释么？](https://www.zhihu.com/question/338066667)
-4. [哈佛大学对于Transformer的实现](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
+4. [Are Sixteen Heads Really Better than One?](https://arxiv.org/pdf/1905.10650)
+5. [哈佛大学对于Transformer的实现](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
