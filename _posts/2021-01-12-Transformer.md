@@ -70,7 +70,8 @@ mathjax: true
 
 ## 输入嵌入（Input Embedding）
 
-将输入的数据（如文本中的单词）转换为固定维度的向量表示.其中向量元素会随机初始化并在之后的学习中更新.
+将离散的输入的token（如单词、子词、字符等）转换为连续的向量表示.
+其中weight如未提供，则从标准正太分布中随机采样出一个(num_embeddings, embedding_dim) 的张量，num_embeddings=词汇表的大小，embedding_dim=每个嵌入向量的维度。
 
 ### 为什么不用ASCII码或者One-hot编码表示而是Word embeddings
 
@@ -112,6 +113,17 @@ cos(\frac{pos}{10000^{\frac{k}{d}} } ) &\text{if k = 2i +1}
 ### 为什么是10000
 
 1. 实验得出
+
+### 有没有更好的位置编码方式
+
+| **位置编码** | **是否可学习** | **是否支持长序列** | **计算开销** | **适用任务** |
+|-------------|---------------|----------------|------------|--------------|
+| 三角函数位置编码 | ❌ 否 | ✅ 是 | 低 | Transformer 基础模型 |
+| [可学习位置编码Learnable](https://aclanthology.org/2022.findings-aacl.42.pdf) | ✅ 是 | ❌ 否 | 低 | 语言建模（GPT, BERT） |
+| [相对位置编码Relative](https://arxiv.org/pdf/1803.02155v2) | ✅ 是 | ✅ 是 | 低 | 机器翻译，文本生成 |
+| [旋转式位置编码RoPE](https://arxiv.org/pdf/2104.09864) | ✅ 是 | ✅ 是 | 低 | GPT, LLaMA |
+| [ALiBi](https://arxiv.org/pdf/2108.12409v2) | ✅ 是 | ✅ 是 | 极低 | 超长文本任务 |
+
 
 ## 编码器(Encoder)
 
