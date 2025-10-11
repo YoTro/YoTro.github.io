@@ -137,9 +137,9 @@ cos(\frac{pos}{10000^{\frac{k}{d}} } ) &\text{if k = 2i +1}
 Mask的主要目的是防作弊, 防止后位置影响前位置
 
 ## 多头自注意力机制(Multi-heads Self Attention)
-
+![Multi-heads Self Attention](https://deepfrench.gitlab.io/deep-learning-project/resources/transformer.png)
 ### 缩放点积注意力(Scaled Dot-Product Attention)
-![Scaled Dot-Product Attention 缩放点积注意力](https://production-media.paperswithcode.com/methods/35184258-10f5-4cd0-8de3-bd9bc8f88dc3.png)
+![Scaled Dot-Product Attention 缩放点积注意力](https://media.geeksforgeeks.org/wp-content/uploads/20231212180658/selfattne.png)
 
 $$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k} })V$$
 
@@ -151,7 +151,7 @@ $$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k} })V$$
 
 假设组成Q,K的随机变量是独立的且服从均值为0,方差为1的分布, 则
 
-$$z^2 = \frac{1}{d_k} \sum_{i = 1}{d_k}\sum_{j = 1}^{d_k}(q_ik_j - \mu)^2$$
+$$z^2 = \frac{1}{d_k} \sum_{i = 1}^{d_k}\sum_{j = 1}^{d_k}(q_ik_j - \mu)^2$$
 
 $$\begin{align}
 其中，
@@ -165,12 +165,12 @@ E(q_i,k_j) &=E(q_i)E(k_j) = 0\\
 V(q_i) &= \frac{1}{d_k} \sum_{i=1}^{d_k}(q_i-E(q_i))^2 = \frac{1}{d_k} \sum_{i=1}^{d_k}q_i^2=1\\
 V(k_j) &= \frac{1}{d_k} \sum_{j=1}^{d_k}(k_j-E(k_j))^2 = \frac{1}{d_k} \sum_{j=1}^{d_k}k_j^2=1\\
 所以，
-z^2 &= \frac{1}{d_k} \sum_{i = 1}{d_k}\sum_{j = 1}^{d_k}(q_ik_j)^2=V(q_i)V(k_j)d_k=d_k\Rightarrow std(z) = \sqrt{d_k}
+z^2 &= \frac{1}{d_k} \sum_{i = 1}^{d_k}\sum_{j = 1}^{d_k}(q_ik_j)^2=V(q_i)V(k_j)d_k=d_k\Rightarrow std(z) = \sqrt{d_k}
 \end{align}$$
 
 ### 多头注意力(Multi-Head Attention)
 
-![多头注意力](https://production-media.paperswithcode.com/methods/multi-head-attention_l1A3G7a.png)
+![多头注意力](https://media.geeksforgeeks.org/wp-content/uploads/20231212181418/multihead.png)
 
 $$\begin{matrix}
 MultiHead(Q, K, V) = Concat(head_1, head_2,...,head_h)W^O
