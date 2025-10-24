@@ -258,6 +258,13 @@ $$y=F(x)+Dropout(x)$$
 残差连接的加和部分也可能被随机丢弃.
 使用$$P_{drop} = 0.1$$, 应用与每个输出的子层之后，dropout 会随机丢弃输出中的一部分神经元，然后，这个被丢弃的输出将会与子层输入相加，输入到正则化层和每个子层。累加嵌入层和位置编码也应用了dropout
 
+[dropout](https://github.com/pytorch/pytorch/blob/main/aten/src/ATen/native/Dropout.cpp)的流程
+
+如果0<p<1:
+1. 根据1-p使用伯努利分布生成器生成一张0，1的二值矩阵, 0表示丢弃：$$P(X=x) = p^x (1-p)^{1-x}$$
+3. 生成的矩阵先乘以1/(1-p)，保持期望不变，再点乘原矩阵
+4. 输出
+
 ### 软化目标标签(Label Smoothing)
 
 **目的**：防止模型过于自信地做出预测，并通过减少模型对错误标签的过度拟合，从而提高泛化能力.
@@ -2333,3 +2340,4 @@ class TransformerDecoderLayer(Module):
 3. [神经网络中 warmup 策略为什么有效；有什么理论解释么？](https://www.zhihu.com/question/338066667)
 4. [Are Sixteen Heads Really Better than One?](https://arxiv.org/pdf/1905.10650)
 5. [哈佛大学对于Transformer的实现](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
+6. [Transformer模型可视化](https://poloclub.github.io/transformer-explainer/)
