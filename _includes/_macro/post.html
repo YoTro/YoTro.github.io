@@ -285,29 +285,32 @@
         </div>
       {% endif %}
 
+      {% comment %}
+        Safe index teaser logic:
+        - teaser_source priority: post.excerpt -> post.description -> post.content
+        - strip_html before truncation to avoid broken tags/counting
+        - use site.auto_excerpt.length when configured, otherwise default to 220 chars
+      {% endcomment %}
+
       {% if is_index %}
-        {% if post.description and site.excerpt_description %}
-          {{ post.description }}
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="{{ post.url | relative_url }}">
-              {{ __.post.read_more }} &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        {% elsif post.excerpt  %}
-          {{ post.excerpt }}
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="{{ post.url | relative_url }}{% if site.scroll_to_more %}#{{ __.post.more }}{% endif %}" rel="contents">
-              {{ __.post.read_more }} &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        {% elsif site.auto_excerpt.enable %}
-          {% assign content = post.content | strip_html %}
-          {{ content | slice: 0, site.auto_excerpt.length }}
-          {% if content.size > site.auto_excerpt.length %}...{% endif %}
+        {%- assign excerpt_len = site.auto_excerpt.length | default: 220 -%}
+        {%- assign teaser_source = post.excerpt | default: post.description | default: post.content -%}
+
+        {%- comment -%}
+          If teaser_source is the full content (fallback), strip HTML and truncate.
+          If it's an explicit excerpt/description we still strip HTML and truncate to keep length consistent.
+        {%- endcomment -%}
+
+        {%- assign teaser = teaser_source | strip_html | strip_newlines | truncate: excerpt_len -%}
+        <p class="post-teaser">{{ teaser }}</p>
+
+        {%- comment -%}
+          Show "read more" if the underlying plain-text content is longer than the excerpt length.
+          Use the stripped content size for the comparison.
+        {%- endcomment -%}
+
+        {%- assign plain_full = post.content | strip_html | strip_newlines -%}
+        {% if plain_full.size > excerpt_len %}
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="{{ post.url | relative_url }}{% if site.scroll_to_more %}#{{ __.post.more }}{% endif %}" rel="contents">
@@ -315,16 +318,12 @@
             </a>
           </div>
           <!--/noindex-->
-        {% else %}
-          {% if post.type == 'picture' %}
-            <a href="{{ post.url | relative_url }}">{{ post.content }}</a>
-          {% else %}
-            {{ post.content }}
-          {% endif %}
         {% endif %}
+
       {% else %}
         {{ post.content }}
-      {% endif  %}
+      {% endif %}
+
     </div>
 
     <div>
