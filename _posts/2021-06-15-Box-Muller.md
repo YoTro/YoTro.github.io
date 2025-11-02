@@ -66,6 +66,8 @@ dz_1 \wedge dz_2&=\cos\Theta \sin\Theta(dr \wedge dr) +  r\cos\Theta \cos\Theta 
 
 根据方法的出现时间升序列表，
 
+<div style="overflow-x:auto;">
+
 | 年份 | 方法名称 (中英文) | 类型 | 主要用途 | 作者 | 国籍 | 论文/原始地址 | 概述与优缺点 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **1900** | **[皮尔逊卡方检验](https://en.wikipedia.org/wiki/Pearson%27s_chi-squared_test)**<br/>Pearson's Chi-squared Test(χ² test 或 Chi-squared) | 统计检验 | 离散与分组连续分布 | 卡尔·皮尔逊<br/>Karl Pearson | 英国 | *Pearson, K. (1900). On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling. Philosophical Magazine.* | **最古老、最通用的拟合优度检验**。比较观测频数与期望频数。<br/>**优**: 非常通用，可用于任何分布。<br/>**缺**: 结果依赖分组方式，对连续分布是近似，需要大样本。 |
@@ -76,6 +78,8 @@ dz_1 \wedge dz_2&=\cos\Theta \sin\Theta(dr \wedge dr) +  r\cos\Theta \cos\Theta 
 | **1967** | **Lilliefors检验**<br/>[Lilliefors Test](https://en.wikipedia.org/wiki/Lilliefors_test) | 统计检验 | 正态分布、指数分布（参数估计） | 休伯特·利利efors<br/>Hubert Lilliefors | 美国 | *Lilliefors, H. W. (1967). On the Kolmogorov-Smirnov test for normality with mean and variance unknown. J. of the American Statistical Association.* | **针对K-S检验的修正**。专门用于当理论分布的参数（如μ, σ）是从样本中估计的情况。<br/>**优**: 解决了K-S检验在参数估计时的滥用问题。<br/>**缺**: 主要用于正态和指数分布。 |
 | **1974** | **P-P图**<br/>P-P Plot (Probability-Probability Plot) | 可视化 | 所有分布 | 推广使用，无单一发明者 | - | *与Q-Q图同期在统计文献中被讨论和比较。* | **另一种图形化工具**。比较数据的累积概率与理论分布的累积概率。<br/>**优**: 对分布的位置和尺度参数变化不敏感。<br/>**缺**: 对尾部拟合问题不如Q-Q图敏感，因此**不如Q-Q图常用**。 |
 | **1980s** | **克雷默-冯·米塞斯检验**<br/>Cramér–von Mises Criterion(C-vM test 或 CvM test) | 统计检验 | 完全指定的连续分布 | 哈拉尔德·克雷默<br/>Harald Cramér<br/>理查德·冯·米塞斯<br/>Richard Edler von Mises | 瑞典<br/>奥地利/美国 | *历史悠久，其用于拟合优度检验的形式在20世纪下半叶被完善。* | **另一种基于ECDF的检验**。计算ECDF与CDF之间差异的平方积分。<br/>**优**: 利用了整个分布上的差异信息，而不仅是最大差异（如K-S）。<br/>**缺**: 其敏感度介于K-S和A-D之间。 |
+
+</div>
 
 ## 图像法
 
@@ -100,6 +104,9 @@ dz_1 \wedge dz_2&=\cos\Theta \sin\Theta(dr \wedge dr) +  r\cos\Theta \cos\Theta 
 
     **常见概率分布：PDF，CDF 与分位数函数**
 
+    <div style="overflow-x:auto;">
+
+
     | 分布名称 | 概率密度函数 (PDF) $f(x)$ | 累积分布函数 (CDF) $F(x)$ | 理论分位数函数 $Q(p)=F^{-1}(p)$ |
     | :--- | :--- | :--- | :--- |
     | **[均匀分布](https://en.wikipedia.org/wiki/Continuous_uniform_distribution)** <br/> $$Uniform(a,b)$$ | $$f(x) = \begin{cases} \frac{1}{b-a} & \text{for } a \le x \le b \\ 0 & \text{otherwise} \end{cases}$$ | $$F(x) = \begin{cases} 0 & \text{for } x < a \\ \frac{x-a}{b-a} & \text{for } a \le x < b \\ 1 & \text{for } x \ge b \end{cases}$$ | $$Q(p) = a + p(b-a)$$ |
@@ -110,6 +117,8 @@ dz_1 \wedge dz_2&=\cos\Theta \sin\Theta(dr \wedge dr) +  r\cos\Theta \cos\Theta 
     | **[（双参数）威布尔分布](https://en.wikipedia.org/wiki/Weibull_distribution)** <br/> $$Weibull(\alpha, \beta)$$ | $$f(x) = \begin{cases} \frac{\beta}{\alpha} ( \frac{x}{\alpha} )^{\beta-1} e^{-(x/\alpha)^\beta} & \text{for } x \ge 0 \\ 0 & \text{for } x < 0 \end{cases}$$ | $$F(x) = \begin{cases} 1 - e^{-(x/\alpha)^\beta} & \text{for } x \ge 0 \\ 0 & \text{for } x < 0 \end{cases}$$ | $$Q(p) = \alpha [ -\ln(1-p) ]^{1/\beta}$$ |
     | **[标准柯西分布](https://en.wikipedia.org/wiki/Cauchy_distribution)** <br/> $$Cauchy(0, 1)$$ | $$f(x) = \frac{1}{\pi (1 + x^2)}$$ | $$F(x) = \frac{1}{\pi} \arctan(x) + \frac{1}{2}$$ | $$Q(p) = \tan ( \pi (p - \frac{1}{2}) )$$ |
     | **[逻辑斯蒂分布](https://en.wikipedia.org/wiki/Logistic_distribution)** <br/> $$Logistic(\mu, s)$$ | $$f(x) = \frac{e^{-(x-\mu)/s}} {s(1 + e^{-(x-\mu)/s})^2}$$ | $$F(x) = \frac{1}{1 + e^{-(x-\mu)/s}}$$ | $$Q(p) = \mu + s \ln ( \frac{p}{1-p} )$$ |
+
+    </div>
 
 
 4. 绘图 (Plotting)，点坐标为 (理论分位数, 样本值)
@@ -243,6 +252,8 @@ plt.show()
 
     $$\mathbf{\chi^2 = \sum \frac{(O_{ij} - E_{ij})^2}{E_{ij}}}$$
 
+    <div style="overflow-x:auto;">
+
     | 单元格 | $$O_{ij}$$ | $$E_{ij}$$ | $$(O_{ij} - E_{ij})$$ | $$(O_{ij} - E_{ij})^2$$ | 贡献值 $$\frac{(O_{ij} - E_{ij})^2}{E_{ij}}$$ |
     | :---: | :---: | :---: | :---: | :---: | :---: |
     | **$R_1C_1$** | 30 | 32.5 | -2.5 | 6.25 | $$6.25 / 32.5 \approx 0.1923$$ |
@@ -250,6 +261,8 @@ plt.show()
     | **$R_2C_1$** | 35 | 32.5 | 2.5 | 6.25 | $$6.25 / 32.5 \approx 0.1923$$ |
     | **$R_2C_2$** | 15 | 17.5 | -2.5 | 6.25 | $$6.25 / 17.5 \approx 0.3571$$ |
     | **总计 ($$\chi^2$$)** | - | - | - | - | $$\mathbf{1.0988}$$ |
+
+    </div>
 
     $$\chi^2 \approx 0.1923 + 0.3571 + 0.1923 + 0.3571 = \mathbf{1.0988}$$
 
@@ -288,6 +301,8 @@ KS检验计算流程
     * 零假设 (H_0)： 样本数据来自标准正态分布 $$F(x) = \Phi(x)$$。
     * 备择假设 (H_a)： 样本数据不来自标准正态分布。
 2. 计算经验 CDF ($$F_n(x)$$) 和理论 CDF ($$F(x)$$)
+    
+    <div style="overflow-x:auto;">
 
     | i | 排序数据 x(i) | 经验 CDF Fn(x) 之前 $$\frac{i-1}{n}$$ | 经验 CDF Fn(x) 之后 $$\frac{i}{n}$$ | 理论 CDF F(x(i)) = Φ(x(i)) |
     |---|----------------|-----------------------------|---------------------------|-----------------------------|
@@ -296,6 +311,8 @@ KS检验计算流程
     | 3 | 0.1  | 2/5 = 0.4 | 3/5 = 0.6 | P(Z ≤ 0.1)  ≈ 0.5398 |
     | 4 | 0.8  | 3/5 = 0.6 | 4/5 = 0.8 | P(Z ≤ 0.8)  ≈ 0.7881 |
     | 5 | 1.5  | 4/5 = 0.8 | 5/5 = 1.0 | P(Z ≤ 1.5)  ≈ 0.9332 |
+
+    </div>
 
 3. 计算KS统计量D_n
 
@@ -345,6 +362,8 @@ AD公式： $$A^2 = -n - \frac{1}{n} \sum_{i=1}^{n} (2i - 1) [ \ln F(x_i) + \ln 
     * 备择假设 (H_a)： 样本数据不来自标准正态分布。
 
 2. 计算理论 CDF ($$F(x)$$)
+    
+    <div style="overflow-x:auto;">
 
     | 序号i | 排序数据 $$x_i$$ | $$\frac{i}{n}$$ | 理论CDF $$F(x_i)$$ | $$\ln F(x_i)$$ | $$x_{n+1-i}$$ | $$1 - F(x_{n+1-i})$$ | $$\ln(1 - F(x_{n+1-i}))$$ | $$\frac{2i−1}{n}$$ |$$[ \ln F(Y_i) + \ln ( 1 - F(Y_{n+1-i}) ) ]$$ | $$S_i$$ |
     |------|------------------|-------------------|--------------------|----------------|----------------|------------------------|---------------------------|---------------------------|---------------------------|---------------------------|
@@ -353,6 +372,8 @@ AD公式： $$A^2 = -n - \frac{1}{n} \sum_{i=1}^{n} (2i - 1) [ \ln F(x_i) + \ln 
     | 3 | 0.1 | 0.6 | 0.5398 | -0.6166 | 0.1 | 1 - 0.5398 = 0.4602 | -0.7760 | 1.0 | -1.3926 | -1.3926 | 
     | 4 | 0.8 | 0.8 | 0.7881 | -0.2381 | -0.5 | 1 - 0.3085 = 0.6915 | -0.3689 | 1.4 | -0.6070 | -0.8498 |
     | 5 | 1.5 | 1.0 | 0.9332 | -0.0690 | -1.2 | 1 - 0.1151 = 0.8849 | -0.1223 | 1.8 | -0.1913 | -0.3443 |
+
+    </div>
 
     $$\mathbf{S} = \sum_{i=1}^{5} S_i = -0.97388 + (-1.63614) + (-1.39260) + (-0.84980) + (-0.34434) = \mathbf{-5.19676}$$
 
